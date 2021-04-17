@@ -1,23 +1,25 @@
 {
   "files": {
-    "main.css": "/need_for_drive/static/css/main.f952c61b.chunk.css",
-    "main.js": "/need_for_drive/static/js/main.94b3c0f2.chunk.js",
-    "main.js.map": "/need_for_drive/static/js/main.94b3c0f2.chunk.js.map",
-    "runtime-main.js": "/need_for_drive/static/js/runtime-main.2efa06a6.js",
-    "runtime-main.js.map": "/need_for_drive/static/js/runtime-main.2efa06a6.js.map",
-    "static/js/2.c85d7639.chunk.js": "/need_for_drive/static/js/2.c85d7639.chunk.js",
-    "static/js/2.c85d7639.chunk.js.map": "/need_for_drive/static/js/2.c85d7639.chunk.js.map",
-    "static/js/3.29931b19.chunk.js": "/need_for_drive/static/js/3.29931b19.chunk.js",
-    "static/js/3.29931b19.chunk.js.map": "/need_for_drive/static/js/3.29931b19.chunk.js.map",
+    "main.css": "/need_for_drive/static/css/main.87094c27.chunk.css",
+    "main.js": "/need_for_drive/static/js/main.82df7b10.chunk.js",
+    "main.js.map": "/need_for_drive/static/js/main.82df7b10.chunk.js.map",
+    "runtime-main.js": "/need_for_drive/static/js/runtime-main.c0681df1.js",
+    "runtime-main.js.map": "/need_for_drive/static/js/runtime-main.c0681df1.js.map",
+    "static/js/2.c60405af.chunk.js": "/need_for_drive/static/js/2.c60405af.chunk.js",
+    "static/js/2.c60405af.chunk.js.map": "/need_for_drive/static/js/2.c60405af.chunk.js.map",
+    "static/js/3.100d3c72.chunk.js": "/need_for_drive/static/js/3.100d3c72.chunk.js",
+    "static/js/3.100d3c72.chunk.js.map": "/need_for_drive/static/js/3.100d3c72.chunk.js.map",
     "index.html": "/need_for_drive/index.html",
-    "static/css/main.f952c61b.chunk.css.map": "/need_for_drive/static/css/main.f952c61b.chunk.css.map",
-    "static/js/2.c85d7639.chunk.js.LICENSE.txt": "/need_for_drive/static/js/2.c85d7639.chunk.js.LICENSE.txt",
-    "static/media/logo.6ce24c58.svg": "/need_for_drive/static/media/logo.6ce24c58.svg"
+    "static/css/main.87094c27.chunk.css.map": "/need_for_drive/static/css/main.87094c27.chunk.css.map",
+    "static/js/2.c60405af.chunk.js.LICENSE.txt": "/need_for_drive/static/js/2.c60405af.chunk.js.LICENSE.txt",
+    "static/media/Facebook_white.c1876cc3.svg": "/need_for_drive/static/media/Facebook_white.c1876cc3.svg",
+    "static/media/Instagram_white.98094ec4.svg": "/need_for_drive/static/media/Instagram_white.98094ec4.svg",
+    "static/media/Telegram_white.e8137bbe.svg": "/need_for_drive/static/media/Telegram_white.e8137bbe.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.2efa06a6.js",
-    "static/js/2.c85d7639.chunk.js",
-    "static/css/main.f952c61b.chunk.css",
-    "static/js/main.94b3c0f2.chunk.js"
+    "static/js/runtime-main.c0681df1.js",
+    "static/js/2.c60405af.chunk.js",
+    "static/css/main.87094c27.chunk.css",
+    "static/js/main.82df7b10.chunk.js"
   ]
 }
