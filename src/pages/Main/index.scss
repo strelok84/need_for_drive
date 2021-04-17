@@ -1,0 +1,24 @@
+@import "../../constants/constants";
+
+.wrapper{
+    width:100%;
+    height: 100%;
+    margin:0 auto;
+    display: grid;
+    grid-template-columns: repeat(4,16px) repeat(86,1fr);
+}
+
+.sidebar{
+    grid-column:1/5;
+    height: 100%;
+    background-color: #151B1F;
+}
+.main{
+    grid-column:5/48;
+    height: 100%;
+}
+.slider{
+    grid-column:48/91;
+    height: 100%;
+    
+}
