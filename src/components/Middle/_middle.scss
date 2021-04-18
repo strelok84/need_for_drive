@@ -11,9 +11,6 @@
   grid-template-columns: 1fr 1fr;
 }
 
-.main__footer {
-  grid-row: 24/26;
-}
 .main__slogan {
   font: 700 normal 30px sans-serif;
   padding-top: 32px;
@@ -27,7 +24,6 @@
   font: 400 normal 14px sans-serif;
   color: $dark_gray;
   padding-top: 39px;
-  
   display: flex;
   align-items: flex-start;
   justify-content: flex-end;
@@ -44,39 +40,75 @@
   margin-right: 64px;
 }
 
-.main__section{
-    grid-row: 4/24;
-    padding:130px 64px 64px 64px;
-    display:flex;
-    flex-direction: column;
+.main__section {
+  grid-row: 4/24;
+  padding: 130px 64px 64px 64px;
+  display: flex;
+  flex-direction: column;
 }
 
-.main__section_karshering{
-    font:700 normal 70px sans-serif;
-    color:$main_black;
-    line-height: 65.63px;
+.main__section_karshering {
+  font: 700 normal 70px sans-serif;
+  color: $main_black;
+  line-height: 65.63px;
 }
-.main__section_slogan{
-    font:bold normal 70px sans-serif;
-    
-    color:$main_accent;
-    line-height: 66px;
-}
-
-.main__section_minute{
-    font:300 normal 26px sans-serif;
-    color:$dark_gray;
-    line-height: 30px;
-    margin-top:34px;
+.main__section_slogan {
+  font: bold normal 70px sans-serif;
+  color: $main_accent;
+  line-height: 66px;
 }
 
-.main__section_btn{
-    font:500 normal 18px sans-serif;
-    color:#fff;
-    line-height: 21.09px;
-    margin-top: 60px;
-    background: linear-gradient(90deg, #0EC261 2.61%, #039F67 112.6%);
-    width:250px;
-    height:48px;
-    border-radius:8px;
+.main__section_minute {
+  font: 300 normal 26px sans-serif;
+  color: $dark_gray;
+  line-height: 30px;
+  margin-top: 34px;
+}
+
+.main__section_btn {
+  font: 500 normal 18px sans-serif;
+  color: #fff;
+  line-height: 21px;
+  margin-top: 60px;
+  background: linear-gradient(90deg, #0ec261 2.61%, #039f67 112.6%);
+  width: 250px;
+  height: 48px;
+  border-radius: 8px;
+  border: 0;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.main__section_btn:hover{
+  filter: brightness(.9);
+}
+.main__section_btn:active{
+  filter: brightness(.8);
+}
+
+.main__footer {
+  grid-row: 24/26;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.main__years {
+  font: 400 normal 13px sans-serif;
+  line-height: 15px;
+  color: $dark_gray;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  margin-bottom: 32px;
+  margin-left: 64px;
+}
+.main__phone {
+  font: 400 normal 13px sans-serif;
+  line-height: 15px;
+  color: $main_black;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  margin-right: 64px;
+  margin-bottom: 32px;
 }

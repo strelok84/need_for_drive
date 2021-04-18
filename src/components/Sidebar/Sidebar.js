@@ -46,7 +46,7 @@ function Sidebar() {
           </li>
         </ul>
       </div>
-      <div className="sidebar__lang">Eng</div>
+      <a className="sidebar__lang" href="#">Eng</a>
     </nav>
   );
 }

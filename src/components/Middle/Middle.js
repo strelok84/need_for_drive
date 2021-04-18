@@ -14,12 +14,19 @@ function Middle() {
         </div>
       </header>
       <section className="main__section">
-          <h1 className="main__section_karshering">Каршеринг</h1>
-          <h2 className="main__section_slogan">Need for drive</h2>
-          <h3 className="main__section_minute">Поминутная аренда авто твоего города</h3>
-          <button className="main__section_btn">Забронировать</button>
+        <h1 className="main__section_karshering">Каршеринг</h1>
+        <h2 className="main__section_slogan">Need for drive</h2>
+        <h3 className="main__section_minute">
+          Поминутная аренда авто твоего города
+        </h3>
+        <a href="#" className="main__section_btn">Забронировать</a>
       </section>
-      <footer className="main__footer"></footer>
+      <footer className="main__footer">
+        <div className="main__years">
+          {"\u00A9"}2016-2019 {"\u00AB"}Heed for drive{"\u00BB"}
+        </div>
+        <div className="main__phone">8 (495) 234-22-44</div>
+      </footer>
     </main>
   );
 }
