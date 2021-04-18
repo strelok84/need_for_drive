@@ -7,7 +7,7 @@ import Instagram from "../../img/Instagram_white.svg";
 function Sidebar() {
   return (
     <nav className="sidebar">
-      <div class="hamburger-menu">
+      <div class="menu">
         <input className="menu__toggle" type="checkbox" />
         <label className="menu__btn" for="menu__toggle">
           <span></span>

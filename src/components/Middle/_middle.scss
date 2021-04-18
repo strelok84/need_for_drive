@@ -1,0 +1,82 @@
+@import "../../constants/constants";
+
+.main {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(25, 1fr);
+}
+.main__header {
+  grid-row: 1/4;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.main__footer {
+  grid-row: 24/26;
+}
+.main__slogan {
+  font: 700 normal 30px sans-serif;
+  padding-top: 32px;
+  padding-left: 64px;
+  color: $main_accent;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.main__sity {
+  font: 400 normal 14px sans-serif;
+  color: $dark_gray;
+  padding-top: 39px;
+  
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  width: 100%;
+  height: 18px;
+}
+.main__sity_marker {
+  margin-right: 7.54px;
+}
+.main__sity_name {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 64px;
+}
+
+.main__section{
+    grid-row: 4/24;
+    padding:130px 64px 64px 64px;
+    display:flex;
+    flex-direction: column;
+}
+
+.main__section_karshering{
+    font:700 normal 70px sans-serif;
+    color:$main_black;
+    line-height: 65.63px;
+}
+.main__section_slogan{
+    font:bold normal 70px sans-serif;
+    
+    color:$main_accent;
+    line-height: 66px;
+}
+
+.main__section_minute{
+    font:300 normal 26px sans-serif;
+    color:$dark_gray;
+    line-height: 30px;
+    margin-top:34px;
+}
+
+.main__section_btn{
+    font:500 normal 18px sans-serif;
+    color:#fff;
+    line-height: 21.09px;
+    margin-top: 60px;
+    background: linear-gradient(90deg, #0EC261 2.61%, #039F67 112.6%);
+    width:250px;
+    height:48px;
+    border-radius:8px;
+}
