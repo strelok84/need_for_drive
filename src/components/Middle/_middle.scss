@@ -12,7 +12,7 @@
 }
 
 .main__slogan {
-  font: 700 normal 30px sans-serif;
+  font: 700 normal 30px 'Roboto', sans-serif;
   padding-top: 32px;
   padding-left: 64px;
   color: $main_accent;
@@ -21,7 +21,7 @@
   justify-content: flex-start;
 }
 .main__sity {
-  font: 400 normal 14px sans-serif;
+  font: 400 normal 14px 'Roboto', sans-serif;
   color: $dark_gray;
   padding-top: 39px;
   display: flex;
@@ -42,31 +42,32 @@
 
 .main__section {
   grid-row: 4/24;
-  padding: 130px 64px 64px 64px;
+  padding: 137px 64px 64px 64px;
   display: flex;
   flex-direction: column;
 }
 
 .main__section_karshering {
-  font: 700 normal 70px sans-serif;
+  font: 700 normal 70px 'Roboto', sans-serif;
   color: $main_black;
   line-height: 65.63px;
 }
 .main__section_slogan {
-  font: bold normal 70px sans-serif;
+  font: bold normal 70px 'Roboto', sans-serif;
   color: $main_accent;
   line-height: 66px;
+  margin-top:5px;
 }
 
 .main__section_minute {
-  font: 300 normal 26px sans-serif;
+  font: 300 normal 26px 'Roboto', sans-serif;
   color: $dark_gray;
   line-height: 30px;
-  margin-top: 34px;
+  margin-top: 29px;
 }
 
 .main__section_btn {
-  font: 500 normal 18px sans-serif;
+  font: 500 normal 18px 'Roboto', sans-serif;
   color: #fff;
   line-height: 21px;
   margin-top: 60px;
@@ -79,12 +80,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-}
-.main__section_btn:hover{
-  filter: brightness(.9);
-}
-.main__section_btn:active{
-  filter: brightness(.8);
+  &:hover {
+    filter: brightness(0.9);
+  }
+  &:active {
+    filter: brightness(0.8);
+  }
 }
 
 .main__footer {
@@ -93,7 +94,7 @@
   grid-template-columns: 1fr 1fr;
 }
 .main__years {
-  font: 400 normal 13px sans-serif;
+  font: 400 normal 13px 'Roboto', sans-serif;
   line-height: 15px;
   color: $dark_gray;
   display: flex;
@@ -103,7 +104,7 @@
   margin-left: 64px;
 }
 .main__phone {
-  font: 400 normal 13px sans-serif;
+  font: 400 normal 13px 'Roboto', sans-serif;
   line-height: 15px;
   color: $main_black;
   display: flex;
