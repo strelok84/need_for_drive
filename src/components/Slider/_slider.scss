@@ -158,7 +158,6 @@
 .arrow {
   width: 8px;
   height: 18px;
-  
 }
 .dots {
   position: fixed;
@@ -206,4 +205,22 @@
   align-items: center;
   justify-content: center;
   margin-top: 32px;
+  &:hover {
+    filter: brightness(0.9);
+  }
+  &:active {
+    filter: brightness(0.8);
+  }
+  &_blue{
+    @extend .slider__btn;
+    background: linear-gradient(90deg, #132949 0%, #0c7b67 100%);
+  }
+  &_red{
+    @extend .slider__btn;
+    background: linear-gradient(90deg, #493013 0%, #7B0C3B 100%);
+  }
+  &_purple{
+    @extend .slider__btn;
+    background: linear-gradient(90deg, #281349 0%, #720C7B 100%);
+  }
 }

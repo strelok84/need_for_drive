@@ -35,13 +35,13 @@ function Sidebar() {
           </li>
           <li className="menu__item__img_wrapper">
             <a className="menu__item" href="#">
-              <img src={Telegram}></img>
+              <img src={Telegram} alt="Telegram"></img>
             </a>
             <a className="menu__item" href="#">
-              <img src={Facebook}></img>
+              <img src={Facebook} alt="Facebook"></img>
             </a>
             <a className="menu__item" href="#">
-              <img src={Instagram}></img>
+              <img src={Instagram} alt="Instagram"></img>
             </a>
           </li>
         </ul>

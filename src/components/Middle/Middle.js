@@ -9,7 +9,7 @@ function Middle() {
         <div className="main__slogan">Need for drive</div>
         <div className="main__sity">
           <div className="main__sity_name">
-            <img className="main__sity_marker" src={Sity_marker}></img>Ульяновск
+            <img className="main__sity_marker" src={Sity_marker} alt="Sity_marker"></img>Ульяновск
           </div>
         </div>
       </header>

@@ -15,7 +15,7 @@ function Slider() {
           <div className="slider__item">
             <div className="slide_1" id="slide_1">
               <a className="slider__control_prev" href="#slide_4" role="button">
-                <img className="arrow" src={arrow_prev}></img>
+                <img className="arrow" src={arrow_prev} alt="previos slide"></img>
               </a>
               <div className="slider__text">
                 <h2 className="slider__text_head">Бесплатная парковка</h2>
@@ -23,59 +23,85 @@ function Slider() {
                   Оставляйте машину на платных городских парковках и разрешенных
                   местах, не нарушая ПДД, а также в аэропортах.
                 </h3>
-                <a href="#" className="slider__btn">Подробнее</a>
+                <a href="#" className="slider__btn">
+                  Подробнее
+                </a>
               </div>
               <a
                 className="slider__control_next "
                 href="#slide_2"
                 role="button"
               >
-                <img className="arrow" src={arrow_next}></img>
+                <img className="arrow" src={arrow_next} alt="next slide"></img>
               </a>
             </div>
           </div>
           <div className="slider__item">
             <div className="slide_2" id="slide_2">
               <a className="slider__control_prev" href="#slide_1" role="button">
-                <img className="arrow" src={arrow_prev}></img>
+                <img className="arrow" src={arrow_prev} alt="previos slide"></img>
               </a>
-              <div>
-                <h2>Бесплатная парковка</h2>
+              <div className="slider__text">
+                <h2 className="slider__text_head">Страховка</h2>
+                <h3 className="slider__text_main">
+                  Полная страховка автомобиля.
+                </h3>
+                <a href="#" className="slider__btn_blue">
+                  Подробнее
+                </a>
               </div>
               <a
                 className="slider__control_next "
                 href="#slide_3"
                 role="button"
               >
-                <img className="arrow" src={arrow_next}></img>
+                <img className="arrow" src={arrow_next} alt="next slide"></img>
               </a>
             </div>
           </div>
           <div className="slider__item">
             <div className="slide_3" id="slide_3">
               <a className="slider__control_prev" href="#slide_2" role="button">
-                <img className="arrow" src={arrow_prev}></img>
+                <img className="arrow" src={arrow_prev} alt="previos slide"></img>
               </a>
+              <div className="slider__text">
+                <h2 className="slider__text_head">Бензин</h2>
+                <h3 className="slider__text_main">
+                  Полный бак на любой заправке города за наш счет.
+                </h3>
+                <a href="#" className="slider__btn_red">
+                  Подробнее
+                </a>
+              </div>
               <a
                 className="slider__control_next "
                 href="#slide_4"
                 role="button"
               >
-                <img className="arrow" src={arrow_next}></img>
+                <img className="arrow" src={arrow_next} alt="next slide"></img>
               </a>
             </div>
           </div>
           <div className="slider__item">
             <div className="slide_4" id="slide_4">
               <a className="slider__control_prev" href="#slide_3" role="button">
-                <img className="arrow" src={arrow_prev}></img>
+                <img className="arrow" src={arrow_prev} alt="previos slide"></img>
               </a>
+              <div className="slider__text">
+                <h2 className="slider__text_head">Обслуживание</h2>
+                <h3 className="slider__text_main">
+                  Автомобиль проходит еженедельное ТО.
+                </h3>
+                <a href="#" className="slider__btn_purple">
+                  Подробнее
+                </a>
+              </div>
               <a
                 className="slider__control_next "
                 href="#slide_1"
                 role="button"
               >
-                <img className="arrow" src={arrow_next}></img>
+                <img className="arrow" src={arrow_next} alt="next slide"></img>
               </a>
             </div>
           </div>
