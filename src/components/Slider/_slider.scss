@@ -1,4 +1,5 @@
 @import "../../constants/constants";
+@import "../../css/mixins";
 
 .slide_1,
 .slide_2,
@@ -174,23 +175,36 @@
   a {
     margin: 2px;
   }
+  @include desktop_min {
+    left: 77%;
+    top: 93%;
+  }
 }
 .slider__text {
   position: relative;
   top: -11px;
   width: 495px;
   height: 317px;
+  @include desktop_min {
+    margin: 424px 32px 341px 32px;
+  }
 }
 .slider__text_head {
   color: #fff;
   font: 600 normal 40px "Roboto", sans-serif;
   line-height: 47px;
+  @include desktop_min {
+    font: 500 normal 32px/37px "Roboto", sans-serif;
+  }
 }
 .slider__text_main {
   color: $light_gray;
   font: 300 normal 24px/90% "Roboto", sans-serif;
 
   margin-top: 12px;
+  @include desktop_min {
+    font: 300 normal 22px/22px "Roboto", sans-serif;
+  }
 }
 .slider__btn {
   text-decoration: none;
@@ -205,22 +219,25 @@
   align-items: center;
   justify-content: center;
   margin-top: 32px;
+  @include desktop_min {
+    font: 500 normal 18px/21px "Roboto", sans-serif;
+  }
   &:hover {
     filter: brightness(0.9);
   }
   &:active {
     filter: brightness(0.8);
   }
-  &_blue{
+  &_blue {
     @extend .slider__btn;
     background: linear-gradient(90deg, #132949 0%, #0c7b67 100%);
   }
-  &_red{
+  &_red {
     @extend .slider__btn;
-    background: linear-gradient(90deg, #493013 0%, #7B0C3B 100%);
+    background: linear-gradient(90deg, #493013 0%, #7b0c3b 100%);
   }
-  &_purple{
+  &_purple {
     @extend .slider__btn;
-    background: linear-gradient(90deg, #281349 0%, #720C7B 100%);
+    background: linear-gradient(90deg, #281349 0%, #720c7b 100%);
   }
 }

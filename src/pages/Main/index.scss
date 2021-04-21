@@ -1,20 +1,28 @@
 @import "../../constants/constants";
-
+@import "../../css/mixins";
 .wrapper{
     width:100%;
     height: 100%;
     margin:0 auto;
     display: grid;
     grid-template-columns: repeat(4,16px) repeat(86,1fr);
+    @include desktop_min{
+        grid-template-columns: repeat(3,16px) 17px repeat(86,1fr);
+    }
 }
 
 
 .main{
     grid-column:5/48;
     height: 100%;
+    @include desktop_min{
+        grid-column:5/54;
+    }
 }
 .slider{
     grid-column:48/91;
     height: 100%;
-    
+    @include desktop_min{
+        grid-column:54/91;
+    }
 }

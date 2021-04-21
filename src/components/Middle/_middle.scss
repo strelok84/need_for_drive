@@ -1,9 +1,10 @@
 @import "../../constants/constants";
+@import "../../css/mixins";
 
 .main {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(25, 1fr);
+ 
 }
 .main__header {
   grid-row: 1/4;
@@ -19,6 +20,9 @@
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
+  @include desktop_min{
+    padding-left:32px;
+  }
 }
 .main__sity {
   font: 400 normal 14px 'Roboto', sans-serif;
@@ -31,20 +35,27 @@
   height: 18px;
 }
 .main__sity_marker {
-  margin-right: 7.54px;
+  margin-right:5.5px;
 }
 .main__sity_name {
   display: flex;
   align-items: center;
   justify-content: center;
   margin-right: 64px;
+  @include desktop_min{
+    margin-right: 29px;
+    margin-top:2px;
+  }
 }
 
 .main__section {
   grid-row: 4/24;
-  padding: 137px 64px 64px 64px;
+  padding: 146px 64px 64px 64px;
   display: flex;
   flex-direction: column;
+  @include desktop_min{
+    padding: 146px 32px 64px 32px;
+  }
 }
 
 .main__section_karshering {
@@ -56,21 +67,21 @@
   font: bold normal 70px 'Roboto', sans-serif;
   color: $main_accent;
   line-height: 66px;
-  margin-top:5px;
+  margin-top:4px;
 }
 
 .main__section_minute {
   font: 300 normal 26px 'Roboto', sans-serif;
   color: $dark_gray;
   line-height: 30px;
-  margin-top: 29px;
+  margin-top: 25px;
 }
 
 .main__section_btn {
   font: 500 normal 18px 'Roboto', sans-serif;
   color: #fff;
   line-height: 21px;
-  margin-top: 60px;
+  margin-top: 63px;
   background: linear-gradient(90deg, #0ec261 2.61%, #039f67 112.6%);
   width: 250px;
   height: 48px;
@@ -102,6 +113,9 @@
   justify-content: flex-start;
   margin-bottom: 32px;
   margin-left: 64px;
+  @include desktop_min{
+    margin-left: 32px;
+  }
 }
 .main__phone {
   font: 400 normal 13px 'Roboto', sans-serif;
@@ -112,4 +126,7 @@
   justify-content: flex-end;
   margin-right: 64px;
   margin-bottom: 32px;
+  @include desktop_min{
+    margin-right: 32px;
+  }
 }
