@@ -5,7 +5,6 @@ import Facebook from "../../img/Facebook_white.svg";
 import Instagram from "../../img/Instagram_white.svg";
 
 function Sidebar() {
-  const lang=document.getElementsByClassName("sidebar__lang")[0];
   return (
     <nav className="sidebar">
       <div class="menu">
@@ -47,7 +46,18 @@ function Sidebar() {
           </li>
         </ul>
       </div>
-      <a className="sidebar__lang" href="#" onClick={()=>{lang.innerHTML==="Eng"?lang.innerHTML="Rus":lang.innerHTML="Eng"}}>Eng</a>
+      <a
+        className="sidebar__lang"
+        href="#"
+        onClick={() => {
+          let lang = document.getElementsByClassName("sidebar__lang")[0];
+          lang.innerHTML === "Eng"
+            ? (lang.innerHTML = "Rus")
+            : (lang.innerHTML = "Eng");
+        }}
+      >
+        Eng
+      </a>
     </nav>
   );
 }

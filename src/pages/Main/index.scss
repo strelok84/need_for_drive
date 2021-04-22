@@ -9,6 +9,9 @@
     @include desktop_min{
         grid-template-columns: repeat(3,16px) 17px repeat(86,1fr);
     }
+    @include tablet{
+        grid-template-columns: repeat(4,21.5px)  repeat(86,1fr);
+    }
 }
 
 
@@ -18,11 +21,17 @@
     @include desktop_min{
         grid-column:5/54;
     }
+    @include tablet{
+        grid-column:5/91;
+    }
 }
 .slider{
     grid-column:48/91;
     height: 100%;
     @include desktop_min{
         grid-column:54/91;
+    }
+    @include tablet{
+        display:none;
     }
 }

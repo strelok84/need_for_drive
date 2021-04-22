@@ -7,6 +7,9 @@
   background-color: #151b1f;
   display: grid;
   grid-template-columns: repeat(4, 16px);
+  @include tablet{
+    grid-template-columns: repeat(4, 21.5px);
+  }
 }
 .sidebar__lang {
   color: $main_accent;
@@ -30,12 +33,21 @@
     border-radius: 50%;
     color: $light_gray;
     margin-bottom: 15px;
+    @include tablet{
+      margin-bottom: 22px;
+    }
   }
   &:active {
     border: 1px solid $light_gray;
     border-radius: 50%;
     color: $main_accent;
     margin-bottom: 15px;
+    @include tablet{
+      margin-bottom: 22px;
+    }
+  }
+  @include tablet{
+    margin-bottom: 22px;
   }
 }
 
@@ -55,6 +67,10 @@
     top:29px;
     left:17px;
   }
+  @include tablet{
+    top:29px;
+    left:27px;
+  }
 }
 .menu__btn {
   display: flex;
@@ -70,6 +86,10 @@
     top:29px;
     left:17px;
   }
+  @include tablet{
+    top:29px;
+    left:27px;
+  }
 }
 
 .menu__btn > span,
@@ -81,6 +101,9 @@
   height: 3px;
   border-radius: 20% 10%;
   background-color: #fff;
+  @include tablet{
+    width: 32px;
+  }
 }
 .menu__btn > span::before {
   content: "";
