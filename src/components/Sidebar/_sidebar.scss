@@ -1,6 +1,9 @@
 @import "../../constants/constants";
 @import "../../css/mixins";
 
+
+
+
 .sidebar {
   grid-column: 1/5;
   height: 100%;
@@ -9,6 +12,9 @@
   grid-template-columns: repeat(4, 16px);
   @include tablet{
     grid-template-columns: repeat(4, 21.5px);
+  }
+  @include mobile{
+    height: 0;
   }
 }
 .sidebar__lang {
@@ -49,6 +55,9 @@
   @include tablet{
     margin-bottom: 22px;
   }
+  @include mobile{
+  display: none;
+}
 }
 
 .menu {
@@ -71,6 +80,10 @@
     top:29px;
     left:27px;
   }
+  @include mobile{
+    top:16px;
+    left:16px;
+  }
 }
 .menu__btn {
   display: flex;
@@ -90,6 +103,10 @@
     top:29px;
     left:27px;
   }
+  @include mobile{
+    top:16px;
+    left:16px;
+  }
 }
 
 .menu__btn > span,
@@ -103,6 +120,11 @@
   background-color: #fff;
   @include tablet{
     width: 32px;
+    
+  }
+  @include mobile{
+    width:19;
+    background-color: #000;
   }
 }
 .menu__btn > span::before {
@@ -133,6 +155,15 @@
   z-index: 1;
   li:nth-child(1) {
     margin-top: 128px;
+    @include mobile{
+      margin-top: 70px;
+    }
+  }
+  @include tablet{
+    opacity: 1;
+  }
+  @include mobile{
+    padding: 0;
   }
 }
 
@@ -150,23 +181,41 @@
   &:hover {
     color: $main_accent;
   }
+  @include mobile{
+    margin-left: 28px;
+    font:500 normal 22px/26px "Roboto", sans-serif;
+    padding-left:0;
+    padding-top:5px;
+  }
 }
 
 .menu__toggle:checked ~ .menu__btn > span {
   transform: rotate(45deg);
+  @include mobile{
+    background-color: #fff;
+    
+  }
 }
 .menu__toggle:checked ~ .menu__btn > span::before {
   top: 0;
   transform: rotate(0);
+  @include mobile{
+    background-color: #fff;
+  }
 }
 .menu__toggle:checked ~ .menu__btn > span::after {
   top: 0;
   transform: rotate(90deg);
+  @include mobile{
+    background-color: #fff;
+  }
 }
 .menu__toggle:checked ~ .menu__box {
   visibility: visible;
   left: 0;
+  $menu_toggle:true !global;
 }
+
 
 .menu__btn > span,
 .menu__btn > span::before,
@@ -178,11 +227,18 @@
   display: flex;
   a {
     margin-top: 38px;
+    @include mobile{
+      margin-top:19px;
+    }
     img:hover {
       filter: brightness(0.5) sepia(1) saturate(2000%) hue-rotate(120deg);
     }
     &:nth-child(1) {
       margin-left: 128px;
+      @include mobile{
+        margin-left: 28px;
+        
+      }
     }
     &:nth-child(2),
     &:nth-child(3) {
@@ -193,3 +249,38 @@
 }
 
 
+#mobile_lang{
+  
+  display:none;
+  @include mobile{
+   display:flex;
+   color: $main_accent;
+    margin:auto auto auto 16px;
+    position: relative;
+  }
+  &:hover {
+    border: 1px solid $light_gray;
+    border-radius: 50%;
+    color: $light_gray;
+    
+    
+  }
+  &:active {
+    border: 1px solid $light_gray;
+    border-radius: 50%;
+    color: $main_accent;
+    
+    
+  }
+}
+
+.menu__item_mobile_lang{
+  display:none;
+  @include mobile{
+    display:block;
+    position: absolute;
+    bottom:0;
+    padding-bottom: 12px;
+    
+  }
+}

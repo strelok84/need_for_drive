@@ -24,6 +24,9 @@
     @include tablet{
         grid-column:5/91;
     }
+    @include mobile{
+        grid-column:1/91;
+    }
 }
 .slider{
     grid-column:48/91;
@@ -32,6 +35,9 @@
         grid-column:54/91;
     }
     @include tablet{
+        display:none;
+    }
+    @include mobile{
         display:none;
     }
 }

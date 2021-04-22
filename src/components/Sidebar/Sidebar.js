@@ -15,25 +15,26 @@ function Sidebar() {
         <ul className="menu__box">
           <li>
             <a className="menu__item" href="#">
-              Парковка
+              ПАРКОВКА
             </a>
           </li>
           <li>
             <a className="menu__item" href="#">
-              Страховка
+              СТРАХОВКА
             </a>
           </li>
           <li>
             <a className="menu__item" href="#">
-              Бензин
+              БЕНЗИН
             </a>
           </li>
           <li>
             <a className="menu__item" href="#">
-              Обслуживание
+              ОБСЛУЖИВАНИЕ
             </a>
           </li>
           <li className="menu__item__img_wrapper">
+            
             <a className="menu__item" href="#">
               <img src={Telegram} alt="Telegram"></img>
             </a>
@@ -43,14 +44,32 @@ function Sidebar() {
             <a className="menu__item" href="#">
               <img src={Instagram} alt="Instagram"></img>
             </a>
+            
           </li>
+          <li className="menu__item_mobile_lang">
+          <a
+            className="sidebar__lang"
+            id="mobile_lang"
+            href="#"
+            onClick={() => {
+              let lang = document.getElementsByClassName("sidebar__lang")[0];
+              lang.innerHTML === "Eng"
+                ? (lang.innerHTML = "Rus")
+                : (lang.innerHTML = "Eng");
+            }}
+          >
+            Eng
+          </a>
+            </li>
+          
         </ul>
+
       </div>
       <a
         className="sidebar__lang"
         href="#"
         onClick={() => {
-          let lang = document.getElementsByClassName("sidebar__lang")[0];
+          let lang = document.getElementsByClassName("sidebar__lang")[1];
           lang.innerHTML === "Eng"
             ? (lang.innerHTML = "Rus")
             : (lang.innerHTML = "Eng");
