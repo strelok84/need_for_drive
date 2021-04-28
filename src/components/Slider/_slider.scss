@@ -14,19 +14,19 @@
 }
 .slide_1 {
   background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%),
-    url(../../img/slide_1.png);
+    url(../../assets/img/slide_1.png);
 }
 .slide_2 {
   background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%),
-    url(../../img/slide_2.png);
+    url(../../assets/img/slide_2.png);
 }
 .slide_3 {
   background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%),
-    url(../../img/slide_3.png);
+    url(../../assets/img/slide_3.png);
 }
 .slide_4 {
   background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%),
-    url(../../img/slide_4.png);
+    url(../../assets/img/slide_4.png);
 }
 
 .slider {
@@ -168,11 +168,16 @@
   }
   a {
     margin: 2px;
+    
   }
+ 
   @include desktop_min {
     left: 77%;
     top: 93%;
   }
+}
+.active svg{
+  fill: $main_accent;
 }
 .slider__text {
   position: relative;
