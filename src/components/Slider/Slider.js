@@ -1,20 +1,12 @@
-import React, { useRef } from "react";
+import React, { useState } from "react";
 import "../Slider/_slider.scss";
 
 import arrow_prev from "../../assets/img/arrow_prev.svg";
 import arrow_next from "../../assets/img/arrow_next.svg";
 
 function Slider() {
-  const dot_1=useRef(null)
+  let [activeSlide, setActiveSlide] = useState(1);
   
-  const dot_2 = document.getElementById("dot_2");
-  const dot_3 = document.getElementById("dot_3");
-  const dot_4 = document.getElementById("dot_4");
-  const arr = [dot_1, dot_2, dot_3, dot_4];
-
-  const activeSlide = (ref) => {
-    ref.classList.add("active")
-  };
   return (
     <div className="slider">
       <div className="slider__wrapper">
@@ -25,8 +17,9 @@ function Slider() {
                 className="slider__control_prev"
                 href="#slide_4"
                 role="button"
-                ref={dot_1}
-                onClick={activeSlide(dot_1)}
+                onClick={() => {
+                  setActiveSlide((activeSlide = 4));
+                }}
               >
                 <img
                   className="arrow"
@@ -48,7 +41,9 @@ function Slider() {
                 className="slider__control_next "
                 href="#slide_2"
                 role="button"
-                onClick={activeSlide(dot_2)}
+                onClick={() => {
+                  setActiveSlide((activeSlide = 2));
+                }}
               >
                 <img className="arrow" src={arrow_next} alt="next slide"></img>
               </a>
@@ -56,7 +51,9 @@ function Slider() {
           </div>
           <div className="slider__item">
             <div className="slide_2" id="slide_2">
-              <a className="slider__control_prev" href="#slide_1" role="button">
+              <a className="slider__control_prev" href="#slide_1" role="button" onClick={() => {
+                  setActiveSlide((activeSlide = 1));
+                }}>
                 <img
                   className="arrow"
                   src={arrow_prev}
@@ -76,7 +73,9 @@ function Slider() {
                 className="slider__control_next "
                 href="#slide_3"
                 role="button"
-                onClick={activeSlide(dot_3)}
+                onClick={() => {
+                  setActiveSlide((activeSlide = 3));
+                }}
               >
                 <img className="arrow" src={arrow_next} alt="next slide"></img>
               </a>
@@ -84,7 +83,9 @@ function Slider() {
           </div>
           <div className="slider__item">
             <div className="slide_3" id="slide_3">
-              <a className="slider__control_prev" href="#slide_2" role="button">
+              <a className="slider__control_prev" href="#slide_2" role="button" onClick={() => {
+                  setActiveSlide((activeSlide = 2));
+                }}>
                 <img
                   className="arrow"
                   src={arrow_prev}
@@ -104,7 +105,9 @@ function Slider() {
                 className="slider__control_next "
                 href="#slide_4"
                 role="button"
-                onClick={activeSlide(dot_4)}
+                onClick={() => {
+                  setActiveSlide((activeSlide = 4));
+                }}
               >
                 <img className="arrow" src={arrow_next} alt="next slide"></img>
               </a>
@@ -112,7 +115,9 @@ function Slider() {
           </div>
           <div className="slider__item">
             <div className="slide_4" id="slide_4">
-              <a className="slider__control_prev" href="#slide_3" role="button">
+              <a className="slider__control_prev" href="#slide_3" role="button" onClick={() => {
+                  setActiveSlide((activeSlide = 3));
+                }}>
                 <img
                   className="arrow"
                   src={arrow_prev}
@@ -132,28 +137,35 @@ function Slider() {
                 className="slider__control_next "
                 href="#slide_1"
                 role="button"
+                onClick={() => {
+                  setActiveSlide((activeSlide = 1));
+                }}
               >
                 <img className="arrow" src={arrow_next} alt="next slide"></img>
               </a>
             </div>
           </div>
           <div className="dots">
-            <a href="#slide_1" id="dot_1">
+            <a href="#slide_1" id="dot_1" className={activeSlide === 1 ? "active" : ""}>
               <svg>
                 <circle cx="4" cy="4" r="4"></circle>
               </svg>
             </a>
-            <a href="#slide_2" id="dot_2">
+            <a href="#slide_2" id="dot_2" className={activeSlide === 2 ? "active" : ""}>
               <svg>
                 <circle cx="4" cy="4" r="4"></circle>
               </svg>
             </a>
-            <a href="#slide_3" id="dot_3">
+            <a href="#slide_3" id="dot_3" className={activeSlide === 3 ? "active" : ""}>
               <svg>
                 <circle cx="4" cy="4" r="4"></circle>
               </svg>
             </a>
-            <a href="#slide_4" id="dot_4">
+            <a
+              href="#slide_4"
+              id="dot_4"
+              className={activeSlide === 4 ? "active" : ""}
+            >
               <svg>
                 <circle cx="4" cy="4" r="4"></circle>
               </svg>
