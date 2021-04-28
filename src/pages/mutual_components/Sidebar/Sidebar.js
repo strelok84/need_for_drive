@@ -1,8 +1,8 @@
 import React from "react";
 import "../Sidebar/_sidebar.scss";
-import Telegram from "../../assets/img/Telegram_white.svg";
-import Facebook from "../../assets/img/Facebook_white.svg";
-import Instagram from "../../assets/img/Instagram_white.svg";
+import Telegram from "../../../assets/img/Telegram_white.svg";
+import Facebook from "../../../assets/img/Facebook_white.svg";
+import Instagram from "../../../assets/img/Instagram_white.svg";
 
 function Sidebar() {
   return (

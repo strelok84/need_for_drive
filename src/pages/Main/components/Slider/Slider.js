@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import "../Slider/_slider.scss";
+import "./_slider.scss";
 
-import arrow_prev from "../../assets/img/arrow_prev.svg";
-import arrow_next from "../../assets/img/arrow_next.svg";
+import arrow_prev from "../../../../assets/img/arrow_prev.svg";
+import arrow_next from "../../../../assets/img/arrow_next.svg";
 
 function Slider() {
   let [activeSlide, setActiveSlide] = useState(1);
-  
+
   return (
     <div className="slider">
       <div className="slider__wrapper">
@@ -51,9 +51,14 @@ function Slider() {
           </div>
           <div className="slider__item">
             <div className="slide_2" id="slide_2">
-              <a className="slider__control_prev" href="#slide_1" role="button" onClick={() => {
+              <a
+                className="slider__control_prev"
+                href="#slide_1"
+                role="button"
+                onClick={() => {
                   setActiveSlide((activeSlide = 1));
-                }}>
+                }}
+              >
                 <img
                   className="arrow"
                   src={arrow_prev}
@@ -83,9 +88,14 @@ function Slider() {
           </div>
           <div className="slider__item">
             <div className="slide_3" id="slide_3">
-              <a className="slider__control_prev" href="#slide_2" role="button" onClick={() => {
+              <a
+                className="slider__control_prev"
+                href="#slide_2"
+                role="button"
+                onClick={() => {
                   setActiveSlide((activeSlide = 2));
-                }}>
+                }}
+              >
                 <img
                   className="arrow"
                   src={arrow_prev}
@@ -115,9 +125,14 @@ function Slider() {
           </div>
           <div className="slider__item">
             <div className="slide_4" id="slide_4">
-              <a className="slider__control_prev" href="#slide_3" role="button" onClick={() => {
+              <a
+                className="slider__control_prev"
+                href="#slide_3"
+                role="button"
+                onClick={() => {
                   setActiveSlide((activeSlide = 3));
-                }}>
+                }}
+              >
                 <img
                   className="arrow"
                   src={arrow_prev}
@@ -146,17 +161,38 @@ function Slider() {
             </div>
           </div>
           <div className="dots">
-            <a href="#slide_1" id="dot_1" className={activeSlide === 1 ? "active" : ""}>
+            <a
+              href="#slide_1"
+              id="dot_1"
+              className={activeSlide === 1 ? "active" : ""}
+              onClick={() => {
+                setActiveSlide((activeSlide = 1));
+              }}
+            >
               <svg>
                 <circle cx="4" cy="4" r="4"></circle>
               </svg>
             </a>
-            <a href="#slide_2" id="dot_2" className={activeSlide === 2 ? "active" : ""}>
+            <a
+              href="#slide_2"
+              id="dot_2"
+              className={activeSlide === 2 ? "active" : ""}
+              onClick={() => {
+                setActiveSlide((activeSlide = 2));
+              }}
+            >
               <svg>
                 <circle cx="4" cy="4" r="4"></circle>
               </svg>
             </a>
-            <a href="#slide_3" id="dot_3" className={activeSlide === 3 ? "active" : ""}>
+            <a
+              href="#slide_3"
+              id="dot_3"
+              className={activeSlide === 3 ? "active" : ""}
+              onClick={() => {
+                setActiveSlide((activeSlide = 3));
+              }}
+            >
               <svg>
                 <circle cx="4" cy="4" r="4"></circle>
               </svg>
@@ -165,6 +201,9 @@ function Slider() {
               href="#slide_4"
               id="dot_4"
               className={activeSlide === 4 ? "active" : ""}
+              onClick={() => {
+                setActiveSlide((activeSlide = 4));
+              }}
             >
               <svg>
                 <circle cx="4" cy="4" r="4"></circle>
