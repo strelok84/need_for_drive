@@ -1,7 +1,7 @@
 import React from "react";
 import "./_order_page.scss";
 import Sidebar from "../mutual_components/Sidebar/Sidebar";
-import Order_header from "./components/Order_header/Order_header";
+import Map from "./components/Map/Map";
 
 
 class Main extends React.Component {
@@ -9,7 +9,7 @@ class Main extends React.Component {
     return (
       <div className="wrapper">
         <Sidebar />
-        <Order_header />
+        <Map />
       </div>
     );
   }
