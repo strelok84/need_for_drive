@@ -1,0 +1,81 @@
+@import "../../constants/constants";
+@import "../../css/mixins";
+
+.form-header {
+  grid-column: 1/87;
+  grid-row: 1/17;
+  border-bottom: 1px solid $light_gray;
+  display: grid;
+  grid-template-rows: 3fr 1fr;
+}
+
+.form-header__wrapper {
+  grid-row: 1/2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid $light_gray;
+}
+.breadcrumbs-wrapper {
+  grid-row: 2/3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lane-slogan,
+.lane-breadcrumbs {
+  width: 1248px;
+}
+.lane-slogan {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-header__slogan {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font: 700 normal 30px/35px "Roboto", sans-serif;
+  color: $main_accent;
+}
+
+.form-header__sity {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font: 400 normal 14px "Roboto", sans-serif;
+  color: $dark_gray;
+}
+
+.form-header__marker{
+  margin-right:7.5px;
+}
+
+.form-header_breadcrumbs {
+  grid-column: 1/87;
+  grid-row: 2/3;
+}
+
+.lane-breadcrumbs__ {
+  &model,
+  &place,
+  &add,
+  &total {
+    text-decoration: none;
+    margin-right: 16px;
+    font: 700 normal 14px/16px "Roboto", sans-serif;
+    color: $dark_gray;
+    &:hover{
+      color: $main_accent;
+    }
+    &:active{
+      color: $main_accent;
+    }
+  }
+  &model,
+  &add,
+  &total {
+    margin-left: 16px;
+  }
+}

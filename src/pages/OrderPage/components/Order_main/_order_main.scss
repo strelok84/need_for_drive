@@ -1,0 +1,76 @@
+@import "../../constants/constants";
+@import "../../css/mixins";
+
+.form-main {
+  grid-column: 1/87;
+  grid-row: 17/101;
+  display: grid;
+  grid-template-columns: repeat(43, 1fr);
+}
+
+.form-main__map {
+  grid-column: 1/32;
+  height: 100%;
+}
+.form-main__aside {
+  grid-column: 32/44;
+  height: 100%;
+  border-left: 1px solid $light_gray;
+  display:flex;
+
+}
+
+.form-main__lane {
+  width: 321px;
+  height: 100%;
+}
+.form-main__ {
+  &order,
+  &cost,
+  &point,
+  &btn {
+    width: 100%;
+    padding-left: 32px;
+  }
+  &order {
+    font: 500 normal 18px/21px "Roboto", sans-serif;
+    padding-top: 32px;
+    text-align: right;
+  }
+  &piсkup {
+    font: 300 normal 14px/16px "Roboto", sans-serif;
+    color: $main_black;
+  }
+  &address {
+    font: 300 normal 14px/16px "Roboto", sans-serif;
+    color: $dark_gray;
+  }
+  &cost {
+    font: 500 normal 16px/16px "Roboto", sans-serif;
+    color: $main_black;
+  }
+  &point {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 32px;
+  }
+  &dots {
+    flex-grow: 1;
+    border-bottom: 2px dotted $dark_gray;
+  }
+  &btn {
+    font: 500 normal 18px "Roboto", sans-serif;
+    color: #fff;
+    line-height: 21px;
+    margin: 32px auto auto 32px;
+    background-color:$light_gray; 
+    width: 287px;
+    height: 48px;
+    
+    border: 0;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
