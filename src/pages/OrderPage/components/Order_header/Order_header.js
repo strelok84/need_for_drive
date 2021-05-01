@@ -1,7 +1,7 @@
 import React from "react";
 import "./_order_header.scss";
-import Sity_marker from "../../img/Sity_marker.svg";
-import triangle from "../../img/triangle.svg";
+import Sity_marker from "../../../../assets/img/Sity_marker.svg"
+import triangle from "../../../../assets/img/triangle.svg";
 
 function Order_header() {
   return (

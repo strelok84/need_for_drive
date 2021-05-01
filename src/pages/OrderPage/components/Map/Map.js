@@ -1,7 +1,7 @@
 import React from "react";
-import "./index.scss";
-import Sidebar from "../../components/Sidebar/Sidebar";
-import Map from "../../components/Map/Map";
+import "./_map.scss";
+import Sidebar from "../../../mutual_components/Sidebar/Sidebar";
+import Map from "./Map";
 
 
 class Main extends React.Component {
