@@ -7,10 +7,12 @@
   border-bottom: 1px solid $light_gray;
   display: grid;
   grid-template-rows: 3fr 1fr;
+ 
 }
 
 .form-header__wrapper {
   grid-row: 1/2;
+ 
   display: flex;
   justify-content: center;
   align-items: center;
@@ -18,6 +20,7 @@
 }
 .breadcrumbs-wrapper {
   grid-row: 2/3;
+  
   display: flex;
   justify-content: center;
   align-items: center;

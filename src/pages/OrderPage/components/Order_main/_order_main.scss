@@ -9,20 +9,73 @@
 }
 
 .form-main__map {
-  grid-column: 1/32;
+  grid-column: 3/31;
+  width: 928px;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  font: 300 normal 14px/16px "Roboto", sans-serif;
+  &--order {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 32px;
+    margin-bottom: 32px;
+    max-width: 320px;
+    form {
+      label {
+        margin-bottom: 14px;
+      }
+    }
+  }
+  &--sity {
+    border: 0;
+    border-bottom: 1px solid $dark_gray;
+    margin-bottom: 14px;
+    margin-left: 5px;
+    font: 300 normal 16px/16px "Roboto", sans-serif;
+    color:$main_black;
+  }
+  &--point {
+    border: 0;
+    border-bottom: 1px solid $dark_gray;
+    margin-bottom: 14px;
+    margin-left: 5px;
+    font: 300 normal 16px/16px "Roboto", sans-serif;
+    color:$main_black;
+  }
 }
+.input__wrapper_sity {
+  width: 320px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  color:$main_black;
+  label {
+    margin-right: 16px;
+  }
+}
+.input__wrapper_point {
+  width: 320px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color:$main_black;
+}
+
 .form-main__aside {
   grid-column: 32/44;
   height: 100%;
   border-left: 1px solid $light_gray;
-  display:flex;
-
+  display: flex;
 }
 
 .form-main__lane {
-  width: 321px;
   height: 100%;
+  display: flex;
+  margin-left: 32px;
+  flex-direction: column;
+  align-items: flex-end;
 }
 .form-main__ {
   &order,
@@ -35,6 +88,7 @@
   &order {
     font: 500 normal 18px/21px "Roboto", sans-serif;
     padding-top: 32px;
+
     text-align: right;
   }
   &piсkup {
@@ -44,10 +98,12 @@
   &address {
     font: 300 normal 14px/16px "Roboto", sans-serif;
     color: $dark_gray;
+    text-align: right;
   }
   &cost {
     font: 500 normal 16px/16px "Roboto", sans-serif;
     color: $main_black;
+    margin-top: 32px;
   }
   &point {
     display: flex;
@@ -62,15 +118,34 @@
     font: 500 normal 18px "Roboto", sans-serif;
     color: #fff;
     line-height: 21px;
-    margin: 32px auto auto 32px;
-    background-color:$light_gray; 
-    width: 287px;
+    background-color: $light_gray;
+    padding: 0;
+    margin-top: 32px;
+    min-width: 280px;
     height: 48px;
-    
     border: 0;
+    border-radius: 8px;
     text-decoration: none;
     display: flex;
     align-items: center;
     justify-content: center;
   }
+}
+.google__map {
+  width: 736px;
+  height: 352px;
+  margin-top:16px;
+}
+
+.form-main__wrapper {
+  grid-column:1/44;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+.form-main__lent{
+  width:1248px;
+  height: 100%;
+  display: flex;
 }
