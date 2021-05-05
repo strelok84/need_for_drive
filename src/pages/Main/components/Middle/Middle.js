@@ -19,7 +19,7 @@ function Middle() {
         <h3 className="main__section_minute">
           Поминутная аренда авто твоего города
         </h3>
-        <a href="#" className="main__section_btn">Забронировать</a>
+        <a href="https://strelok84.github.io/need_for_drive/map" className="main__section_btn">Забронировать</a>
       </section>
       <footer className="main__footer">
         <div className="main__years">
