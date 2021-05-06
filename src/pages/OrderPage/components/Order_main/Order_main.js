@@ -11,11 +11,19 @@ function Order_main() {
         <div className="form-main__map--order">
           <form className="input__wrapper_sity">
             <label for="city">Город</label>
-            <input className="form-main__map--sity" name="city" placeholder="Начните вводить город..."></input>
+            <input className="form-main__map--sity" name="city" placeholder="Начните вводить город..." list="citylist" type="search"></input>
+              <datalist id="citylist">
+                <option>Кызылорда</option>
+                <option>Тьмутаракань</option>
+              </datalist>
           </form>
           <form className="input__wrapper_point">
             <label for="point">Пункт выдачи</label>
-            <input className="form-main__map--point" name="point" placeholder="Начните вводить пункт..."></input>
+            <input className="form-main__map--point" name="point" placeholder="Начните вводить пункт..." list="pointlist" type="search"></input>
+            <datalist id="pointlist">
+                <option>pickpoint1</option>
+                <option>pickpoint2</option>
+              </datalist>
           </form>
         </div>
         <div>Выбрать на карте</div>

@@ -34,7 +34,7 @@
     margin-bottom: 14px;
     margin-left: 5px;
     font: 300 normal 16px/16px "Roboto", sans-serif;
-    color:$main_black;
+    color: $main_black;
   }
   &--point {
     border: 0;
@@ -42,7 +42,7 @@
     margin-bottom: 14px;
     margin-left: 5px;
     font: 300 normal 16px/16px "Roboto", sans-serif;
-    color:$main_black;
+    color: $main_black;
   }
 }
 .input__wrapper_sity {
@@ -50,17 +50,23 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  color:$main_black;
+  color: $main_black;
   label {
-    margin-right: 16px;
+    margin-right: 1px;
   }
+}
+.form-main__map--sity {
+  width: 224px;
+}
+.form-main__map--point {
+  width: 224px;
 }
 .input__wrapper_point {
   width: 320px;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
-  color:$main_black;
+  color: $main_black;
 }
 
 .form-main__aside {
@@ -134,18 +140,36 @@
 .google__map {
   width: 736px;
   height: 352px;
-  margin-top:16px;
+  margin-top: 16px;
 }
 
 .form-main__wrapper {
-  grid-column:1/44;
+  grid-column: 1/44;
   display: flex;
   justify-content: center;
   align-items: center;
-  
 }
-.form-main__lent{
-  width:1248px;
+.form-main__lent {
+  width: 1248px;
   height: 100%;
   display: flex;
+}
+#citylist,
+#pointlist {
+  border: 0;
+}
+input::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  right: 15px;
+  top:33%;
+  
+  background-image: url(../../../../assets/img/cancel.svg);
+  background-repeat: no-repeat;
+}
+
+input[list]::-webkit-calendar-picker-indicator {
+  opacity: 0;
 }
