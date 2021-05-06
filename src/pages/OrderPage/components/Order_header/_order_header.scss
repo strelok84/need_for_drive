@@ -7,12 +7,11 @@
   border-bottom: 1px solid $light_gray;
   display: grid;
   grid-template-rows: 3fr 1fr;
- 
 }
 
 .form-header__wrapper {
   grid-row: 1/2;
- 
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -20,7 +19,7 @@
 }
 .breadcrumbs-wrapper {
   grid-row: 2/3;
-  
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -29,12 +28,24 @@
 .lane-slogan,
 .lane-breadcrumbs {
   width: 1248px;
+  @include desktop_min {
+    width: 100%;
+  }
 }
 .lane-slogan {
   display: flex;
   justify-content: space-between;
+  @include desktop_min {
+    /* justify-content: space-around; */
+    padding-left: 10%;
+    padding-right: 10%;
+  }
 }
-
+.lane-breadcrumbs {
+  @include desktop_min {
+    padding-left: 10%;
+  }
+}
 .form-header__slogan {
   display: flex;
   align-items: center;
@@ -51,8 +62,8 @@
   color: $dark_gray;
 }
 
-.form-header__marker{
-  margin-right:7.5px;
+.form-header__marker {
+  margin-right: 7.5px;
 }
 
 .form-header_breadcrumbs {
@@ -69,10 +80,10 @@
     margin-right: 16px;
     font: 700 normal 14px/16px "Roboto", sans-serif;
     color: $dark_gray;
-    &:hover{
+    &:hover {
       color: $main_accent;
     }
-    &:active{
+    &:active {
       color: $main_accent;
     }
   }

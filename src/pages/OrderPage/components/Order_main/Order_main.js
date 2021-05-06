@@ -32,8 +32,8 @@ function Order_main() {
               bootstrapURLKeys={{
                 key: "AIzaSyDEUoFQqwctWUViRtQq47lU8YuYXvAiXkI",
               }}
-              center={{ lat: 54, lng: 54 }}
-              zoom={16}
+              center={{ lat: 54.31, lng: 48.39 }}
+              zoom={14}
             ></GoogleMapReact>
         </div>
       </div>

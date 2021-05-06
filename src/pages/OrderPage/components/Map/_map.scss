@@ -1,12 +1,9 @@
 @import "../../../../constants/_constants.scss";
 @import "../../../../css/mixins";
 
-.form__map{
-    grid-column:5/91;
-    
-    display: grid;
-    grid-template-columns: repeat(86,1fr);
-    grid-template-rows:repeat(100,1vh);
+.form__map {
+  grid-column: 5/91;
+  display: grid;
+  grid-template-columns: repeat(86, 1fr);
+  grid-template-rows: repeat(100, 1vh);
 }
-
-

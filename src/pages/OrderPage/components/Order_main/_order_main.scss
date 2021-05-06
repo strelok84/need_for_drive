@@ -44,6 +44,10 @@
     font: 300 normal 16px/16px "Roboto", sans-serif;
     color: $main_black;
   }
+  @include desktop_min{
+    width:100%;
+    align-items: center;
+  }
 }
 .input__wrapper_sity {
   width: 320px;
@@ -82,6 +86,10 @@
   margin-left: 32px;
   flex-direction: column;
   align-items: flex-end;
+  @include desktop_min {
+    margin-left:0;
+    align-items: flex-start;
+  }
 }
 .form-main__ {
   &order,
@@ -90,12 +98,17 @@
   &btn {
     width: 100%;
     padding-left: 32px;
+    @include desktop_min {
+      width: 80%;
+    }
   }
   &order {
     font: 500 normal 18px/21px "Roboto", sans-serif;
     padding-top: 32px;
-
     text-align: right;
+    @include desktop_min {
+      text-align: center;
+    }    
   }
   &piсkup {
     font: 300 normal 14px/16px "Roboto", sans-serif;
@@ -141,6 +154,9 @@
   width: 736px;
   height: 352px;
   margin-top: 16px;
+  @include desktop_min{
+    width:80%;
+  }
 }
 
 .form-main__wrapper {
@@ -153,6 +169,9 @@
   width: 1248px;
   height: 100%;
   display: flex;
+  @include desktop_min{
+    width:100%;
+  }
 }
 #citylist,
 #pointlist {
@@ -164,8 +183,8 @@ input::-webkit-search-cancel-button {
   height: 12px;
   position: absolute;
   right: 15px;
-  top:33%;
-  
+  top: 33%;
+
   background-image: url(../../../../assets/img/cancel.svg);
   background-repeat: no-repeat;
 }

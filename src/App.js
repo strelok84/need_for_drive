@@ -7,9 +7,9 @@ import OrderPage from "./pages/OrderPage/OrderPage";
 function App() {
   return (
     <div className="App">
-      <Switch>
-        <Route exact path="/" component={Main} />
+      <Switch>        
         <Route path="/map" component={OrderPage} />
+        <Route exact path="/" component={Main} />
         <Redirect to="/" />
       </Switch>
     </div>
