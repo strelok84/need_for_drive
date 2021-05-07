@@ -26,7 +26,7 @@ function Order_main() {
               </datalist>
           </form>
         </div>
-        <div>Выбрать на карте</div>
+        <div className="chooze">Выбрать на карте</div>
         <div className="google__map">
         <GoogleMapReact
               bootstrapURLKeys={{

@@ -6,4 +6,7 @@
   display: grid;
   grid-template-columns: repeat(86, 1fr);
   grid-template-rows: repeat(100, 1vh);
+  @include mobile{
+    grid-column: 1/91;
+  }
 }

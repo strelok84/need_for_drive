@@ -6,4 +6,7 @@
     @include desktop_min{
         grid-template-columns: repeat(3,16px) 17px repeat(86,1fr);
     }
+    @include tablet{
+        grid-template-columns: repeat(4,21.5px)  repeat(86,1fr);
+    }
 }

@@ -7,6 +7,9 @@
   border-bottom: 1px solid $light_gray;
   display: grid;
   grid-template-rows: 3fr 1fr;
+  @include mobile{
+    grid-column: 15/87;
+  }
 }
 
 .form-header__wrapper {
@@ -31,19 +34,41 @@
   @include desktop_min {
     width: 100%;
   }
+  @include tablet{
+    width: 100%;
+}
+@include mobile{
+  width: 100%;
+}
 }
 .lane-slogan {
   display: flex;
   justify-content: space-between;
-  @include desktop_min {
-    /* justify-content: space-around; */
+  @include desktop_min {    
     padding-left: 10%;
     padding-right: 10%;
+  }
+  @include tablet{
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+  @include mobile{
+    padding-left: 5%;
+    padding-right: 5%;
   }
 }
 .lane-breadcrumbs {
   @include desktop_min {
     padding-left: 10%;
+  }
+  @include tablet{
+    padding-left: 10%;
+  }
+  @include mobile{
+    padding-left: 0;
+    img{
+      display: none;
+    }
   }
 }
 .form-header__slogan {
@@ -91,5 +116,8 @@
   &add,
   &total {
     margin-left: 16px;
+    @include mobile{
+      display:none;
+    }
   }
 }
