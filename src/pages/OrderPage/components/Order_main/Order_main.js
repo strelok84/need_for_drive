@@ -18,7 +18,7 @@ function Order_main() {
               </datalist>
           </form>
           <form className="input__wrapper_point">
-            <label for="point">Пункт выдачи</label>
+            <label for="point"></label>
             <input className="form-main__map--point" name="point" placeholder="Начните вводить пункт..." list="pointlist" type="search"></input>
             <datalist id="pointlist">
                 <option>pickpoint1</option>

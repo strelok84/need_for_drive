@@ -9,6 +9,7 @@
   grid-template-rows: 3fr 1fr;
   @include mobile{
     grid-column: 15/87;
+    margin-right:5%;
   }
 }
 
@@ -53,8 +54,9 @@
     padding-right: 10%;
   }
   @include mobile{
-    padding-left: 5%;
-    padding-right: 5%;
+    padding-left: 0;
+    padding-right: 0;
+
   }
 }
 .lane-breadcrumbs {
@@ -77,6 +79,9 @@
   justify-content: center;
   font: 700 normal 30px/35px "Roboto", sans-serif;
   color: $main_accent;
+  @include mobile{
+    font: 700 normal 24px/24px "Roboto", sans-serif;
+  }
 }
 
 .form-header__sity {
@@ -85,10 +90,16 @@
   justify-content: center;
   font: 400 normal 14px "Roboto", sans-serif;
   color: $dark_gray;
+  @include mobile{
+    font: 400 normal 12px "Roboto", sans-serif;
+  }
 }
 
 .form-header__marker {
   margin-right: 7.5px;
+  @include mobile{
+    margin-right: 5px;
+  }
 }
 
 .form-header_breadcrumbs {
