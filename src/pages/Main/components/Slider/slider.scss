@@ -1,5 +1,5 @@
-@import "../../../../constants/constants";
-@import "../../../../css/mixins";
+@import "../../../../styles/constants";
+@import "../../../../styles/mixins";
 
 .slide_1,
 .slide_2,
@@ -152,7 +152,6 @@
 .arrow {
   width: 8px;
   height: 18px;
-  z-index: 5;
 }
 .dots {
   position: fixed;
@@ -168,15 +167,14 @@
   }
   a {
     margin: 2px;
-    
   }
- 
+
   @include desktop_min {
     left: 77%;
     top: 93%;
   }
 }
-.active svg{
+.active svg {
   fill: $main_accent;
 }
 .slider__text {

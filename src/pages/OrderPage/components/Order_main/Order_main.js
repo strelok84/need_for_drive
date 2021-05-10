@@ -1,5 +1,5 @@
 import React from "react";
-import "./_order_main.scss";
+import "./order_main.scss";
 import GoogleMapReact from "google-map-react";
 
 function Order_main() {
@@ -7,60 +7,72 @@ function Order_main() {
     <div className="form-main">
       <div className="form-main__wrapper">
         <div className="form-main__lent">
-      <div className="form-main__map">
-        <div className="form-main__map--order">
-          <form className="input__wrapper_sity">
-            <label for="city">Город</label>
-            <input className="form-main__map--sity" name="city" placeholder="Начните вводить город..." list="citylist" type="search"></input>
-              <datalist id="citylist">
-                <option>Кызылорда</option>
-                <option>Тьмутаракань</option>
-              </datalist>
-          </form>
-          <form className="input__wrapper_point">
-            <label for="point"></label>
-            <input className="form-main__map--point" name="point" placeholder="Начните вводить пункт..." list="pointlist" type="search"></input>
-            <datalist id="pointlist">
-                <option>pickpoint1</option>
-                <option>pickpoint2</option>
-              </datalist>
-          </form>
-        </div>
-        <div className="chooze">Выбрать на карте</div>
-        <div className="google__map">
-        <GoogleMapReact
-              bootstrapURLKeys={{
-                key: "AIzaSyDEUoFQqwctWUViRtQq47lU8YuYXvAiXkI",
-              }}
-              center={{ lat: 54.31, lng: 48.39 }}
-              zoom={14}
-            ></GoogleMapReact>
-        </div>
-      </div>
-      <div className="form-main__aside">
-        <div className="form-main__lane">
-          <div className="form-main__order">Ваш заказ</div>
-          <div className="form-main__point">
-            <div className="form-main__piсkup">
-              <br />
-              Пункт выдачи
+          <div className="form-main__map">
+            <div className="form-main__map--order">
+              <form className="input__wrapper_sity">
+                <label for="city">Город</label>
+                <input
+                  className="form-main__map--sity"
+                  name="city"
+                  placeholder="Начните вводить город..."
+                  list="citylist"
+                  type="search"
+                ></input>
+                <datalist id="citylist">
+                  <option>Кызылорда</option>
+                  <option>Тьмутаракань</option>
+                </datalist>
+              </form>
+              <form className="input__wrapper_point">
+                <label for="point"></label>
+                <input
+                  className="form-main__map--point"
+                  name="point"
+                  placeholder="Начните вводить пункт..."
+                  list="pointlist"
+                  type="search"
+                ></input>
+                <datalist id="pointlist">
+                  <option>pickpoint1</option>
+                  <option>pickpoint2</option>
+                </datalist>
+              </form>
             </div>
-            {<div className="form-main__dots"> </div>}
-            <div className="form-main__address">
-              Ульяновск,
-              <br />
-              Нариманова 42
+            <div className="chooze">Выбрать на карте</div>
+            <div className="google__map">
+              <GoogleMapReact
+                bootstrapURLKeys={{
+                  key: "AIzaSyDEUoFQqwctWUViRtQq47lU8YuYXvAiXkI",
+                }}
+                center={{ lat: 54.31, lng: 48.39 }}
+                zoom={14}
+              ></GoogleMapReact>
             </div>
           </div>
-          <div className="form-main__cost">
-            Цена: от 8000 до 12000 {"\u20BD"}
-          </div>
-          <div href="#" className="form-main__btn">
-            Выбрать модель
+          <div className="form-main__aside">
+            <div className="form-main__lane">
+              <div className="form-main__order">Ваш заказ</div>
+              <div className="form-main__point">
+                <div className="form-main__piсkup">
+                  <br />
+                  Пункт выдачи
+                </div>
+                {<div className="form-main__dots"> </div>}
+                <div className="form-main__address">
+                  Ульяновск,
+                  <br />
+                  Нариманова 42
+                </div>
+              </div>
+              <div className="form-main__cost">
+                Цена: от 8000 до 12000 {"\u20BD"}
+              </div>
+              <div href="#" className="form-main__btn">
+                Выбрать модель
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-      </div>
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
 import React from "react";
-import "./_order_header.scss";
-import Sity_marker from "../../../../assets/img/Sity_marker.svg"
+import "./order_header.scss";
+import Sity_marker from "../../../../assets/img/Sity_marker.svg";
 import triangle from "../../../../assets/img/triangle.svg";
 
 function Order_header() {
@@ -21,13 +21,21 @@ function Order_header() {
       </div>
       <div className="breadcrumbs-wrapper">
         <div className="lane-breadcrumbs">
-            <a href="/need_for_drive/map" className="lane-breadcrumbs__place">Местоположение</a>
-            <img src={triangle}></img>
-            <a href="#" className="lane-breadcrumbs__model">Модель</a>
-            <img src={triangle}></img>
-            <a href="#" className="lane-breadcrumbs__add">Дополнительно</a>
-            <img src={triangle}></img>
-            <a href="#" className="lane-breadcrumbs__total">Итого</a>
+          <a href="/need_for_drive/map" className="lane-breadcrumbs__place">
+            Местоположение
+          </a>
+          <img src={triangle}></img>
+          <a href="#" className="lane-breadcrumbs__model">
+            Модель
+          </a>
+          <img src={triangle}></img>
+          <a href="#" className="lane-breadcrumbs__add">
+            Дополнительно
+          </a>
+          <img src={triangle}></img>
+          <a href="#" className="lane-breadcrumbs__total">
+            Итого
+          </a>
         </div>
       </div>
     </div>
@@ -35,4 +43,3 @@ function Order_header() {
 }
 
 export default Order_header;
-

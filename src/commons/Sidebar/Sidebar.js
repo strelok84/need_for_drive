@@ -1,8 +1,8 @@
 import React from "react";
-import "../Sidebar/_sidebar.scss";
-import Telegram from "../../../assets/img/Telegram_white.svg";
-import Facebook from "../../../assets/img/Facebook_white.svg";
-import Instagram from "../../../assets/img/Instagram_white.svg";
+import "./_sidebar.scss";
+import Telegram from "../../assets/img/Telegram_white.svg";
+import Facebook from "../../assets/img/Facebook_white.svg";
+import Instagram from "../../assets/img/Instagram_white.svg";
 
 function Sidebar() {
   return (
@@ -34,7 +34,6 @@ function Sidebar() {
             </a>
           </li>
           <li className="menu__item__img_wrapper">
-            
             <a className="menu__item" href="#">
               <img src={Telegram} alt="Telegram"></img>
             </a>
@@ -44,26 +43,23 @@ function Sidebar() {
             <a className="menu__item" href="#">
               <img src={Instagram} alt="Instagram"></img>
             </a>
-            
           </li>
           <li className="menu__item_mobile_lang">
-          <a
-            className="sidebar__lang"
-            id="mobile_lang"
-            href="#"
-            onClick={() => {
-              let lang = document.getElementsByClassName("sidebar__lang")[0];
-              lang.innerHTML === "Eng"
-                ? (lang.innerHTML = "Rus")
-                : (lang.innerHTML = "Eng");
-            }}
-          >
-            Eng
-          </a>
-            </li>
-          
+            <a
+              className="sidebar__lang"
+              id="mobile_lang"
+              href="#"
+              onClick={() => {
+                let lang = document.getElementsByClassName("sidebar__lang")[0];
+                lang.innerHTML === "Eng"
+                  ? (lang.innerHTML = "Rus")
+                  : (lang.innerHTML = "Eng");
+              }}
+            >
+              Eng
+            </a>
+          </li>
         </ul>
-
       </div>
       <a
         className="sidebar__lang"

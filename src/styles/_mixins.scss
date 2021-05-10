@@ -1,4 +1,4 @@
-@import "../constants/constants";
+@import "./constants";
 
 @mixin desktop_min{
     @media(min-width: $screen_dx_min) and (max-width: $screen_dx - 1px){

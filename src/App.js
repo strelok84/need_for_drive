@@ -1,4 +1,4 @@
-import "./constants/_constants.scss";
+import "./styles/_constants.scss";
 import "./App.scss";
 import { Route, Switch, Redirect } from "react-router-dom";
 import Main from "./pages/Main/Main";
