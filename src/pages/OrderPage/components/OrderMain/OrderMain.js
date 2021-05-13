@@ -62,17 +62,6 @@ function Order_main() {
                   styles={colourStyles}
                   placeholder="Начните вводить город..."
                 />
-                {/* <input
-                  className="form-main__map--sity"
-                  name="city"
-                  placeholder="Начните вводить город..."
-                  list="citylist"
-                  type="search"
-                ></input>
-                <datalist id="citylist" name="citylist">
-                  <option>Кызылорда</option>
-                  <option>Тьмутаракань</option>
-                </datalist> */}
               </form>
               <form className="input__wrapper_point">
                 <label for="point"></label>
@@ -83,17 +72,6 @@ function Order_main() {
                   styles={colourStyles}
                   placeholder="Начните вводить пункт..."
                 />
-                {/* <input
-                  className="form-main__map--point"
-                  name="point"
-                  placeholder="Начните вводить пункт..."
-                  list="pointlist"
-                  type="search"
-                ></input>
-                <datalist id="pointlist" name="citylist">
-                  <option>pickpoint1</option>
-                  <option>pickpoint2</option>
-                </datalist> */}
               </form>
             </div>
             <div className="chooze">Выбрать на карте</div>
