@@ -45,57 +45,24 @@ function Slider(props) {
               </a>
             </div>
           </div>
-          ))}
-          
+          ))}          
+
           <div className="dots">
-            <a
-              href="#slide_1"
-              id="dot_1"
-              className={activeSlide === 1 ? "active" : ""}
+            {props.slides.map((item)=>(
+              <a
+              href={`#slide_${item.slide.number}`}
+              id={`dot_${item.slide.number}`}
+              className={activeSlide === item.slide.number ? "active" : ""}
               onClick={() => {
-                setActiveSlide((activeSlide = 1));
+                setActiveSlide((activeSlide = item.slide.number));
               }}
             >
               <svg>
                 <circle cx="4" cy="4" r="4"></circle>
               </svg>
             </a>
-            <a
-              href="#slide_2"
-              id="dot_2"
-              className={activeSlide === 2 ? "active" : ""}
-              onClick={() => {
-                setActiveSlide((activeSlide = 2));
-              }}
-            >
-              <svg>
-                <circle cx="4" cy="4" r="4"></circle>
-              </svg>
-            </a>
-            <a
-              href="#slide_3"
-              id="dot_3"
-              className={activeSlide === 3 ? "active" : ""}
-              onClick={() => {
-                setActiveSlide((activeSlide = 3));
-              }}
-            >
-              <svg>
-                <circle cx="4" cy="4" r="4"></circle>
-              </svg>
-            </a>
-            <a
-              href="#slide_4"
-              id="dot_4"
-              className={activeSlide === 4 ? "active" : ""}
-              onClick={() => {
-                setActiveSlide((activeSlide = 4));
-              }}
-            >
-              <svg>
-                <circle cx="4" cy="4" r="4"></circle>
-              </svg>
-            </a>
+            ))}
+            
           </div>
         </div>
       </div>
