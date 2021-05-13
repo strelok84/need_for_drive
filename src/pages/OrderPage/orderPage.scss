@@ -1,7 +1,7 @@
 @import "../../styles/constants";
 @import "../../styles/mixins";
 
-.wrapper {
+.wrapper {  
   height: 100vh;
   @include desktop_min {
     grid-template-columns: repeat(3, 16px) 17px repeat(86, 1fr);

@@ -33,19 +33,22 @@
   }
   &--sity {
     border: 0;
-    border-bottom: 1px solid $dark_gray;
+    
     margin-bottom: 14px;
     margin-left: 5px;
-    font: 300 normal 16px/16px "Roboto", sans-serif;
+    font: 300 normal 14px/16px "Roboto", sans-serif;
     color: $main_black;
+    outline: none;
+    
   }
   &--point {
     border: 0;
-    border-bottom: 1px solid $dark_gray;
+   
     margin-bottom: 14px;
     margin-left: 5px;
-    font: 300 normal 16px/16px "Roboto", sans-serif;
+    font: 300 normal 14px/16px "Roboto", sans-serif;
     color: $main_black;
+    outline: none;
   }
   @include desktop_min {
     width: 100%;
@@ -256,7 +259,12 @@
 
 #citylist,
 #pointlist {
-  border: 0;
+  border: 1px solid $light_gray;
+ 
+}
+input[name="citylist"] {
+  border: 1px solid $light_gray;
+  border-radius: 0;
 }
 
 input::-webkit-search-cancel-button {

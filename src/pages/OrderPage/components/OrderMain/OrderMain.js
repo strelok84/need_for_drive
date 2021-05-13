@@ -1,6 +1,48 @@
 import React from "react";
 import "./orderMain.scss";
 import GoogleMapReact from "google-map-react";
+import Select from "react-select";
+
+
+
+const cityOptions = [
+  { value: 'Тьмутаракань', label: 'Тьмутаракань' },
+  { value: 'Ульяновск', label: 'Ульяновск' },
+  { value: 'Самара', label: 'Самара' },
+  { value: 'Самара', label: 'Самара' },
+  { value: 'Тьмутаракань', label: 'Тьмутаракань' },
+  { value: 'Ульяновск', label: 'Ульяновск' },
+  { value: 'Самара', label: 'Самара' },
+  { value: 'Самара', label: 'Самара' },
+  { value: 'Тьмутаракань', label: 'Тьмутаракань' },
+  { value: 'Ульяновск', label: 'Ульяновск' },
+  { value: 'Самара', label: 'Самара' },
+  { value: 'Самара', label: 'Самара' },
+  { value: 'Самара', label: 'Самара' }
+]
+const inputStyles=()=>({
+  border: 'none',
+  borderBottom:"1px solid #999999",
+  borderRadius:0,
+  boxShadow:'none',
+  minHeight:'19px'
+})
+
+const colourStyles = {
+  control: styles => ({ ...styles, ...inputStyles() }),
+  valueContainer:styles => ({ ...styles, paddingLeft:"0"}),
+  indicatorSeparator:styles => ({ ...styles, display:"none" }),
+  dropdownIndicator:styles => ({ ...styles, display:"none" }),
+  menu:(provided,state) => ({ ...provided,
+    borderRadius:0,
+    marginTop:0,
+    color: state.isSelected ? 'red' : '#999' }),
+  option:(provided,state)=>({...provided,
+    color:state.isFocused?"#0EC261":"#999",
+    backgroundColor:"none"
+  })
+ 
+}
 
 function Order_main() {
   return (
@@ -11,31 +53,45 @@ function Order_main() {
             <div className="form-main__map--order">
               <form className="input__wrapper_sity">
                 <label for="city">Город</label>
-                <input
+                <Select
+                className="form-main__map--sity"
+                isClearable="true"
+                options={cityOptions}
+                styles={colourStyles}
+                placeholder="Начните вводить город..."
+                />
+                {/* <input
                   className="form-main__map--sity"
                   name="city"
                   placeholder="Начните вводить город..."
                   list="citylist"
                   type="search"
                 ></input>
-                <datalist id="citylist">
+                <datalist id="citylist" name="citylist">
                   <option>Кызылорда</option>
                   <option>Тьмутаракань</option>
-                </datalist>
+                </datalist> */}
               </form>
               <form className="input__wrapper_point">
                 <label for="point"></label>
-                <input
+                <Select
+                className="form-main__map--point"
+                isClearable="true"
+                options={cityOptions}
+                styles={colourStyles}
+                placeholder="Начните вводить пункт..."
+                />
+                {/* <input
                   className="form-main__map--point"
                   name="point"
                   placeholder="Начните вводить пункт..."
                   list="pointlist"
                   type="search"
                 ></input>
-                <datalist id="pointlist">
+                <datalist id="pointlist" name="citylist">
                   <option>pickpoint1</option>
                   <option>pickpoint2</option>
-                </datalist>
+                </datalist> */}
               </form>
             </div>
             <div className="chooze">Выбрать на карте</div>
