@@ -30,20 +30,25 @@
     @include mobile {
       max-width: 100%;
     }
+    @include desktop_min {
+      align-self: flex-start;
+      margin-left: 10%;
+    }
+    @include tablet {
+      align-self: flex-start;
+      margin-left: 10%;
+    }
   }
   &--sity {
     border: 0;
-    
     margin-bottom: 14px;
     margin-left: 5px;
     font: 300 normal 14px/16px "Roboto", sans-serif;
     color: $main_black;
     outline: none;
-    
   }
   &--point {
     border: 0;
-   
     margin-bottom: 14px;
     margin-left: 5px;
     font: 300 normal 14px/16px "Roboto", sans-serif;
@@ -217,6 +222,10 @@
   @include mobile {
     display: none;
   }
+  @include desktop_min{
+    align-self: flex-start;
+    margin-left:10%;
+  }
 }
 
 .google__map {
@@ -260,7 +269,6 @@
 #citylist,
 #pointlist {
   border: 1px solid $light_gray;
- 
 }
 input[name="citylist"] {
   border: 1px solid $light_gray;
