@@ -1,5 +1,5 @@
 import React from "react";
-import "./_middle.scss";
+import "./middle.scss";
 import Sity_marker from "../../../../assets/img/Sity_marker.svg";
 
 function Middle() {

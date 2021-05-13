@@ -1,5 +1,5 @@
 import React from "react";
-import "./order_page.scss";
+import "./orderPage.scss";
 import Sidebar from "../../commons/Sidebar/Sidebar";
 import Map from "./components/Map/Map";
 

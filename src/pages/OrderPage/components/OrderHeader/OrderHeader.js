@@ -1,5 +1,5 @@
 import React from "react";
-import "./order_header.scss";
+import "./orderHeader.scss";
 import Sity_marker from "../../../../assets/img/Sity_marker.svg";
 import triangle from "../../../../assets/img/triangle.svg";
 

@@ -1,5 +1,5 @@
 import React from "react";
-import "./order_main.scss";
+import "./orderMain.scss";
 import GoogleMapReact from "google-map-react";
 
 function Order_main() {
