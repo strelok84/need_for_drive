@@ -3,46 +3,48 @@ import "./orderMain.scss";
 import GoogleMapReact from "google-map-react";
 import Select from "react-select";
 
-
-
 const cityOptions = [
-  { value: 'Тьмутаракань', label: 'Тьмутаракань' },
-  { value: 'Ульяновск', label: 'Ульяновск' },
-  { value: 'Самара', label: 'Самара' },
-  { value: 'Самара', label: 'Самара' },
-  { value: 'Тьмутаракань', label: 'Тьмутаракань' },
-  { value: 'Ульяновск', label: 'Ульяновск' },
-  { value: 'Самара', label: 'Самара' },
-  { value: 'Самара', label: 'Самара' },
-  { value: 'Тьмутаракань', label: 'Тьмутаракань' },
-  { value: 'Ульяновск', label: 'Ульяновск' },
-  { value: 'Самара', label: 'Самара' },
-  { value: 'Самара', label: 'Самара' },
-  { value: 'Самара', label: 'Самара' }
-]
-const inputStyles=()=>({
-  border: 'none',
-  borderBottom:"1px solid #999999",
-  borderRadius:0,
-  boxShadow:'none',
-  minHeight:'19px'
-})
+  { value: "Тьмутаракань", label: "Тьмутаракань" },
+  { value: "Ульяновск", label: "Ульяновск" },
+  { value: "Самара", label: "Самара" },
+  { value: "Самара", label: "Самара" },
+  { value: "Тьмутаракань", label: "Тьмутаракань" },
+  { value: "Ульяновск", label: "Ульяновск" },
+  { value: "Самара", label: "Самара" },
+  { value: "Самара", label: "Самара" },
+  { value: "Тьмутаракань", label: "Тьмутаракань" },
+  { value: "Ульяновск", label: "Ульяновск" },
+  { value: "Самара", label: "Самара" },
+  { value: "Самара", label: "Самара" },
+  { value: "Самара", label: "Самара" },
+];
+const inputStyles = () => ({
+  border: "none",
+  borderBottom: "1px solid #999999",
+  borderRadius: 0,
+  boxShadow: "none",
+  minHeight: "19px",
+});
 
 const colourStyles = {
-  control: styles => ({ ...styles, ...inputStyles() }),
-  valueContainer:styles => ({ ...styles, paddingLeft:"0"}),
-  indicatorSeparator:styles => ({ ...styles, display:"none" }),
-  dropdownIndicator:styles => ({ ...styles, display:"none" }),
-  menu:(provided,state) => ({ ...provided,
-    borderRadius:0,
-    marginTop:0,
-    color: state.isSelected ? 'red' : '#999' }),
-  option:(provided,state)=>({...provided,
-    color:state.isFocused?"#0EC261":"#999",
-    backgroundColor:"none"
-  })
- 
-}
+  control: (styles) => ({ ...styles, ...inputStyles() }),
+  valueContainer: (styles) => ({ ...styles, paddingLeft: "0" }),
+  indicatorsContainer: (styles) => ({ ...styles, minHeight: "19px" }),
+  indicatorSeparator: (styles) => ({ ...styles, display: "none" }),
+  dropdownIndicator: (styles) => ({ ...styles, display: "none" }),
+  clearIndicator: (styles) => ({ ...styles, padding: "0" }),
+  menu: (provided, state) => ({
+    ...provided,
+    borderRadius: 0,
+    marginTop: 0,
+    color: state.isSelected ? "red" : "#999",
+  }),
+  option: (provided, state) => ({
+    ...provided,
+    color: state.isFocused ? "#0EC261" : "#999",
+    backgroundColor: "none",
+  }),
+};
 
 function Order_main() {
   return (
@@ -54,11 +56,11 @@ function Order_main() {
               <form className="input__wrapper_sity">
                 <label for="city">Город</label>
                 <Select
-                className="form-main__map--sity"
-                isClearable="true"
-                options={cityOptions}
-                styles={colourStyles}
-                placeholder="Начните вводить город..."
+                  className="form-main__map--sity"
+                  isClearable="true"
+                  options={cityOptions}
+                  styles={colourStyles}
+                  placeholder="Начните вводить город..."
                 />
                 {/* <input
                   className="form-main__map--sity"
@@ -75,11 +77,11 @@ function Order_main() {
               <form className="input__wrapper_point">
                 <label for="point"></label>
                 <Select
-                className="form-main__map--point"
-                isClearable="true"
-                options={cityOptions}
-                styles={colourStyles}
-                placeholder="Начните вводить пункт..."
+                  className="form-main__map--point"
+                  isClearable="true"
+                  options={cityOptions}
+                  styles={colourStyles}
+                  placeholder="Начните вводить пункт..."
                 />
                 {/* <input
                   className="form-main__map--point"
