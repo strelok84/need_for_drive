@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="App">
       <Switch>        
-        <Route path="/map" component={OrderPage} />
+        <Route path="/map" component={OrderPage} />        
         <Route exact path="/" component={Main} />
         <Redirect to="/" />
       </Switch>
