@@ -7,7 +7,7 @@ import Instagram from "../../assets/img/Instagram_white.svg";
 function Sidebar(props) {
   useEffect(() => {
     const menu = document.querySelector(".menu__box");
-    if (props.gradient === false) {
+    if (!props.gradient) {
       menu.classList.add("menu__box_black");
     }
   });
