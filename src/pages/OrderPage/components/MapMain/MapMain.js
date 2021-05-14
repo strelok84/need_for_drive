@@ -1,5 +1,5 @@
 import React from "react";
-import "./orderMain.scss";
+import "./MapMain.scss";
 import GoogleMapReact from "google-map-react";
 import Select from "react-select";
 
@@ -20,10 +20,11 @@ const cityOptions = [
 ];
 const inputStyles = () => ({
   border: "none",
-  borderBottom: "1px solid #999999",
+  borderBottom: "1px solid #999999",  
   borderRadius: 0,
   boxShadow: "none",
   minHeight: "19px",
+  margin:"auto 5% auto auto"
 });
 
 const colourStyles = {
@@ -46,7 +47,7 @@ const colourStyles = {
   }),
 };
 
-function Order_main() {
+function MapMain() {
   return (
     <div className="form-main">
       <div className="form-main__wrapper">
@@ -114,4 +115,4 @@ function Order_main() {
   );
 }
 
-export default Order_main;
+export default MapMain;

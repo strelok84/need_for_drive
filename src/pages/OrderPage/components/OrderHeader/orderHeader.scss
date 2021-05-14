@@ -10,12 +10,12 @@
   @include mobile {
     grid-column: 15/87;
     margin-right: 5%;
+    border:0;
   }
 }
 
 .form-header__wrapper {
   grid-row: 1/2;
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -23,15 +23,23 @@
   @include mobile {
     align-items: flex-start;
     margin-top: 20px;
+    border:0;
   }
 }
 
 .breadcrumbs-wrapper {
   grid-row: 2/3;
-
   display: flex;
   justify-content: center;
   align-items: center;
+  @include mobile {
+    position: absolute;
+    top:12vh;
+    left:0;
+    width:100vw;
+    border-bottom: 1px solid $light_gray;
+    border-top: 1px solid $light_gray;
+  }
 }
 
 .lane-slogan,
@@ -136,6 +144,11 @@
     margin-left: 16px;
     @include mobile {
       display: none;
+    }
+  }
+  &place{
+    @include mobile {
+      margin-left:16%;
     }
   }
 }

@@ -1,10 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./_sidebar.scss";
 import Telegram from "../../assets/img/Telegram_white.svg";
 import Facebook from "../../assets/img/Facebook_white.svg";
 import Instagram from "../../assets/img/Instagram_white.svg";
 
-function Sidebar() {
+function Sidebar(props) {
+  useEffect(() => {
+    const menu = document.querySelector(".menu__box");
+    if (props.gradient === false) {
+      menu.classList.add("menu__box_black");
+    }
+  });
+
   return (
     <nav className="sidebar">
       <div class="menu">

@@ -6,6 +6,9 @@
   grid-row: 17/101;
   display: grid;
   grid-template-columns: repeat(43, 1fr);
+  @include mobile {
+    grid-column: 15/87;
+  }
 }
 
 .form-main__map {
@@ -46,6 +49,7 @@
     font: 300 normal 14px/16px "Roboto", sans-serif;
     color: $main_black;
     outline: none;
+    
   }
   &--point {
     border: 0;
@@ -83,7 +87,7 @@
   @include mobile {
     width: 100%;
     justify-content: space-between;
-    margin: auto 5%;
+    margin: auto;
   }
 }
 
@@ -109,7 +113,7 @@
   @include mobile {
     width: 100%;
     justify-content: space-between;
-    margin: auto 5%;
+    margin: auto;
     label {
       &:after {
         content: "Пункт";
@@ -127,6 +131,16 @@
     justify-content: space-between;
     flex-direction: column;
   }
+  @include tablet {
+    grid-column:3/31;
+    margin-left:10%;
+    border:0;
+    height:auto;
+  }
+  @include mobile {
+    height:auto;
+    border:0;
+  }
 }
 
 .form-main__lane {
@@ -141,10 +155,12 @@
   }
   @include tablet {
     margin-left: 0;
-    align-items: flex-start;
+    align-items: flex-start;   
   }
   @include mobile {
-    margin: auto 5%;
+    margin-right: 5%;
+    margin-left:0;
+    align-items: center;
   }
 }
 
@@ -171,10 +187,13 @@
     }
     @include tablet {
       text-align: center;
+      padding-top:8px;
+      display:none;
     }
     @include mobile {
       padding-top: 0;
       text-align: center;
+      display:none;
     }
   }
   &piсkup {
@@ -190,11 +209,28 @@
     font: 500 normal 16px/16px "Roboto", sans-serif;
     color: $main_black;
     margin-top: 32px;
+    @include tablet {
+      margin-top:8px;
+      display:none;
+    }
+    @include mobile {
+      display:none;
+    }
+    @include desktop_min {
+      min-width: 280px;
+    }
   }
   &point {
     display: flex;
     justify-content: space-between;
     padding-top: 32px;
+    @include tablet {
+      padding-top:8px;
+      display:none;
+    }
+    @include mobile {
+      display:none;
+    }
   }
   &dots {
     flex-grow: 1;
@@ -215,6 +251,20 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    @include tablet {
+      margin-bottom:22px;
+    }
+    @include mobile {
+      min-width:160px;
+      width:100%;
+      margin-bottom:22px;
+    }
+    @include desktop_min {
+      width:80%;
+     min-width: auto;
+     margin-left:auto;
+     margin-right:auto;
+    }
   }
 }
 
@@ -223,6 +273,10 @@
     display: none;
   }
   @include desktop_min{
+    align-self: flex-start;
+    margin-left:10%;
+  }
+  @include tablet {
     align-self: flex-start;
     margin-left:10%;
   }
@@ -237,9 +291,12 @@
   }
   @include tablet {
     width: 80%;
+    height: 80%;
   }
   @include mobile {
-    display: none;
+    width: 95%;
+    height: 100%;
+    margin-right:5%;
   }
 }
 
@@ -248,6 +305,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  @include tablet {
+    align-items: flex-start;
+    justify-content: space-between;
+  }
 }
 
 .form-main__lent {
@@ -258,7 +319,9 @@
     width: 100%;
   }
   @include tablet {
+    
     width: 100%;
+    flex-direction:column;
   }
   @include mobile {
     width: 100%;
@@ -266,27 +329,9 @@
   }
 }
 
-#citylist,
-#pointlist {
-  border: 1px solid $light_gray;
-}
-input[name="citylist"] {
-  border: 1px solid $light_gray;
-  border-radius: 0;
-}
 
-input::-webkit-search-cancel-button {
-  -webkit-appearance: none;
-  width: 12px;
-  height: 12px;
-  position: absolute;
-  right: 15px;
-  top: 33%;
 
-  background-image: url(../../../../assets/img/cancel.svg);
-  background-repeat: no-repeat;
-}
 
-input[list]::-webkit-calendar-picker-indicator {
-  opacity: 0;
-}
+
+
+

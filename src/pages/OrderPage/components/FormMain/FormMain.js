@@ -1,7 +1,7 @@
 import React from "react";
-import "./map.scss";
+import "./formMain.scss";
 import OrderHeader from "../OrderHeader/OrderHeader";
-import OrderMain from "../OrderMain/OrderMain";
+import OrderMain from "../MapMain/MapMain";
 
 class Map extends React.Component {
   render() {

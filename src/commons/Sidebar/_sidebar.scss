@@ -1,19 +1,16 @@
 @import "../../styles/constants";
 @import "../../styles/mixins";
 
-
-
-
 .sidebar {
   grid-column: 1/5;
-  height: 100vh;
+  height: 100%;
   background-color: #151b1f;
   display: grid;
   grid-template-columns: repeat(4, 16px);
-  @include tablet{
+  @include tablet {
     grid-template-columns: repeat(4, 21.5px);
   }
-  @include mobile{
+  @include mobile {
     height: 0;
   }
 }
@@ -39,7 +36,7 @@
     border-radius: 50%;
     color: $light_gray;
     margin-bottom: 15px;
-    @include tablet{
+    @include tablet {
       margin-bottom: 22px;
     }
   }
@@ -48,16 +45,16 @@
     border-radius: 50%;
     color: $main_accent;
     margin-bottom: 15px;
-    @include tablet{
+    @include tablet {
       margin-bottom: 22px;
     }
   }
-  @include tablet{
+  @include tablet {
     margin-bottom: 22px;
   }
-  @include mobile{
-  display: none;
-}
+  @include mobile {
+    display: none;
+  }
 }
 
 .menu {
@@ -72,17 +69,17 @@
   height: 32px;
   z-index: 3;
   margin: 0;
-  @include desktop_min{
-    top:29px;
-    left:17px;
+  @include desktop_min {
+    top: 29px;
+    left: 17px;
   }
-  @include tablet{
-    top:29px;
-    left:27px;
+  @include tablet {
+    top: 29px;
+    left: 27px;
   }
-  @include mobile{
-    top:16px;
-    left:16px;
+  @include mobile {
+    top: 16px;
+    left: 16px;
   }
 }
 .menu__btn {
@@ -95,17 +92,17 @@
   height: 32px;
   z-index: 2;
   justify-content: center;
-  @include desktop_min{
-    top:29px;
-    left:17px;
+  @include desktop_min {
+    top: 29px;
+    left: 17px;
   }
-  @include tablet{
-    top:29px;
-    left:27px;
+  @include tablet {
+    top: 29px;
+    left: 27px;
   }
-  @include mobile{
-    top:16px;
-    left:16px;
+  @include mobile {
+    top: 16px;
+    left: 16px;
   }
 }
 
@@ -118,11 +115,11 @@
   height: 3px;
   border-radius: 20% 10%;
   background-color: #fff;
-  @include tablet{
-    width: 32px;    
+  @include tablet {
+    width: 32px;
   }
-  @include mobile{
-    width:19;
+  @include mobile {
+    width: 19;
     background-color: #000;
   }
 }
@@ -151,28 +148,42 @@
   /* opacity: 0.9; */
   box-shadow: 1px 0px 6px rgba(0, 0, 0, 0.2);
   transition-duration: 0.25s;
-  background: linear-gradient(to right, rgba(11, 15, 18, 1) calc(50% + 48px), rgba(11, 15, 18, 0.9) calc(50% + 48px));
+  background: linear-gradient(
+    to right,
+    rgba(11, 15, 18, 1) calc(50% + 48px),
+    rgba(11, 15, 18, 0.9) calc(50% + 48px)
+  );
   z-index: 1;
   li:nth-child(1) {
     margin-top: 128px;
-    @include mobile{
+    @include mobile {
       margin-top: 70px;
     }
   }
-  @include desktop_min{
-    background: linear-gradient(to right, rgba(11, 15, 18, 1) calc(60%), rgba(11, 15, 18, 0.9) calc(60%));
+  @include desktop_min {
+    background: linear-gradient(
+      to right,
+      rgba(11, 15, 18, 1) calc(60%),
+      rgba(11, 15, 18, 0.9) calc(60%)
+    );
   }
-  @include tablet{
+  @include tablet {
     opacity: 1;
     background-image: none;
     background-color: #111518;
   }
-  @include mobile{
+  @include mobile {
     padding: 0;
     opacity: 1;
     background-image: none;
     background-color: #111518;
   }
+}
+.menu__box_black {
+  padding: 0;
+  opacity: 1;
+  background-image: none;
+  background-color: #111518;
 }
 
 .menu__item {
@@ -186,45 +197,43 @@
   text-decoration: none;
   margin-left: 128px;
   transition-duration: 0.25s;
-  max-width:30%;
+  max-width: 30%;
   &:hover {
     color: $main_accent;
   }
-  @include mobile{
+  @include mobile {
     margin-left: 28px;
-    font:500 normal 22px/26px "Roboto", sans-serif;
-    padding-left:0;
-    padding-top:5px;
+    font: 500 normal 22px/26px "Roboto", sans-serif;
+    padding-left: 0;
+    padding-top: 5px;
   }
 }
 
 .menu__toggle:checked ~ .menu__btn > span {
   transform: rotate(45deg);
-  @include mobile{
+  @include mobile {
     background-color: #fff;
-    
   }
 }
 .menu__toggle:checked ~ .menu__btn > span::before {
   top: 0;
   transform: rotate(0);
-  @include mobile{
+  @include mobile {
     background-color: #fff;
   }
 }
 .menu__toggle:checked ~ .menu__btn > span::after {
   top: 0;
   transform: rotate(90deg);
-  @include mobile{
+  @include mobile {
     background-color: #fff;
   }
 }
 .menu__toggle:checked ~ .menu__box {
   visibility: visible;
   left: 0;
-  $menu_toggle:true !global;
+  $menu_toggle: true !global;
 }
-
 
 .menu__btn > span,
 .menu__btn > span::before,
@@ -236,17 +245,16 @@
   display: flex;
   a {
     margin-top: 38px;
-    @include mobile{
-      margin-top:19px;
+    @include mobile {
+      margin-top: 19px;
     }
     img:hover {
       filter: brightness(0.5) sepia(1) saturate(2000%) hue-rotate(120deg);
     }
     &:nth-child(1) {
       margin-left: 128px;
-      @include mobile{
+      @include mobile {
         margin-left: 28px;
-        
       }
     }
     &:nth-child(2),
@@ -257,39 +265,32 @@
   }
 }
 
-
-#mobile_lang{
-  
-  display:none;
-  @include mobile{
-   display:flex;
-   color: $main_accent;
-    margin:auto auto auto 16px;
+#mobile_lang {
+  display: none;
+  @include mobile {
+    display: flex;
+    color: $main_accent;
+    margin: auto auto auto 16px;
     position: relative;
   }
   &:hover {
     border: 1px solid $light_gray;
     border-radius: 50%;
     color: $light_gray;
-    
-    
   }
   &:active {
     border: 1px solid $light_gray;
     border-radius: 50%;
     color: $main_accent;
-    
-    
   }
 }
 
-.menu__item_mobile_lang{
-  display:none;
-  @include mobile{
-    display:block;
+.menu__item_mobile_lang {
+  display: none;
+  @include mobile {
+    display: block;
     position: absolute;
-    bottom:0;
+    bottom: 0;
     padding-bottom: 12px;
-    
   }
 }
