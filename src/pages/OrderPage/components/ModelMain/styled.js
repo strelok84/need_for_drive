@@ -243,7 +243,7 @@ export const AllModel = styled.input`
     align-items: center;
     user-select: none;
     font: 300 normal 14px/16px "Roboto", sans-serif;
-    color:${constants.dark_gray};
+    color: ${constants.dark_gray};
   }
   + label::before {
     content: "";
@@ -266,8 +266,8 @@ export const AllModel = styled.input`
     width: 0.7em;
     height: 0.7em;
   }
-  :checked + label{
-      color:${constants.main_black};
+  :checked + label {
+    color: ${constants.main_black};
   }
 `;
 export const Econom = styled.input`
@@ -282,7 +282,7 @@ export const Econom = styled.input`
     align-items: center;
     user-select: none;
     font: 300 normal 14px/16px "Roboto", sans-serif;
-    color:${constants.dark_gray};
+    color: ${constants.dark_gray};
   }
   + label::before {
     content: "";
@@ -305,9 +305,9 @@ export const Econom = styled.input`
     width: 0.7em;
     height: 0.7em;
   }
-  :checked + label{
-    color:${constants.main_black};
-}
+  :checked + label {
+    color: ${constants.main_black};
+  }
 `;
 export const Premium = styled.input`
   box-sizing: border-box;
@@ -320,7 +320,7 @@ export const Premium = styled.input`
     align-items: center;
     user-select: none;
     font: 300 normal 14px/16px "Roboto", sans-serif;
-    color:${constants.dark_gray};
+    color: ${constants.dark_gray};
   }
   + label::before {
     content: "";
@@ -343,7 +343,23 @@ export const Premium = styled.input`
     width: 0.7em;
     height: 0.7em;
   }
-  :checked + label{
-    color:${constants.main_black};
-}
+  :checked + label {
+    color: ${constants.main_black};
+  }
+`;
+export const CardWrapper = styled.div`
+  width: 736px;
+  margin-top: 16px;
+  @media (min-width: ${constants.screen_dx_min}px) and (max-width: ${constants.screen_dx -
+    1}px) {
+    width: 80%;
+  }
+  @media (min-width: ${constants.screen_tablet}px) and (max-width: ${constants.screen_dx_min -
+    1}px) {
+    width: 80%;
+  }
+  @media (max-width: ${constants.screen_tablet - 1}px) {
+    width: 95%;
+    margin-right: 5%;
+  }
 `;
