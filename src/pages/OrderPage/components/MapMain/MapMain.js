@@ -94,7 +94,7 @@ function MapMain() {
                   <br />
                   Пункт выдачи
                 </div>
-                {<div className="form-main__dots"> </div>}
+                {<div className="form-main__dots"></div>}
                 <div className="form-main__address">
                   Ульяновск,
                   <br />

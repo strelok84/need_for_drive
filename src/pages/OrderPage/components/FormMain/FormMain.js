@@ -1,17 +1,21 @@
 import React from "react";
 import "./formMain.scss";
 import OrderHeader from "../OrderHeader/OrderHeader";
-import OrderMain from "../MapMain/MapMain";
+import MapMain from "../MapMain/MapMain";
+import ModelMain from "../ModelMain/ModelMain";
 
-class Map extends React.Component {
-  render() {
-    return (
-      <div className="form__map">
-        <OrderHeader />
-        <OrderMain />
-      </div>
-    );
-  }
+function Map(props) {
+  const components = {
+    MapMain: MapMain,
+    ModelMain:ModelMain
+  };
+  const Tagname = components[props.orderPage]
+  return (
+    <div className="form__map">
+      <OrderHeader />
+      <Tagname />
+    </div>
+  );
 }
 
 export default Map;
