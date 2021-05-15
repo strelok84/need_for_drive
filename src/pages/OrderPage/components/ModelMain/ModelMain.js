@@ -12,6 +12,11 @@ import {
   FormMainAddress,
   FormMainCost,
   FormMainBtn,
+  FormMainModel,
+  ModelRadioWrapper,
+  AllModel,
+  Econom,
+  Premium,
 } from "./styled";
 
 function Model() {
@@ -19,6 +24,16 @@ function Model() {
     <FormMain>
       <FormMainWrapper>
         <FormMainLent>
+          <FormMainModel>
+            <ModelRadioWrapper>
+              <AllModel name="model" type="radio" value="all" id="allmodel" />
+              <label for="allmodel">Все модели</label>
+              <Econom name="model" type="radio" value="econom" id="econom"/>
+              <label for="econom">Эконом</label>
+              <Premium name="model" type="radio" value="premium" id="premium"/>
+              <label for="premium">Премиум</label>
+            </ModelRadioWrapper>
+          </FormMainModel>
           <FormMainAside>
             <FormMainLane>
               <FormMainOrder>Ваш заказ</FormMainOrder>
