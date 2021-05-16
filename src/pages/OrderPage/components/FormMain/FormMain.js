@@ -4,6 +4,7 @@ import OrderHeader from "../OrderHeader/OrderHeader";
 import MapMain from "../MapMain/MapMain";
 import ModelMain from "../ModelMain/ModelMain";
 
+
 function Map(props) {
   const components = {
     MapMain: MapMain,
@@ -12,7 +13,7 @@ function Map(props) {
   const Tagname = components[props.orderPage]
   return (
     <div className="form__map">
-      <OrderHeader />
+      <OrderHeader name={props.name} />
       <Tagname />
     </div>
   );

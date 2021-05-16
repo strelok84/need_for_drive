@@ -1,9 +1,34 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./orderHeader.scss";
 import Sity_marker from "../../../../assets/img/Sity_marker.svg";
 import triangle from "../../../../assets/img/triangle.svg";
 
-function Order_header() {
+function Order_header(props) {
+  useEffect(() => {
+    const place = document.querySelector(".lane-breadcrumbs__place");
+    const model = document.querySelector(".lane-breadcrumbs__model");
+    const add = document.querySelector(".lane-breadcrumbs__add");
+    const total = document.querySelector(".lane-breadcrumbs__total");
+    const width = window.innerWidth;
+    if (width < 768) {
+      switch (props.name) {
+        case "model":
+          model.classList.remove("hidden");
+          break;
+        case "place":
+          place.classList.remove("hidden");
+          break;
+        case "add":
+          add.classList.remove("add");
+          break;
+        case "total":
+          total.classList.remove("hidden");
+          break;
+        default:
+          console.log("wrong_name")
+      }
+    }
+  });
   return (
     <div className="form-header">
       <div className="form-header__wrapper">
@@ -21,19 +46,22 @@ function Order_header() {
       </div>
       <div className="breadcrumbs-wrapper">
         <div className="lane-breadcrumbs">
-          <a href="/need_for_drive/map" className="lane-breadcrumbs__place">
+          <a
+            href="/need_for_drive/map"
+            className="lane-breadcrumbs__place hidden "
+          >
             Местоположение
           </a>
           <img src={triangle}></img>
-          <a href="#" className="lane-breadcrumbs__model">
+          <a href="#" className="lane-breadcrumbs__model hidden">
             Модель
           </a>
           <img src={triangle}></img>
-          <a href="#" className="lane-breadcrumbs__add">
+          <a href="#" className="lane-breadcrumbs__add hidden">
             Дополнительно
           </a>
           <img src={triangle}></img>
-          <a href="#" className="lane-breadcrumbs__total">
+          <a href="#" className="lane-breadcrumbs__total hidden">
             Итого
           </a>
         </div>

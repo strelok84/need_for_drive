@@ -27,29 +27,75 @@ const model = [
     costMin: 12000,
     costMax: 25000,
     imgURL: "",
+    class: "econom",
   },
-  { name: "CRETA", costMin: 12000, costMax: 25000, imgURL: "" },
-  { name: "SONATA", costMin: 10000, costMax: 32000, imgURL: "" },
+  {
+    name: "CRETA",
+    costMin: 12000,
+    costMax: 25000,
+    imgURL: "",
+    class: "premium",
+  },
+  {
+    name: "SONATA",
+    costMin: 10000,
+    costMax: 32000,
+    imgURL: "",
+    class: "econom",
+  },
+  {
+    name: "SONATA",
+    costMin: 10000,
+    costMax: 32000,
+    imgURL: "",
+    class: "econom",
+  },
+  {
+    name: "SONATA",
+    costMin: 10000,
+    costMax: 32000,
+    imgURL: "",
+    class: "econom",
+  },
+  {
+    name: "SONATA",
+    costMin: 10000,
+    costMax: 32000,
+    imgURL: "",
+    class: "econom",
+  },
+  {
+    name: "SONATA",
+    costMin: 10000,
+    costMax: 32000,
+    imgURL: "",
+    class: "econom",
+  },
 ];
 
 function Model() {
+ 
   return (
     <FormMain>
       <FormMainWrapper>
         <FormMainLent>
           <FormMainModel>
             <ModelRadioWrapper>
-              <AllModel name="model" type="radio" value="all" id="allmodel" />
+              <AllModel name="model" type="radio" value="all" id="allmodel" defaultChecked/>
               <label for="allmodel">Все модели</label>
-              <Econom name="model" type="radio" value="econom" id="econom" />
+              <Econom name="model" type="radio" value="econom" id="econom"  />
               <label for="econom">Эконом</label>
               <Premium name="model" type="radio" value="premium" id="premium" />
               <label for="premium">Премиум</label>
             </ModelRadioWrapper>
             <CardWrapper>
-                {model.map((item)=>(
-                    <Card name={item.name} costMin={item.costMin} costMax={item.costMax}/>
-                ))}
+              {model.map((item) => (
+                <Card
+                  name={item.name}
+                  costMin={item.costMin}
+                  costMax={item.costMax}
+                />
+              ))}
             </CardWrapper>
           </FormMainModel>
           <FormMainAside>

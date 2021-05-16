@@ -7,7 +7,7 @@ function Main() {
   return (
     <div className="wrapper">
       <Sidebar gradient={false} />
-      <FormMain orderPage="MapMain" />
+      <FormMain orderPage="MapMain" name='place' />
     </div>
   );
 }

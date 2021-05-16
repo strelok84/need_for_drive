@@ -229,6 +229,10 @@ export const ModelRadioWrapper = styled.div`
     align-self: flex-start;
     margin-left: 10%;
   }
+  @media (max-width: ${constants.screen_tablet - 1}px) {
+    flex-direction: column;
+    align-self: flex-start;
+  }
 `;
 export const AllModel = styled.input`
   box-sizing: border-box;
@@ -244,6 +248,9 @@ export const AllModel = styled.input`
     user-select: none;
     font: 300 normal 14px/16px "Roboto", sans-serif;
     color: ${constants.dark_gray};
+    @media (max-width: ${constants.screen_tablet - 1}px) {
+    margin-top: 1em;
+  }
   }
   + label::before {
     content: "";
@@ -269,7 +276,9 @@ export const AllModel = styled.input`
   :checked + label {
     color: ${constants.main_black};
   }
+ 
 `;
+
 export const Econom = styled.input`
   box-sizing: border-box;
   position: absolute;
@@ -283,6 +292,9 @@ export const Econom = styled.input`
     user-select: none;
     font: 300 normal 14px/16px "Roboto", sans-serif;
     color: ${constants.dark_gray};
+    @media (max-width: ${constants.screen_tablet - 1}px) {
+    margin-top: 1em;
+  }
   }
   + label::before {
     content: "";
@@ -308,6 +320,7 @@ export const Econom = styled.input`
   :checked + label {
     color: ${constants.main_black};
   }
+  
 `;
 export const Premium = styled.input`
   box-sizing: border-box;
@@ -321,6 +334,9 @@ export const Premium = styled.input`
     user-select: none;
     font: 300 normal 14px/16px "Roboto", sans-serif;
     color: ${constants.dark_gray};
+    @media (max-width: ${constants.screen_tablet - 1}px) {
+    margin-top: 1em;
+  }
   }
   + label::before {
     content: "";
@@ -346,13 +362,18 @@ export const Premium = styled.input`
   :checked + label {
     color: ${constants.main_black};
   }
+  
 `;
 export const CardWrapper = styled.div`
   width: 736px;
   margin-top: 16px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,368px);
+  border-collapse: collapse;
   @media (min-width: ${constants.screen_dx_min}px) and (max-width: ${constants.screen_dx -
     1}px) {
     width: 80%;
+    margin-left:10%;
   }
   @media (min-width: ${constants.screen_tablet}px) and (max-width: ${constants.screen_dx_min -
     1}px) {

@@ -143,12 +143,18 @@
   &total {
     margin-left: 16px;
     @include mobile {
-      display: none;
+      margin-left:16%;
     }
   }
   &place{
     @include mobile {
       margin-left:16%;
     }
+  }
+}
+
+.hidden{
+  @include mobile {
+  display:none;
   }
 }
