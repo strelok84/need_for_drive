@@ -6,6 +6,9 @@ export const FormMain = styled.div`
   grid-row: 17/101;
   display: grid;
   grid-template-columns: repeat(43, 1fr);
+  &.basket{
+    grid-column:1/87;
+  }
   @media (max-width: ${constants.screen_tablet - 1}px) {
     grid-column: 15/87;
     color: ${constants.main_accent};
@@ -87,6 +90,9 @@ export const FormMainOrder = styled.div`
   font: 500 normal 18px/21px "Roboto", sans-serif;
   padding-top: 32px;
   text-align: right;
+  &.basket{
+    display:block;
+  }
   @media (min-width: ${constants.screen_dx_min}px) and (max-width: ${constants.screen_dx -
     1}px) {
     text-align: center;
@@ -110,6 +116,12 @@ export const FormMainPoint = styled.div`
   display: flex;
   justify-content: space-between;
   padding-top: 32px;
+  &.basket{
+    display:flex;
+    width:90%;
+    margin-right:5%;
+    margin-left:5%;
+  }
   @media (min-width: ${constants.screen_tablet}px) and (max-width: ${constants.screen_dx_min -
     1}px) {
     padding-top: 8px;
@@ -136,12 +148,43 @@ export const FormMainAddress = styled.div`
   color: ${constants.dark_gray};
   text-align: right;
 `;
+export const FormMainModelAside = styled.div`
+  width: 100%;
+  padding-left: 32px;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 16px;
+  &.basket{
+    display:flex;
+    width:90%;
+    margin-right:5%;
+    margin-left:5%;
+  }
+  @media (min-width: ${constants.screen_tablet}px) and (max-width: ${constants.screen_dx_min -
+    1}px) {
+    padding-top: 8px;
+    display: none;
+  }
+  @media (max-width: ${constants.screen_tablet - 1}px) {
+    display: none;
+  }
+  @media (min-width: ${constants.screen_dx_min}px) and (max-width: ${constants.screen_dx -
+    1}px) {
+    width: 80%;
+  }
+`;
 export const FormMainCost = styled.div`
   width: 100%;
   padding-left: 32px;
-  font: 500 normal 16px/16px "Roboto", sans-serif;
+  font: 400 normal 16px/16px "Roboto", sans-serif;
   color: ${constants.main_black};
   margin-top: 32px;
+  &.basket{
+    display:block;
+    width:90%;
+    margin-right:5%;
+    margin-left:5%;
+  }
   @media (min-width: ${constants.screen_tablet}px) and (max-width: ${constants.screen_dx_min -
     1}px) {
     margin-top: 8px;
@@ -166,6 +209,7 @@ export const FormMainBtn = styled.div`
   padding: 0;
   margin-top: 32px;
   min-width: 280px;
+  max-width: 320px;
   height: 48px;
   border: 0;
   border-radius: 8px;
@@ -173,14 +217,21 @@ export const FormMainBtn = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  
   @media (min-width: ${constants.screen_tablet}px) and (max-width: ${constants.screen_dx_min -
     1}px) {
-    margin-bottom: 22px;
+    position: fixed;
+    bottom: 22px;
+    left: 20%;
+   
   }
   @media (max-width: ${constants.screen_tablet - 1}px) {
-    min-width: 160px;
-    width: 100%;
-    margin-bottom: 22px;
+    min-width: 160px; z-index: 0;
+    width: 60vw;   
+    position: fixed;
+    bottom: 1em;
+    left: 10%;
+    
   }
   @media (min-width: ${constants.screen_dx_min}px) and (max-width: ${constants.screen_dx -
     1}px) {
@@ -197,6 +248,9 @@ export const FormMainModel = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
+  &.disable{
+    display:none;
+  }
   font: 300 normal 14px/16px "Roboto", sans-serif;
   @media (min-width: ${constants.screen_dx_min}px) and (max-width: ${constants.screen_dx -
     1}px) {
@@ -219,6 +273,9 @@ export const ModelRadioWrapper = styled.div`
   max-width: 100%;
   display: flex;
   align-items: flex-start;
+  &.disable{
+    display:none;
+  }
   @media (min-width: ${constants.screen_dx_min}px) and (max-width: ${constants.screen_dx -
     1}px) {
     align-self: flex-start;
@@ -249,8 +306,8 @@ export const AllModel = styled.input`
     font: 300 normal 14px/16px "Roboto", sans-serif;
     color: ${constants.dark_gray};
     @media (max-width: ${constants.screen_tablet - 1}px) {
-    margin-top: 1em;
-  }
+      margin-top: 1em;
+    }
   }
   + label::before {
     content: "";
@@ -276,7 +333,6 @@ export const AllModel = styled.input`
   :checked + label {
     color: ${constants.main_black};
   }
- 
 `;
 
 export const Econom = styled.input`
@@ -293,8 +349,8 @@ export const Econom = styled.input`
     font: 300 normal 14px/16px "Roboto", sans-serif;
     color: ${constants.dark_gray};
     @media (max-width: ${constants.screen_tablet - 1}px) {
-    margin-top: 1em;
-  }
+      margin-top: 1em;
+    }
   }
   + label::before {
     content: "";
@@ -320,7 +376,6 @@ export const Econom = styled.input`
   :checked + label {
     color: ${constants.main_black};
   }
-  
 `;
 export const Premium = styled.input`
   box-sizing: border-box;
@@ -335,8 +390,8 @@ export const Premium = styled.input`
     font: 300 normal 14px/16px "Roboto", sans-serif;
     color: ${constants.dark_gray};
     @media (max-width: ${constants.screen_tablet - 1}px) {
-    margin-top: 1em;
-  }
+      margin-top: 1em;
+    }
   }
   + label::before {
     content: "";
@@ -362,18 +417,20 @@ export const Premium = styled.input`
   :checked + label {
     color: ${constants.main_black};
   }
-  
 `;
 export const CardWrapper = styled.div`
   width: 736px;
-  margin-top: 16px;
-  display:grid;
-  grid-template-columns:repeat(auto-fit,368px);
+  margin-top: 48px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 368px);
   border-collapse: collapse;
+  &.disable{
+    display:none;
+  }
   @media (min-width: ${constants.screen_dx_min}px) and (max-width: ${constants.screen_dx -
     1}px) {
     width: 80%;
-    margin-left:10%;
+    margin-left: 10%;
   }
   @media (min-width: ${constants.screen_tablet}px) and (max-width: ${constants.screen_dx_min -
     1}px) {
@@ -382,5 +439,18 @@ export const CardWrapper = styled.div`
   @media (max-width: ${constants.screen_tablet - 1}px) {
     width: 95%;
     margin-right: 5%;
+  }
+`;
+export const Basket = styled.img`
+  @media (min-width: ${constants.screen_dx_min - 1}px) {
+    display: none;
+  }
+  height: 48px;
+  position: fixed;
+  bottom: 22px;
+  right: 5%;
+
+  :active {
+    filter: brightness(0.5) sepia(1) saturate(2000%) hue-rotate(120deg);
   }
 `;

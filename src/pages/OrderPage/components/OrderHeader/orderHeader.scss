@@ -20,10 +20,12 @@
   justify-content: center;
   align-items: center;
   border-bottom: 1px solid $light_gray;
+  
   @include mobile {
     align-items: flex-start;
     margin-top: 20px;
     border:0;
+    width:90%;
   }
 }
 
@@ -33,9 +35,7 @@
   justify-content: center;
   align-items: center;
   @include mobile {
-    position: absolute;
-    top:12vh;
-    left:0;
+    margin-left:-16.5%;
     width:100vw;
     border-bottom: 1px solid $light_gray;
     border-top: 1px solid $light_gray;
@@ -70,6 +70,8 @@
   @include mobile {
     padding-left: 0;
     padding-right: 0;
+    justify-content: left;
+    
   }
 }
 
@@ -96,6 +98,7 @@
   color: $main_accent;
   @include mobile {
     font: 700 normal 24px/24px "Roboto", sans-serif;
+    margin-right: 1em;
   }
 }
 
@@ -107,6 +110,7 @@
   color: $dark_gray;
   @include mobile {
     font: 400 normal 12px "Roboto", sans-serif;
+   
   }
 }
 

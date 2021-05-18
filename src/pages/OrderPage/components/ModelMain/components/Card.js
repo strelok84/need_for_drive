@@ -28,8 +28,8 @@ const CardStyle = styled.div`
      border:5px solid green;
     }
     @media (max-width: ${constants.screen_tablet - 1}px) {
-    width: 60%;
-    
+    width: 68%;
+    height: 160px;
   }
 `;
 

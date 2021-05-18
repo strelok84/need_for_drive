@@ -68,7 +68,7 @@
   left: 16px;
   width: 32px;
   height: 32px;
-  z-index: 3;
+  z-index: 30;
   margin: 0;
   @include desktop_min {
     top: 29px;
@@ -91,7 +91,7 @@
   left: 16px;
   width: 32px;
   height: 32px;
-  z-index: 2;
+  z-index: 20;
   justify-content: center;
   @include desktop_min {
     top: 29px;
@@ -154,7 +154,7 @@
     rgba(11, 15, 18, 1) calc(50% + 48px),
     rgba(11, 15, 18, 0.9) calc(50% + 48px)
   );
-  z-index: 1;
+  z-index: 10;
   li:nth-child(1) {
     margin-top: 128px;
     @include mobile {
