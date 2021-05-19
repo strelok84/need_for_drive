@@ -74,7 +74,7 @@ function Card(props) {
       <div>
       <Name>{props.name}</Name>
       <Cost>
-        {props.costMin}-{props.costMax}
+        {props.costMin}-{props.costMax} {"\u20BD"}
       </Cost>
       </div>
       <ModelImg src={src} alt="model"></ModelImg>

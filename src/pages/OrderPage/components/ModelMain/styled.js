@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components/macro";
 import constants from "../../../../styles/constants";
 
 export const FormMain = styled.div`
@@ -6,19 +6,20 @@ export const FormMain = styled.div`
   grid-row: 17/101;
   display: grid;
   grid-template-columns: repeat(43, 1fr);
+  z-index: 10;
   &.basket{
     grid-column:1/87;
   }
   @media (max-width: ${constants.screen_tablet - 1}px) {
     grid-column: 15/87;
-    color: ${constants.main_accent};
-  }
+    
 `;
 export const FormMainWrapper = styled.div`
   grid-column: 1/44;
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index:100;
   @media (min-width: ${constants.screen_tablet}) and (max-width: ${constants.screen_dx_min +
     1}px) {
     align-items: flex-start;
@@ -29,6 +30,7 @@ export const FormMainLent = styled.div`
   width: 1248px;
   height: 100%;
   display: flex;
+  z-index:1000;
   @media (min-width: ${constants.screen_dx_min}px) and (max-width: ${constants.screen_dx -
     1}px) {
     width: 100%;
@@ -37,10 +39,14 @@ export const FormMainLent = styled.div`
     1}px) {
     width: 100%;
     flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
   }
   @media (max-width: ${constants.screen_tablet - 1}px) {
     width: 100%;
     flex-direction: column;
+    justify-content: space-around;
+    
   }
 `;
 export const FormMainAside = styled.div`
@@ -53,11 +59,14 @@ export const FormMainAside = styled.div`
     flex-direction: column;
     height: auto;
     border: 0;
+   
   }
   @media (min-width: ${constants.screen_tablet}px) and (max-width: ${constants.screen_dx_min -
     1}px) {
+   
     grid-column: 3/31;
-    margin-left: 10%;
+   margin-left:10%;
+   margin-top:2em;
     border: 0;
     height: auto;
   }
@@ -77,6 +86,7 @@ export const FormMainLane = styled.div`
     1}px) {
     margin-left: 0;
     align-items: flex-start;
+    min-width: 320px;
   }
   @media (max-width: ${constants.screen_tablet - 1}px) {
     margin-right: 5%;
@@ -92,6 +102,7 @@ export const FormMainOrder = styled.div`
   text-align: right;
   &.basket{
     display:block;
+    
   }
   @media (min-width: ${constants.screen_dx_min}px) and (max-width: ${constants.screen_dx -
     1}px) {
@@ -99,7 +110,8 @@ export const FormMainOrder = styled.div`
   }
   @media (min-width: ${constants.screen_tablet}px) and (max-width: ${constants.screen_dx_min -
     1}px) {
-    text-align: center;
+    text-align: left;
+    padding-left: 0;
     padding-top: 8px;
     display: none;
   }
@@ -121,10 +133,16 @@ export const FormMainPoint = styled.div`
     width:90%;
     margin-right:5%;
     margin-left:5%;
+    @media (min-width: ${constants.screen_tablet}px) and (max-width: ${constants.screen_dx_min -
+    1}px) {
+      margin-left:0;
+      padding-left: 0;
+    }
   }
   @media (min-width: ${constants.screen_tablet}px) and (max-width: ${constants.screen_dx_min -
     1}px) {
     padding-top: 8px;
+    
     display: none;
   }
   @media (max-width: ${constants.screen_tablet - 1}px) {
@@ -159,6 +177,11 @@ export const FormMainModelAside = styled.div`
     width:90%;
     margin-right:5%;
     margin-left:5%;
+    @media (min-width: ${constants.screen_tablet}px) and (max-width: ${constants.screen_dx_min -
+    1}px) {
+      margin-left:0;
+      padding-left: 0;
+    }
   }
   @media (min-width: ${constants.screen_tablet}px) and (max-width: ${constants.screen_dx_min -
     1}px) {
@@ -184,6 +207,11 @@ export const FormMainCost = styled.div`
     width:90%;
     margin-right:5%;
     margin-left:5%;
+    @media (min-width: ${constants.screen_tablet}px) and (max-width: ${constants.screen_dx_min -
+    1}px) {
+      margin-left:0;
+      padding-left: 0;
+    }
   }
   @media (min-width: ${constants.screen_tablet}px) and (max-width: ${constants.screen_dx_min -
     1}px) {
@@ -449,7 +477,7 @@ export const Basket = styled.img`
   position: fixed;
   bottom: 22px;
   right: 5%;
-
+  z-index:10000;
   :active {
     filter: brightness(0.5) sepia(1) saturate(2000%) hue-rotate(120deg);
   }

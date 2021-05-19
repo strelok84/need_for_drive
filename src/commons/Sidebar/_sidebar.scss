@@ -8,6 +8,7 @@
   display: grid;
   grid-template-columns: repeat(4, 16px);
   position:fixed;
+  z-index: 300000;
   @include tablet {
     grid-template-columns: repeat(4, 21.5px);
   }
@@ -60,6 +61,7 @@
 
 .menu {
   grid-column: 2/4;
+  z-index: 300000;
 }
 .menu__toggle {
   opacity: 0;
@@ -68,7 +70,7 @@
   left: 16px;
   width: 32px;
   height: 32px;
-  z-index: 30;
+  z-index: 300000;
   margin: 0;
   @include desktop_min {
     top: 29px;
