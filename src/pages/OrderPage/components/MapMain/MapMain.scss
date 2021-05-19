@@ -18,6 +18,9 @@
   display: flex;
   flex-direction: column;
   font: 300 normal 14px/16px "Roboto", sans-serif;
+  &.disable {
+    display: none;
+  }
   &--order {
     display: flex;
     flex-direction: column;
@@ -32,6 +35,8 @@
     }
     @include mobile {
       max-width: 100%;
+      margin-top: 1em;
+    margin-bottom: 1em;
     }
     @include desktop_min {
       align-self: flex-start;
@@ -49,7 +54,6 @@
     font: 300 normal 14px/16px "Roboto", sans-serif;
     color: $main_black;
     outline: none;
-    
   }
   &--point {
     border: 0;
@@ -69,7 +73,7 @@
   }
   @include mobile {
     width: 100%;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     grid-column: 1/44;
   }
@@ -132,14 +136,15 @@
     flex-direction: column;
   }
   @include tablet {
-    grid-column:3/31;
-    margin-left:10%;
-    border:0;
-    height:auto;
+    grid-column: 3/31;
+    margin-left: 10%;
+    border: 0;
+    height: auto;
+    margin-top:2em;
   }
   @include mobile {
-    height:auto;
-    border:0;
+    height: auto;
+    border: 0;
   }
 }
 
@@ -155,11 +160,12 @@
   }
   @include tablet {
     margin-left: 0;
-    align-items: flex-start;   
+    align-items: flex-start;
+    min-width: 320px;
   }
   @include mobile {
     margin-right: 5%;
-    margin-left:0;
+    margin-left: 0;
     align-items: center;
   }
 }
@@ -182,18 +188,29 @@
     font: 500 normal 18px/21px "Roboto", sans-serif;
     padding-top: 32px;
     text-align: right;
+    &.basket{
+      text-align: left;
+    padding-left: 0;
+    padding-top: 8px;
+    }
     @include desktop_min {
       text-align: center;
     }
     @include tablet {
       text-align: center;
-      padding-top:8px;
-      display:none;
+      padding-top: 8px;
+      display: none;
+      &.basket {
+        display: block;
+      }
     }
     @include mobile {
       padding-top: 0;
       text-align: center;
-      display:none;
+      display: none;
+      &.basket {
+        display: block;
+      }
     }
   }
   &piсkup {
@@ -209,12 +226,28 @@
     font: 500 normal 16px/16px "Roboto", sans-serif;
     color: $main_black;
     margin-top: 32px;
+    &.basket {
+      display: block;
+      width: 90%;
+      margin-right: 5%;
+      margin-left: 5%;
+      @include tablet {
+        margin-left: 0;
+        padding-left: 0;
+      }
+      @include mobile {
+        margin-left: -1em;
+        margin-top:1em;
+        padding-left: 0;
+        text-align: left;
+      }
+    }
     @include tablet {
-      margin-top:8px;
-      display:none;
+      margin-top: 8px;
+      display: none;
     }
     @include mobile {
-      display:none;
+      display: none;
     }
     @include desktop_min {
       min-width: 280px;
@@ -224,12 +257,25 @@
     display: flex;
     justify-content: space-between;
     padding-top: 32px;
+    &.basket {
+      display: flex;
+      width: 90%;
+      margin-right: 5%;
+     
+      @include tablet {
+        margin-left: 0;
+        padding-left: 0;
+      }
+    }
     @include tablet {
-      padding-top:8px;
-      display:none;
+      padding-top: 8px;
+      display: none;
     }
     @include mobile {
-      display:none;
+      display: none;
+      padding-top: 8px;
+      margin-left: -1em;
+        padding-left: 0;
     }
   }
   &dots {
@@ -237,6 +283,8 @@
     border-bottom: 2px dotted $dark_gray;
   }
   &btn {
+    width: 100%;
+    padding-left: 32px;
     font: 500 normal 18px "Roboto", sans-serif;
     color: #fff;
     line-height: 21px;
@@ -244,6 +292,7 @@
     padding: 0;
     margin-top: 32px;
     min-width: 280px;
+    max-width: 320px;
     height: 48px;
     border: 0;
     border-radius: 8px;
@@ -251,19 +300,27 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    @include tablet {
-      margin-bottom:22px;
+
+    @media (min-width: $screen_tablet) and (max-width: $screen_dx_min -
+    1px) {
+      position: fixed;
+      bottom: 22px;
+      left: 20%;
     }
-    @include mobile {
-      min-width:160px;
-      width:100%;
-      margin-bottom:22px;
+    @media (max-width: $screen_tablet - 1px) {
+      min-width: 160px;
+      z-index: 0;
+      width: 60vw;
+      position: fixed;
+      bottom: 1em;
+      left: 15%;
     }
-    @include desktop_min {
-      width:80%;
-     min-width: auto;
-     margin-left:auto;
-     margin-right:auto;
+    @media (min-width: $screen_dx_min) and (max-width: $screen_dx -
+    1px) {
+      width: 80%;
+      min-width: auto;
+      margin-left: auto;
+      margin-right: auto;
     }
   }
 }
@@ -272,13 +329,13 @@
   @include mobile {
     display: none;
   }
-  @include desktop_min{
+  @include desktop_min {
     align-self: flex-start;
-    margin-left:10%;
+    margin-left: 10%;
   }
   @include tablet {
     align-self: flex-start;
-    margin-left:10%;
+    margin-left: 10%;
   }
 }
 
@@ -291,12 +348,13 @@
   }
   @include tablet {
     width: 80%;
-    height: 80%;
+    height: 60%;
   }
   @include mobile {
     width: 95%;
-    height: 100%;
-    margin-right:5%;
+    height: 50%;
+    margin-top: 5%;
+    margin-right: 5%;
   }
 }
 
@@ -319,19 +377,12 @@
     width: 100%;
   }
   @include tablet {
-    
     width: 100%;
-    flex-direction:column;
+    flex-direction: column;
   }
   @include mobile {
     width: 100%;
     flex-direction: column;
+    justify-content: space-around;
   }
 }
-
-
-
-
-
-
-

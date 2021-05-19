@@ -2,6 +2,8 @@ import React from "react";
 import "./MapMain.scss";
 import GoogleMapReact from "google-map-react";
 import Select from "react-select";
+import basket from "../../../../assets/img/basket.svg";
+import {Basket} from "./styled";
 
 const cityOptions = [
   { value: "Тьмутаракань", label: "Тьмутаракань" },
@@ -48,6 +50,22 @@ const colourStyles = {
 };
 
 function MapMain() {
+  const aside=()=>{
+    const order = document.querySelector(".form-main__order");
+    const pickpoint = document.querySelector(".form-main__point");
+    
+    const cost = document.querySelector(".form-main__cost");
+    //const cardWrapper = document.querySelector(".form-main__cost");
+    const formMainMap = document.querySelector(".form-main__map");
+    const formMain = document.querySelector(".form-main");
+    order.classList.toggle("basket");
+    pickpoint.classList.toggle("basket");
+    
+    cost.classList.toggle("basket");
+    formMain.classList.toggle("basket");
+    //cardWrapper.classList.toggle("disable");
+    formMainMap.classList.toggle("disable");
+  }
   return (
     <div className="form-main">
       <div className="form-main__wrapper">
@@ -109,6 +127,12 @@ function MapMain() {
               </div>
             </div>
           </div>
+          <Basket
+            src={basket}
+            onClick={() => {
+              aside();
+            }}
+          />
         </div>
       </div>
     </div>

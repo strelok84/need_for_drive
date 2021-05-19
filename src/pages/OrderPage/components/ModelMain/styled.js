@@ -12,8 +12,9 @@ export const FormMain = styled.div`
   }
   @media (max-width: ${constants.screen_tablet - 1}px) {
     grid-column: 15/87;
-    
+    }    
 `;
+
 export const FormMainWrapper = styled.div`
   grid-column: 1/44;
   display: flex;
@@ -102,7 +103,9 @@ export const FormMainOrder = styled.div`
   text-align: right;
   &.basket{
     display:block;
-    
+    text-align:left;
+   
+    width:90%;
   }
   @media (min-width: ${constants.screen_dx_min}px) and (max-width: ${constants.screen_dx -
     1}px) {
@@ -133,6 +136,7 @@ export const FormMainPoint = styled.div`
     width:90%;
     margin-right:5%;
     margin-left:5%;
+   
     @media (min-width: ${constants.screen_tablet}px) and (max-width: ${constants.screen_dx_min -
     1}px) {
       margin-left:0;
@@ -147,6 +151,9 @@ export const FormMainPoint = styled.div`
   }
   @media (max-width: ${constants.screen_tablet - 1}px) {
     display: none;
+    &.basket{
+      padding-top: 8px;
+    }
   }
   @media (min-width: ${constants.screen_dx_min}px) and (max-width: ${constants.screen_dx -
     1}px) {
@@ -478,7 +485,7 @@ export const Basket = styled.img`
   bottom: 22px;
   right: 5%;
   z-index:10000;
-  :active {
+  &.basket{
     filter: brightness(0.5) sepia(1) saturate(2000%) hue-rotate(120deg);
   }
 `;

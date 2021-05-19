@@ -1,4 +1,4 @@
-import React,{useEffect} from "react";
+import React, { useEffect } from "react";
 import {
   FormMain,
   FormMainWrapper,
@@ -19,7 +19,7 @@ import {
   Premium,
   CardWrapper,
   FormMainModelAside,
-  Basket
+  Basket,
 } from "./styled";
 import Card from "./components/Card";
 import basket from "../../../../assets/img/basket.svg";
@@ -76,36 +76,41 @@ const model = [
   },
 ];
 
-function Model() {
-  useEffect(()=>{
-    
-  })
-  const aside=()=>{
-   const order=document.getElementById("order");
-   const pickpoint=document.getElementById("pickpoint");
-   const model=document.getElementById("model");
-   const cost=document.getElementById("cost");
-   const cardWrapper=document.getElementById("cardWrapper");
-   const formMainModel=document.getElementById("formMainModel");
-   const formMain=document.getElementById("formMain");
-   order.classList.toggle("basket");
-   pickpoint.classList.toggle("basket");
-   model.classList.toggle("basket");
-   cost.classList.toggle("basket");
-   formMain.classList.toggle("basket");
-   cardWrapper.classList.toggle("disable");
-   formMainModel.classList.toggle("disable");
-  }
-  
+function Model() {  
+  const aside = () => {
+    const order = document.getElementById("order");
+    const pickpoint = document.getElementById("pickpoint");
+    const model = document.getElementById("model");
+    const cost = document.getElementById("cost");
+    const cardWrapper = document.getElementById("cardWrapper");
+    const formMainModel = document.getElementById("formMainModel");
+    const formMain = document.getElementById("formMain");
+    const basket = document.getElementById("basket");
+    basket.classList.toggle("basket");
+    order.classList.toggle("basket");
+    pickpoint.classList.toggle("basket");
+    model.classList.toggle("basket");
+    cost.classList.toggle("basket");
+    formMain.classList.toggle("basket");
+    cardWrapper.classList.toggle("disable");
+    formMainModel.classList.toggle("disable");
+  };
+
   return (
     <FormMain id="formMain">
       <FormMainWrapper>
         <FormMainLent>
           <FormMainModel id="formMainModel">
             <ModelRadioWrapper id="modelRadioWrapper">
-              <AllModel name="model" type="radio" value="all" id="allmodel" defaultChecked/>
+              <AllModel
+                name="model"
+                type="radio"
+                value="all"
+                id="allmodel"
+                defaultChecked
+              />
               <label for="allmodel">Все модели</label>
-              <Econom name="model" type="radio" value="econom" id="econom"  />
+              <Econom name="model" type="radio" value="econom" id="econom" />
               <label for="econom">Эконом</label>
               <Premium name="model" type="radio" value="premium" id="premium" />
               <label for="premium">Премиум</label>
@@ -140,12 +145,19 @@ function Model() {
                 <FormMainDots></FormMainDots>
                 <FormMainAddress>Hundai,I30 N</FormMainAddress>
               </FormMainModelAside>
-              <FormMainCost id="cost">Цена: от 10000 до 32000 {"\u20BD"}</FormMainCost>
+              <FormMainCost id="cost">
+                Цена: от 10000 до 32000 {"\u20BD"}
+              </FormMainCost>
               <FormMainBtn>Дополнительно</FormMainBtn>
-
             </FormMainLane>
           </FormMainAside>
-          <Basket src={basket} onClick={()=>{aside()}} />
+          <Basket
+            id="basket"
+            src={basket}
+            onClick={() => {
+              aside();
+            }}
+          />
         </FormMainLent>
       </FormMainWrapper>
     </FormMain>
