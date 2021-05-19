@@ -4,6 +4,7 @@ import { Route, Switch, Redirect } from "react-router-dom";
 import Main from "./pages/Main/Main";
 import LocationPage from "./pages/OrderPage/LocationPage";
 import ModelPage from "./pages/OrderPage/ModelPage";
+import AddPage from "./pages/OrderPage/AddPage";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Switch>        
         <Route path="/map" component={LocationPage} />
         <Route path="/model" component={ModelPage} />
+        <Route path="/add" component={AddPage} />
         <Route exact path="/" component={Main} />
         <Redirect to="/" />
       </Switch>
