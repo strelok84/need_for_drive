@@ -3,7 +3,7 @@ import "./MapMain.scss";
 import GoogleMapReact from "google-map-react";
 import Select from "react-select";
 import basket from "../../../../assets/img/basket.svg";
-import {Basket} from "./styled";
+import { Basket } from "./styled";
 
 const cityOptions = [
   { value: "Тьмутаракань", label: "Тьмутаракань" },
@@ -22,11 +22,11 @@ const cityOptions = [
 ];
 const inputStyles = () => ({
   border: "none",
-  borderBottom: "1px solid #999999",  
+  borderBottom: "1px solid #999999",
   borderRadius: 0,
   boxShadow: "none",
   minHeight: "19px",
-  margin:"auto 5% auto auto"
+  margin: "auto 5% auto auto",
 });
 
 const colourStyles = {
@@ -50,22 +50,20 @@ const colourStyles = {
 };
 
 function MapMain() {
-  const aside=()=>{
+  const aside = () => {
     const order = document.querySelector(".form-main__order");
     const pickpoint = document.querySelector(".form-main__point");
-    
     const cost = document.querySelector(".form-main__cost");
-    //const cardWrapper = document.querySelector(".form-main__cost");
     const formMainMap = document.querySelector(".form-main__map");
     const formMain = document.querySelector(".form-main");
+    const basket = document.getElementById("basket");
+    basket.classList.toggle("basket");
     order.classList.toggle("basket");
     pickpoint.classList.toggle("basket");
-    
     cost.classList.toggle("basket");
     formMain.classList.toggle("basket");
-    //cardWrapper.classList.toggle("disable");
     formMainMap.classList.toggle("disable");
-  }
+  };
   return (
     <div className="form-main">
       <div className="form-main__wrapper">
@@ -128,6 +126,7 @@ function MapMain() {
             </div>
           </div>
           <Basket
+            id="basket"
             src={basket}
             onClick={() => {
               aside();

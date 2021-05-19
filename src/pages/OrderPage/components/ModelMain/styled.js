@@ -7,12 +7,12 @@ export const FormMain = styled.div`
   display: grid;
   grid-template-columns: repeat(43, 1fr);
   z-index: 10;
-  &.basket{
-    grid-column:1/87;
+  &.basket {
+    grid-column: 1/87;
   }
   @media (max-width: ${constants.screen_tablet - 1}px) {
     grid-column: 15/87;
-    }    
+  }
 `;
 
 export const FormMainWrapper = styled.div`
@@ -20,7 +20,7 @@ export const FormMainWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index:100;
+  z-index: 100;
   @media (min-width: ${constants.screen_tablet}) and (max-width: ${constants.screen_dx_min +
     1}px) {
     align-items: flex-start;
@@ -31,7 +31,7 @@ export const FormMainLent = styled.div`
   width: 1248px;
   height: 100%;
   display: flex;
-  z-index:1000;
+  z-index: 1000;
   @media (min-width: ${constants.screen_dx_min}px) and (max-width: ${constants.screen_dx -
     1}px) {
     width: 100%;
@@ -47,7 +47,6 @@ export const FormMainLent = styled.div`
     width: 100%;
     flex-direction: column;
     justify-content: space-around;
-    
   }
 `;
 export const FormMainAside = styled.div`
@@ -60,14 +59,12 @@ export const FormMainAside = styled.div`
     flex-direction: column;
     height: auto;
     border: 0;
-   
   }
   @media (min-width: ${constants.screen_tablet}px) and (max-width: ${constants.screen_dx_min -
     1}px) {
-   
     grid-column: 3/31;
-   margin-left:10%;
-   margin-top:2em;
+    margin-left: 10%;
+    margin-top: 2em;
     border: 0;
     height: auto;
   }
@@ -101,11 +98,11 @@ export const FormMainOrder = styled.div`
   font: 500 normal 18px/21px "Roboto", sans-serif;
   padding-top: 32px;
   text-align: right;
-  &.basket{
-    display:block;
-    text-align:left;
-   
-    width:90%;
+  &.basket {
+    display: block;
+    text-align: left;
+
+    width: 90%;
   }
   @media (min-width: ${constants.screen_dx_min}px) and (max-width: ${constants.screen_dx -
     1}px) {
@@ -131,27 +128,26 @@ export const FormMainPoint = styled.div`
   display: flex;
   justify-content: space-between;
   padding-top: 32px;
-  &.basket{
-    display:flex;
-    width:90%;
-    margin-right:5%;
-    margin-left:5%;
-   
+  &.basket {
+    display: flex;
+    width: 90%;
+    margin-right: 5%;
+    margin-left: 5%;
     @media (min-width: ${constants.screen_tablet}px) and (max-width: ${constants.screen_dx_min -
-    1}px) {
-      margin-left:0;
+      1}px) {
+      margin-left: 0;
       padding-left: 0;
     }
   }
   @media (min-width: ${constants.screen_tablet}px) and (max-width: ${constants.screen_dx_min -
     1}px) {
     padding-top: 8px;
-    
+
     display: none;
   }
   @media (max-width: ${constants.screen_tablet - 1}px) {
     display: none;
-    &.basket{
+    &.basket {
       padding-top: 8px;
     }
   }
@@ -179,14 +175,14 @@ export const FormMainModelAside = styled.div`
   display: flex;
   justify-content: space-between;
   padding-top: 16px;
-  &.basket{
-    display:flex;
-    width:90%;
-    margin-right:5%;
-    margin-left:5%;
+  &.basket {
+    display: flex;
+    width: 90%;
+    margin-right: 5%;
+    margin-left: 5%;
     @media (min-width: ${constants.screen_tablet}px) and (max-width: ${constants.screen_dx_min -
-    1}px) {
-      margin-left:0;
+      1}px) {
+      margin-left: 0;
       padding-left: 0;
     }
   }
@@ -209,14 +205,14 @@ export const FormMainCost = styled.div`
   font: 400 normal 16px/16px "Roboto", sans-serif;
   color: ${constants.main_black};
   margin-top: 32px;
-  &.basket{
-    display:block;
-    width:90%;
-    margin-right:5%;
-    margin-left:5%;
+  &.basket {
+    display: block;
+    width: 90%;
+    margin-right: 5%;
+    margin-left: 5%;
     @media (min-width: ${constants.screen_tablet}px) and (max-width: ${constants.screen_dx_min -
-    1}px) {
-      margin-left:0;
+      1}px) {
+      margin-left: 0;
       padding-left: 0;
     }
   }
@@ -252,21 +248,20 @@ export const FormMainBtn = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  
+
   @media (min-width: ${constants.screen_tablet}px) and (max-width: ${constants.screen_dx_min -
     1}px) {
     position: fixed;
     bottom: 22px;
     left: 20%;
-   
   }
   @media (max-width: ${constants.screen_tablet - 1}px) {
-    min-width: 160px; z-index: 0;
-    width: 60vw;   
+    min-width: 160px;
+    z-index: 0;
+    width: 60vw;
     position: fixed;
     bottom: 1em;
     left: 10%;
-    
   }
   @media (min-width: ${constants.screen_dx_min}px) and (max-width: ${constants.screen_dx -
     1}px) {
@@ -283,8 +278,8 @@ export const FormMainModel = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
-  &.disable{
-    display:none;
+  &.disable {
+    display: none;
   }
   font: 300 normal 14px/16px "Roboto", sans-serif;
   @media (min-width: ${constants.screen_dx_min}px) and (max-width: ${constants.screen_dx -
@@ -308,8 +303,8 @@ export const ModelRadioWrapper = styled.div`
   max-width: 100%;
   display: flex;
   align-items: flex-start;
-  &.disable{
-    display:none;
+  &.disable {
+    display: none;
   }
   @media (min-width: ${constants.screen_dx_min}px) and (max-width: ${constants.screen_dx -
     1}px) {
@@ -459,8 +454,8 @@ export const CardWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, 368px);
   border-collapse: collapse;
-  &.disable{
-    display:none;
+  &.disable {
+    display: none;
   }
   @media (min-width: ${constants.screen_dx_min}px) and (max-width: ${constants.screen_dx -
     1}px) {
@@ -484,8 +479,8 @@ export const Basket = styled.img`
   position: fixed;
   bottom: 22px;
   right: 5%;
-  z-index:10000;
-  &.basket{
+  z-index: 10000;
+  &.basket {
     filter: brightness(0.5) sepia(1) saturate(2000%) hue-rotate(120deg);
   }
 `;

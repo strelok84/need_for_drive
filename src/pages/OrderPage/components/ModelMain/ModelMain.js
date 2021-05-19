@@ -76,7 +76,7 @@ const model = [
   },
 ];
 
-function Model() {  
+function Model() {
   const aside = () => {
     const order = document.getElementById("order");
     const pickpoint = document.getElementById("pickpoint");
