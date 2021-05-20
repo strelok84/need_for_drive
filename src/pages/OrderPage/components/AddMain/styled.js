@@ -1,5 +1,6 @@
 import styled from "styled-components/macro";
 import constants from "../../../../styles/constants";
+import checkMark from "../../../../assets/img/check_mark.svg";
 
 export const FormMain = styled.div`
   grid-column: 1/87;
@@ -32,6 +33,7 @@ export const FormMainLent = styled.div`
   height: 100%;
   display: flex;
   z-index: 1000;
+  justify-content: space-between;
   @media (min-width: ${constants.screen_dx_min}px) and (max-width: ${constants.screen_dx -
     1}px) {
     width: 100%;
@@ -64,7 +66,7 @@ export const FormMainAside = styled.div`
     1}px) {
     grid-column: 3/31;
     margin-left: 10%;
-    margin-top: 2em;
+    margin-top: 0;
     border: 0;
     height: auto;
   }
@@ -77,7 +79,7 @@ export const FormMainLane = styled.div`
   align-items: flex-end;
   @media (min-width: ${constants.screen_dx_min}px) and (max-width: ${constants.screen_dx -
     1}px) {
-    margin-left: 0;
+    margin-left: 32px;
     align-items: flex-start;
   }
   @media (min-width: ${constants.screen_tablet}px) and (max-width: ${constants.screen_dx_min -
@@ -94,9 +96,8 @@ export const FormMainLane = styled.div`
 `;
 export const FormMainOrder = styled.div`
   width: 100%;
-  padding-left: 32px;
   font: 500 normal 18px/21px "Roboto", sans-serif;
-  padding-top: 32px;
+  margin-top: 32px;
   text-align: right;
   &.basket {
     display: block;
@@ -119,6 +120,7 @@ export const FormMainOrder = styled.div`
     padding-top: 0;
     text-align: center;
     display: none;
+    padding-left: 10%;
   }
 `;
 
@@ -154,6 +156,7 @@ export const FormMainPoint = styled.div`
   @media (min-width: ${constants.screen_dx_min}px) and (max-width: ${constants.screen_dx -
     1}px) {
     width: 80%;
+    padding-left: 0;
   }
 `;
 export const FormMainPickup = styled.div`
@@ -169,7 +172,7 @@ export const FormMainAddress = styled.div`
   color: ${constants.dark_gray};
   text-align: right;
 `;
-export const FormMainModelAside = styled.div`
+export const FormMainItemAside = styled.div`
   width: 100%;
   padding-left: 32px;
   display: flex;
@@ -197,11 +200,13 @@ export const FormMainModelAside = styled.div`
   @media (min-width: ${constants.screen_dx_min}px) and (max-width: ${constants.screen_dx -
     1}px) {
     width: 80%;
+    padding-left: 0;
   }
 `;
+
 export const FormMainCost = styled.div`
   width: 100%;
-  padding-left: 32px;
+
   font: 400 normal 16px/16px "Roboto", sans-serif;
   color: ${constants.main_black};
   margin-top: 32px;
@@ -218,15 +223,16 @@ export const FormMainCost = styled.div`
   }
   @media (min-width: ${constants.screen_tablet}px) and (max-width: ${constants.screen_dx_min -
     1}px) {
-    margin-top: 8px;
+    margin-top: 16px;
     display: none;
   }
   @media (max-width: ${constants.screen_tablet - 1}px) {
     display: none;
+    padding-left: 10%;
   }
   @media (min-width: ${constants.screen_dx_min}px) and (max-width: ${constants.screen_dx -
     1}px) {
-    min-width: 280px;
+    min-width: 270px;
   }
 `;
 
@@ -267,14 +273,12 @@ export const FormMainBtn = styled.div`
     1}px) {
     width: 80%;
     min-width: auto;
-    margin-left: auto;
-    margin-right: auto;
   }
 `;
 
 export const FormMainModel = styled.div`
   grid-column: 3/31;
-  width: 928px;
+  max-width: 928px;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -285,7 +289,7 @@ export const FormMainModel = styled.div`
   @media (min-width: ${constants.screen_dx_min}px) and (max-width: ${constants.screen_dx -
     1}px) {
     width: 100%;
-    align-items: center;
+    align-items: left;
   }
   @media (min-width: ${constants.screen_tablet}px) and (max-width: ${constants.screen_dx_min -
     1}px) {
@@ -294,13 +298,26 @@ export const FormMainModel = styled.div`
   }
   @media (max-width: ${constants.screen_tablet - 1}px) {
     width: 100%;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+
     grid-column: 1/44;
   }
 `;
 export const Color = styled.div`
   margin-top: 32px;
+  @media (min-width: ${constants.screen_dx_min}px) and (max-width: ${constants.screen_dx -
+    1}px) {
+    margin-left: 15%;
+  }
+  @media (min-width: ${constants.screen_tablet}px) and (max-width: ${constants.screen_dx_min -
+    1}px) {
+    align-self: flex-start;
+    margin-left: 10%;
+  }
+  @media (max-width: ${constants.screen_tablet - 1}px) {
+    align-self: flex-start;
+    margin-top: 8px;
+  }
 `;
 
 export const ModelRadioWrapper = styled.div`
@@ -462,7 +479,170 @@ export const Basket = styled.img`
   bottom: 22px;
   right: 5%;
   z-index: 10000;
+
   &.basket {
     filter: brightness(0.5) sepia(1) saturate(2000%) hue-rotate(120deg);
+  }
+`;
+export const FormDateWrapper = styled.div`
+  margin-top: 32px;
+  @media (min-width: ${constants.screen_dx_min}px) and (max-width: ${constants.screen_dx -
+    1}px) {
+    margin-left: 15%;
+  }
+  @media (min-width: ${constants.screen_tablet}px) and (max-width: ${constants.screen_dx_min -
+    1}px) {
+    align-self: flex-start;
+    margin-left: 10%;
+  }
+  @media (max-width: ${constants.screen_tablet - 1}px) {
+    margin-top: 1em;
+  }
+`;
+
+export const DateWrapper = styled.div`
+  margin-top: 16px;
+  display: flex;
+  @media (max-width: ${constants.screen_tablet - 1}px) {
+    margin-top: 8px;
+  }
+  label {
+    text-align: right;
+    margin-right: 3px;
+  }
+  input {
+    border: none;
+    border-bottom: 1px solid ${constants.dark_gray};
+    width: 224px;
+    font: 300 normal 14px/16px "Roboto", sans-serif;
+    color: ${constants.main_black};
+    ::placeholder {
+      color: ${constants.dark_gray};
+      font: 300 normal 14px/16px "Roboto", sans-serif;
+    }
+  }
+  button:after {
+    background-color: transparent;
+    color: ${constants.main_black};
+    font-size: 21px;
+    line-height: 16px;
+    display: inline;
+    vertical-align: baseline;
+  }
+`;
+export const RateWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  @media (min-width: ${constants.screen_dx_min}px) and (max-width: ${constants.screen_dx -
+    1}px) {
+    margin-left: 15%;
+  }
+  @media (min-width: ${constants.screen_tablet}px) and (max-width: ${constants.screen_dx_min -
+    1}px) {
+    align-self: flex-start;
+    margin-left: 10%;
+  }
+  @media (max-width: ${constants.screen_tablet - 1}px) {
+    margin-top: 1em;
+  }
+  span {
+    margin-top: 32px;
+    margin-bottom: 8px;
+    @media (max-width: ${constants.screen_tablet - 1}px) {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+`;
+
+export const RadioInput = styled.input`
+  box-sizing: border-box;
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+  + label {
+    margin-top: 8px;
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+    font: 300 normal 14px/16px "Roboto", sans-serif;
+    color: ${constants.dark_gray};
+    @media (max-width: ${constants.screen_tablet - 1}px) {
+      margin-top: 1em;
+    }
+  }
+  + label::before {
+    content: "";
+    display: inline-block;
+    width: 0.5em;
+    height: 0.5em;
+    flex-shrink: 0;
+    flex-grow: 0;
+    border: 1px solid #adb5bd;
+    border-radius: 50%;
+    margin-right: 0.5em;
+    background-repeat: no-repeat;
+    background-position: top top;
+    background-size: 50% 50%;
+  }
+
+  :checked + label::before {
+    box-sizing: border-box;
+    border: 2px solid ${constants.main_accent};
+    width: 0.7em;
+    height: 0.7em;
+  }
+  :checked + label {
+    color: ${constants.main_black};
+  }
+`;
+
+export const AdditionalService = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-top: 32px;
+  @media (min-width: ${constants.screen_dx_min}px) and (max-width: ${constants.screen_dx -
+    1}px) {
+    margin-left: 15%;
+  }
+  @media (min-width: ${constants.screen_tablet}px) and (max-width: ${constants.screen_dx_min -
+    1}px) {
+    align-self: flex-start;
+    margin-left: 10%;
+  }
+  @media (max-width: ${constants.screen_tablet - 1}px) {
+    margin-top: 8px;
+    margin-bottom: 0;
+  }
+  span {
+    margin-bottom: 8px;
+    @media (max-width: ${constants.screen_tablet - 1}px) {
+      margin-bottom: 0;
+    }
+  }
+`;
+
+export const CheckBox = styled.input`
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+  margin: 0;
+  + label {
+    margin-top: 8px;
+    display: inline-flex;
+    align-items: center;
+  }
+  + label::before {
+    box-sizing: border-box;
+    content: "";
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border: 1px solid ${constants.dark_gray};
+    margin-right: 0.5em;
+  }
+  :checked + label::before {
+    content: url(${checkMark});
+    border: 2px solid ${constants.main_accent};
   }
 `;

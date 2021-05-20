@@ -19,7 +19,7 @@ function Order_header(props) {
           place.classList.remove("hidden");
           break;
         case "add":
-          add.classList.remove("add");
+          add.classList.remove("hidden");
           break;
         case "total":
           total.classList.remove("hidden");
