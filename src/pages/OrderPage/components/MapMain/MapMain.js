@@ -27,6 +27,8 @@ const inputStyles = () => ({
   boxShadow: "none",
   minHeight: "19px",
   margin: "auto 5% auto auto",
+  ':hover':{borderColor:"#0EC261"}
+  
 });
 
 const colourStyles = {
