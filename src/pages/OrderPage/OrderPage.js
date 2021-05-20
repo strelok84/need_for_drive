@@ -4,15 +4,14 @@ import Sidebar from "../../commons/Sidebar/Sidebar";
 import FormMain from "./components/FormMain/FormMain";
 
 
-class Main extends React.Component {
-  render() {
-    return (
+function Main (props) { 
+    console.log(props.OrderPage)  
+      return (
       <div className="wrapper">
         <Sidebar gradient={false} />        
-        <FormMain orderPage="ModelMain" name='model'/>
+        <FormMain orderPage={props.OrderPage} name={props.name}/>
       </div>
-    );
-  }
+    );  
 }
 
 export default Main;
