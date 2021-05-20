@@ -26,6 +26,7 @@ const inputStyles = () => ({
   borderRadius: 0,
   boxShadow: "none",
   minHeight: "19px",
+  paddingLeft:"5px",
   margin: "auto 5% auto auto",
   ':hover':{borderColor:"#0EC261"}
   
@@ -48,6 +49,7 @@ const colourStyles = {
     ...provided,
     color: state.isFocused ? "#0EC261" : "#999",
     backgroundColor: "none",
+    
   }),
 };
 
