@@ -17,7 +17,10 @@ function App() {
         </Route>
         <Route path="/add" >
           {<OrderPage name="add" OrderPage="AddMain" />}
-        </Route>        
+        </Route>
+        <Route path="/final" >
+          {<OrderPage name="final" OrderPage="FinalMain" />}
+        </Route>         
         <Route exact path="/" component={Main} />
         <Redirect to="/" />
       </Switch>

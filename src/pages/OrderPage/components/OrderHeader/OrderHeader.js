@@ -24,6 +24,9 @@ function Order_header(props) {
         case "total":
           total.classList.remove("hidden");
           break;
+        case "final":
+          total.classList.remove("hidden");
+          break;  
         default:
           console.log("wrong_name")
       }
@@ -61,7 +64,7 @@ function Order_header(props) {
             Дополнительно
           </a>
           <img src={triangle}></img>
-          <a href="#" className="lane-breadcrumbs__total hidden">
+          <a href="/need_for_drive/final" className="lane-breadcrumbs__total hidden">
             Итого
           </a>
         </div>
