@@ -1,33 +1,55 @@
 import React from "react";
-import "./middle.scss";
+
 import Sity_marker from "../../../../assets/img/Sity_marker.svg";
+import {
+  Main,
+  MainHeader,
+  MainSlogan,
+  MainSity,
+  MainSityName,
+  MainSityMarker,
+  MainSection,
+  MainKarshering,
+  MainSectionSlogan,
+  MainMinute,
+  MainBtn,
+  MainFooter,
+  MainYears,
+  MainPhone
+} from "./styled";
 
 function Middle() {
   return (
-    <main className="main">
-      <header className="main__header">
-        <div className="main__slogan">Need for drive</div>
-        <div className="main__sity">
-          <div className="main__sity_name">
-            <img className="main__sity_marker" src={Sity_marker} alt="Sity_marker"></img>Ульяновск
-          </div>
-        </div>
-      </header>
-      <section className="main__section">
-        <h1 className="main__section_karshering">Каршеринг</h1>
-        <h2 className="main__section_slogan">Need for drive</h2>
-        <h3 className="main__section_minute">
+    <Main>
+      <MainHeader>
+        <MainSlogan>Need for drive</MainSlogan>
+        <MainSity>
+          <MainSityName>
+            <MainSityMarker
+              src={Sity_marker}
+              alt="Sity_marker"
+            ></MainSityMarker>
+            Ульяновск
+          </MainSityName>
+        </MainSity>
+      </MainHeader>
+      <MainSection>
+        <MainKarshering>Каршеринг</MainKarshering>
+        <MainSectionSlogan>Need for drive</MainSectionSlogan>
+        <MainMinute>
           Поминутная аренда авто твоего города
-        </h3>
-        <a href="./map" className="main__section_btn">Забронировать</a>
-      </section>
-      <footer className="main__footer">
-        <div className="main__years">
+        </MainMinute>
+        <MainBtn href="./map">
+          Забронировать
+        </MainBtn>
+      </MainSection>
+      <MainFooter>
+        <MainYears>
           {"\u00A9"}2016-2019 {"\u00AB"}Heed for drive{"\u00BB"}
-        </div>
-        <div className="main__phone">8 (495) 234-22-44</div>
-      </footer>
-    </main>
+        </MainYears>
+        <MainPhone>8 (495) 234-22-44</MainPhone>
+      </MainFooter>
+    </Main>
   );
 }
 

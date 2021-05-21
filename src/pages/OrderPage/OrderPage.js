@@ -1,5 +1,4 @@
 import React from "react";
-import "./orderPage.scss";
 import Sidebar from "../../commons/Sidebar/Sidebar";
 import FormMain from "./components/FormMain/FormMain";
 

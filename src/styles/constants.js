@@ -5,7 +5,7 @@ const constants = {
   light_gray: "#EEE",
   screen_mobile: 320,
   screen_tablet: 768,
-  screen_dx_min: 1023,
+  screen_dx_min: 1024,
   screen_dx: 1440,
 };
 

@@ -21,7 +21,7 @@ import {
   Fuel,
   Available,
   OrderWrapper,
-  CarImg
+  CarImg,
 } from "./styled";
 import basket from "../../../../assets/img/basket.svg";
 import I30N from "../../../../assets/img/I30N.png";
@@ -48,20 +48,19 @@ function Add() {
     <FormMain id="formMain">
       <FormMainWrapper>
         <FormMainLent>
-        
           <FormMainModel id="formMainModel">
-             
             <FinalOrder>
-                <ModelName>Hundai,I30N</ModelName>
-                <ModelNumber>K 761 HA 763</ModelNumber>
-                <Fuel><b>Топливо</b> 100%</Fuel>
-                <Available><b>Доступна с</b> 12.06.2019 12:00</Available>
+              <ModelName>Hundai,I30N</ModelName>
+              <ModelNumber>K 761 HA 763</ModelNumber>
+              <Fuel>
+                <b>Топливо</b> 100%
+              </Fuel>
+              <Available>
+                <b>Доступна с</b> 12.06.2019 12:00
+              </Available>
             </FinalOrder>
-           
             <CarImg src={I30N}></CarImg>
           </FormMainModel>
-         
-
           <FormMainAside>
             <FormMainLane>
               <FormMainOrder id="order">Ваш заказ</FormMainOrder>

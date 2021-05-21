@@ -1,8 +1,27 @@
 import React from "react";
-import "../Main/main.scss";
+
 import Sidebar from "../../commons/Sidebar/Sidebar";
 import Middle from "./components/Middle/Middle";
 import Slider from "./components/Slider/Slider";
+import styled from "styled-components/macro";
+import constants from "../../styles/constants";
+
+export const Wrapper = styled.div`
+  height: 100vh;
+  z-index: 8;
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 16px) repeat(86, 1fr);
+  @media (min-width: ${constants.screen_dx_min}px) and (max-width: ${constants.screen_dx -
+    1}px) {
+    grid-template-columns: repeat(3, 16px) 17px repeat(86, 1fr);
+  }
+  @media (min-width: ${constants.screen_tablet}px) and (max-width: ${constants.screen_dx_min -
+    1}px) {
+    grid-template-columns: repeat(4, 21.5px) repeat(86, 1fr);
+  } 
+`;
 
 function Main() {
   const slides = [
@@ -45,11 +64,11 @@ function Main() {
     },
   ];
   return (
-    <div className="wrapper">
+    <Wrapper>
       <Sidebar />
       <Middle />
       <Slider slides={slides} />
-    </div>
+    </Wrapper>
   );
 }
 

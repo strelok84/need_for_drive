@@ -102,7 +102,6 @@ export const FormMainOrder = styled.div`
   &.basket {
     display: block;
     text-align: left;
-
     width: 90%;
   }
   @media (min-width: ${constants.screen_dx_min}px) and (max-width: ${constants.screen_dx -
@@ -344,7 +343,6 @@ export const ModelRadioWrapper = styled.div`
 `;
 export const AllModel = styled.input`
   box-sizing: border-box;
-
   position: absolute;
   z-index: -1;
   opacity: 0;
