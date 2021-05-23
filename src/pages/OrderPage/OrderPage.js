@@ -7,7 +7,7 @@ function Main (props) {
     console.log(props.OrderPage)  
       return (
       <div className="wrapper">
-        <Sidebar gradient={false} />        
+        <Sidebar gradient='black' />        
         <FormMain orderPage={props.OrderPage} name={props.name}/>
       </div>
     );  

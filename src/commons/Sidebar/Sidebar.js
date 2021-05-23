@@ -1,58 +1,59 @@
 import React, { useEffect } from "react";
-import "./_sidebar.scss";
+
 import Telegram from "../../assets/img/Telegram_white.svg";
 import Facebook from "../../assets/img/Facebook_white.svg";
 import Instagram from "../../assets/img/Instagram_white.svg";
+import {Nav,Menu,MenuToggle,MenuBtn,MenuBox,MenuItem,ItemWrapper,LangWrapper,Lang} from "./styled";
 
 function Sidebar(props) {
   useEffect(() => {
-    const menu = document.querySelector(".menu__box");
-    if (!props.gradient) {
+    const menu = document.querySelector(".menu__box");   
+    if (props.gradient==="black") {
       menu.classList.add("menu__box_black");
     }
   });
-
+  
   return (
-    <nav className="sidebar">
-      <div class="menu">
-        <input className="menu__toggle" type="checkbox" />
-        <label className="menu__btn" for="menu__toggle">
+    <Nav>
+      <Menu>
+        <MenuToggle type="checkbox" />
+        <MenuBtn className="menu__btn" for="menu__toggle">
           <span></span>
-        </label>
-        <ul className="menu__box">
+        </MenuBtn>
+        <MenuBox className="menu__box">
           <li>
-            <a className="menu__item" href="#">
+            <MenuItem href="#">
               ПАРКОВКА
-            </a>
+            </MenuItem>
           </li>
           <li>
-            <a className="menu__item" href="#">
+            <MenuItem href="#">
               СТРАХОВКА
-            </a>
+            </MenuItem>
           </li>
           <li>
-            <a className="menu__item" href="#">
+            <MenuItem href="#">
               БЕНЗИН
-            </a>
+            </MenuItem>
           </li>
           <li>
-            <a className="menu__item" href="#">
+            <MenuItem href="#">
               ОБСЛУЖИВАНИЕ
-            </a>
+            </MenuItem>
           </li>
-          <li className="menu__item__img_wrapper">
-            <a className="menu__item" href="#">
+          <ItemWrapper>
+            <MenuItem href="#">
               <img src={Telegram} alt="Telegram"></img>
-            </a>
-            <a className="menu__item" href="#">
+            </MenuItem>
+            <MenuItem href="#">
               <img src={Facebook} alt="Facebook"></img>
-            </a>
-            <a className="menu__item" href="#">
+            </MenuItem>
+            <MenuItem href="#">
               <img src={Instagram} alt="Instagram"></img>
-            </a>
-          </li>
-          <li className="menu__item_mobile_lang">
-            <a
+            </MenuItem>
+          </ItemWrapper>
+          <LangWrapper>
+            <Lang
               className="sidebar__lang"
               id="mobile_lang"
               href="#"
@@ -64,11 +65,11 @@ function Sidebar(props) {
               }}
             >
               Eng
-            </a>
-          </li>
-        </ul>
-      </div>
-      <a
+            </Lang>
+          </LangWrapper>
+        </MenuBox>
+      </Menu>
+      <Lang
         className="sidebar__lang"
         href="#"
         onClick={() => {
@@ -79,8 +80,8 @@ function Sidebar(props) {
         }}
       >
         Eng
-      </a>
-    </nav>
+      </Lang>
+    </Nav>
   );
 }
 

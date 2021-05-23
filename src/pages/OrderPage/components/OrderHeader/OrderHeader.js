@@ -1,7 +1,21 @@
 import React, { useEffect } from "react";
-import "./orderHeader.scss";
+/* import "./orderHeader.scss"; */
 import Sity_marker from "../../../../assets/img/Sity_marker.svg";
 import triangle from "../../../../assets/img/triangle.svg";
+import {
+  FormHeader,
+  Wrapper,
+  Slogan,
+  FormHeaderSlogan,
+  FormHeaderSity,
+  FormHeaderMarker,
+  BdkrWrapper,
+  LaneBdkr,
+  Place,
+  Model,
+  Add,
+  Total
+} from "./styled";
 
 function Order_header(props) {
   useEffect(() => {
@@ -26,50 +40,58 @@ function Order_header(props) {
           break;
         case "final":
           total.classList.remove("hidden");
-          break;  
+          break;
         default:
-          console.log("wrong_name")
+          console.log("wrong_name");
       }
     }
   });
   return (
-    <div className="form-header">
-      <div className="form-header__wrapper">
-        <div className="lane-slogan">
-          <div className="form-header__slogan">Need for drive</div>
-          <div className="form-header__sity">
-            <img
-              className="form-header__marker"
+    <FormHeader>
+      <Wrapper>
+        <Slogan>
+          <FormHeaderSlogan>Need for drive</FormHeaderSlogan>
+          <FormHeaderSity>
+            <FormHeaderMarker
               src={Sity_marker}
               alt="Sity_marker"
-            ></img>
+            ></FormHeaderMarker>
             Ульяновск
-          </div>
-        </div>
-      </div>
-      <div className="breadcrumbs-wrapper">
-        <div className="lane-breadcrumbs">
-          <a
+          </FormHeaderSity>
+        </Slogan>
+      </Wrapper>
+      <BdkrWrapper>
+        <LaneBdkr>
+          <Place
             href="/need_for_drive/map"
-            className="lane-breadcrumbs__place hidden "
+            className="lane-breadcrumbs__place hidden"
           >
             Местоположение
-          </a>
+          </Place>
           <img src={triangle}></img>
-          <a href="/need_for_drive/model" className="lane-breadcrumbs__model hidden">
+          <Model
+            href="/need_for_drive/model"
+            className="lane-breadcrumbs__model hidden"
+          >
             Модель
-          </a>
+          </Model>
           <img src={triangle}></img>
-          <a href="/need_for_drive/add" className="lane-breadcrumbs__add hidden">
+          <Add
+            href="/need_for_drive/add"
+            className="lane-breadcrumbs__add hidden"
+          >
             Дополнительно
-          </a>
+          </Add>
           <img src={triangle}></img>
-          <a href="/need_for_drive/final" className="lane-breadcrumbs__total hidden">
+          <Total
+            href="/need_for_drive/final"
+            className="lane-breadcrumbs__total hidden"
+          >
             Итого
-          </a>
-        </div>
-      </div>
-    </div>
+          </Total>
+        </LaneBdkr>
+      </BdkrWrapper>
+    </FormHeader>
   );
 }
 

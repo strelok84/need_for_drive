@@ -67,7 +67,7 @@ function Main() {
     <Wrapper>
       <Sidebar />
       <Middle />
-      <Slider slides={slides} />
+      <Slider slides={slides}/>
     </Wrapper>
   );
 }
