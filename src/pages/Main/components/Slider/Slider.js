@@ -1,8 +1,24 @@
 import React, { useState } from "react";
-import "./slider.scss";
 import arrow_prev from "../../../../assets/img/arrow_prev.svg";
 import arrow_next from "../../../../assets/img/arrow_next.svg";
-import { Box, Wrapper, Items, Item,Slide } from "./styled";
+import {
+  Box,
+  Wrapper,
+  Items,
+  Item,
+  Slide,
+  SliderControlPrev,
+  SliderControlNext,
+  ArrowImg,
+  SliderText,
+  SliderTextHead,
+  SliderTextMain,
+  SliderBtn,
+  theme,
+  Dots,
+  Dot
+} from "./styled";
+import { ThemeProvider } from "styled-components";
 
 function Slider(props) {
   let [activeSlide, setActiveSlide] = useState(1);
@@ -16,48 +32,58 @@ function Slider(props) {
                 className={`slide_${item.slide.number}`}
                 id={`slide_${item.slide.number}`}
               >
-                <a
-                  className="slider__control_prev"
+                <SliderControlPrev
                   href={`#slide_${item.slide.prev_slider}`}
                   role="button"
                   onClick={() => {
                     setActiveSlide((activeSlide = item.slide.prev_slider));
                   }}
                 >
-                  <img
+                  <ArrowImg
                     className="arrow"
                     src={arrow_prev}
                     alt="previos slide"
-                  ></img>
-                </a>
-                <div className="slider__text">
-                  <h2 className="slider__text_head">{`${item.slide.text_head}`}</h2>
-                  <h3 className="slider__text_main">{`${item.slide.text_main}`}</h3>
-                  <a href="#" className="slider__btn">
-                    Подробнее
-                  </a>
-                </div>
-                <a
-                  className="slider__control_next "
+                  ></ArrowImg>
+                </SliderControlPrev>
+                <SliderText>
+                  <SliderTextHead>{`${item.slide.text_head}`}</SliderTextHead>
+                  <SliderTextMain>{`${item.slide.text_main}`}</SliderTextMain>
+                  <ThemeProvider
+                    theme={((number) => {
+                      if (number === 1) {
+                        return theme.theme_1;
+                      }else if(number===2){
+                        return theme.theme_2;
+                      }else if(number===3){
+                        return theme.theme_3;
+                      }else if(number===4){
+                        return theme.theme_4;
+                      }
+                    })(item.slide.number)}
+                  >
+                    <SliderBtn href="#">Подробнее</SliderBtn>
+                  </ThemeProvider>
+                </SliderText>
+                <SliderControlNext
                   href={`#slide_${item.slide.next_slider}`}
                   role="button"
                   onClick={() => {
                     setActiveSlide((activeSlide = item.slide.next_slider));
                   }}
                 >
-                  <img
+                  <ArrowImg
                     className="arrow"
                     src={arrow_next}
                     alt="next slide"
-                  ></img>
-                </a>
+                  ></ArrowImg>
+                </SliderControlNext>
               </Slide>
             </Item>
           ))}
 
-          <div className="dots">
+          <Dots>
             {props.slides.map((item) => (
-              <a
+              <Dot
                 href={`#slide_${item.slide.number}`}
                 id={`dot_${item.slide.number}`}
                 className={activeSlide === item.slide.number ? "active" : ""}
@@ -68,9 +94,9 @@ function Slider(props) {
                 <svg>
                   <circle cx="4" cy="4" r="4"></circle>
                 </svg>
-              </a>
+              </Dot>
             ))}
-          </div>
+          </Dots>
         </Items>
       </Wrapper>
     </Box>
