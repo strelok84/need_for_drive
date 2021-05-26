@@ -28,6 +28,9 @@ function App() {
         <Route path="/final">
           {<OrderPage name="final" OrderPage="FinalMain" />}
         </Route>
+        <Route path="/ConfirmFinal">
+          {<OrderPage name="ConfirmFinal" OrderPage="ConfirmFinal" />}
+        </Route>
         <Route exact path="/" component={Main} />
         <Redirect to="/" />
       </Switch>

@@ -8,8 +8,12 @@ export const Basket = styled.img`
   height: 48px;
   position: fixed;
   bottom: 22px;
-  right: 5%;
+  right: 24px;
   z-index: 10000;
+  @media (min-width: ${constants.screen_tablet}px) and (max-width: ${constants.screen_dx_min -
+    1}px) {
+      right:5%;
+    }
   &.basket {
     filter: brightness(0.5) sepia(1) saturate(2000%) hue-rotate(120deg);
   }
@@ -21,7 +25,7 @@ export const FormMain = styled.div`
   display: grid;
   grid-template-columns: repeat(43, 1fr);
   @media (max-width: ${constants.screen_tablet - 1}px) {
-    grid-column: 15/87;
+    grid-column: 1/87;
   }
 `;
 export const Wrapper = styled.div`
@@ -181,10 +185,11 @@ export const GoogleMap = styled.div`
     height: 60%;
   }
   @media (max-width: ${constants.screen_tablet - 1}px) {
-    width: 95%;
+    width: calc(100% - 48px);
     height: 50%;
     margin-top: 5%;
-    margin-right: 5%;
+    margin-right:24px;
+    margin-left:24px;
   }
 `;
 
@@ -227,7 +232,7 @@ export const Lane = styled.div`
   }
   @media (max-width: ${constants.screen_tablet - 1}px) {
     margin-right: 5%;
-    margin-left: 0;
+    margin-left: 24px;
     align-items: center;
   }
 `;
@@ -264,6 +269,7 @@ export const FormMainOrder = styled.div`
     display: none;
     &.basket {
       display: block;
+      text-align: center;
     }
   }
 `;
@@ -299,6 +305,9 @@ export const FormMainPoint = styled.div`
     padding-top: 8px;
     margin-left: -1em;
     padding-left: 0;
+    &.basket {
+      margin-right: 0;
+    }
   }
 `;
 
@@ -353,15 +362,20 @@ export const Cost = styled.div`
   }
   @media (max-width: ${constants.screen_tablet - 1}px) {
     display: none;
+    &.basket {
+      margin-left:0;
+    }
   }
 `;
-export const Button = styled.div`
+export const Button = styled.a`
+text-decoration:none;
   width: 100%;
   padding-left: 32px;
   font: 500 normal 18px "Roboto", sans-serif;
   color: #fff;
   line-height: 21px;
   background-color: ${constants.light_gray};
+  background: linear-gradient(90deg, #13493f 0%, #0c7b1b 100%);
   padding: 0;
   margin-top: 32px;
   min-width: 280px;
@@ -393,6 +407,6 @@ export const Button = styled.div`
     width: 60vw;
     position: fixed;
     bottom: 1em;
-    left: 15%;
+    left: 24px;
   }
 `;

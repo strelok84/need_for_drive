@@ -14,7 +14,8 @@ import {
   Place,
   Model,
   Add,
-  Total
+  Total,
+  Number
 } from "./styled";
 
 function Order_header(props) {
@@ -23,7 +24,19 @@ function Order_header(props) {
     const model = document.querySelector(".lane-breadcrumbs__model");
     const add = document.querySelector(".lane-breadcrumbs__add");
     const total = document.querySelector(".lane-breadcrumbs__total");
+    const number = document.querySelector(".lane-breadcrumbs__number");
     const width = window.innerWidth;
+   
+    if(props.name==="ConfirmFinal"){
+      place.classList.add("confirm");
+      model.classList.add("confirm");
+      add.classList.add("confirm");
+      total.classList.add("confirm");
+      number.classList.add("confirm");
+      const triangle = document.querySelectorAll(".triangle");
+     triangle.forEach((item)=>{item.style.display="none"})
+     
+    }
     if (width < 768) {
       switch (props.name) {
         case "model":
@@ -40,7 +53,7 @@ function Order_header(props) {
           break;
         case "final":
           total.classList.remove("hidden");
-          break;
+          break;       
         default:
           console.log("wrong_name");
       }
@@ -61,34 +74,40 @@ function Order_header(props) {
         </Slogan>
       </Wrapper>
       <BdkrWrapper>
-        <LaneBdkr>
+        <LaneBdkr id="bdkr">
           <Place
             href="/need_for_drive/map"
             className="lane-breadcrumbs__place hidden"
           >
             Местоположение
           </Place>
-          <img src={triangle}></img>
+          <img src={triangle} className="triangle"></img>
           <Model
             href="/need_for_drive/model"
             className="lane-breadcrumbs__model hidden"
           >
             Модель
           </Model>
-          <img src={triangle}></img>
+          <img src={triangle} className="triangle"></img>
           <Add
             href="/need_for_drive/add"
             className="lane-breadcrumbs__add hidden"
           >
             Дополнительно
           </Add>
-          <img src={triangle}></img>
+          <img src={triangle} className="triangle"></img>
           <Total
             href="/need_for_drive/final"
             className="lane-breadcrumbs__total hidden"
           >
             Итого
           </Total>
+          <Number
+            href="/need_for_drive/final"
+            className="lane-breadcrumbs__number"
+          >
+            RU 58491823
+          </Number>
         </LaneBdkr>
       </BdkrWrapper>
     </FormHeader>

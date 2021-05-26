@@ -148,7 +148,7 @@ function Model() {
               <FormMainCost id="cost">
                 Цена: от 10000 до 32000 {"\u20BD"}
               </FormMainCost>
-              <FormMainBtn>Дополнительно</FormMainBtn>
+              <FormMainBtn href="./add">Дополнительно</FormMainBtn>
             </FormMainLane>
           </FormMainAside>
           <Basket

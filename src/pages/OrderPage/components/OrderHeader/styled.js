@@ -70,7 +70,7 @@ export const FormHeaderSity = styled.div`
   color: ${constants.dark_gray};
   @media (max-width: ${constants.screen_tablet - 1}px) {
     font: 400 normal 12px "Roboto", sans-serif;
-    padding-right: 5%;
+    padding-right: 24px;
   }
 `;
 
@@ -116,13 +116,16 @@ export const Place = styled.a`
   margin-right: 16px;
   font: 700 normal 14px/16px "Roboto", sans-serif;
   color: ${constants.dark_gray};
+  &.confirm {
+    display: none;
+  }
   &.hidden {
     @media (max-width: ${constants.screen_tablet - 1}px) {
       display: none;
     }
   }
   @media (max-width: ${constants.screen_tablet - 1}px) {
-    margin-left: 16%;
+    margin-left:24px;
   }
   :hover {
     color: ${constants.main_accent};
@@ -137,13 +140,16 @@ export const Model = styled.a`
   font: 700 normal 14px/16px "Roboto", sans-serif;
   color: ${constants.dark_gray};
   margin-left: 16px;
+  &.confirm {
+    display: none;
+  }
   &.hidden {
     @media (max-width: ${constants.screen_tablet - 1}px) {
       display: none;
     }
   }
   @media (max-width: ${constants.screen_tablet - 1}px) {
-    margin-left: 16%;
+    margin-left: 24px;
   }
   :hover {
     color: ${constants.main_accent};
@@ -158,6 +164,9 @@ export const Add = styled.a`
   font: 700 normal 14px/16px "Roboto", sans-serif;
   color: ${constants.dark_gray};
   margin-left: 16px;
+  &.confirm {
+    display: none;
+  }
   &.hidden {
     @media (max-width: ${constants.screen_tablet - 1}px) {
       display: none;
@@ -179,6 +188,9 @@ export const Total = styled.a`
   font: 700 normal 14px/16px "Roboto", sans-serif;
   color: ${constants.dark_gray};
   margin-left: 16px;
+  &.confirm {
+    display: none;
+  }
   &.hidden {
     @media (max-width: ${constants.screen_tablet - 1}px) {
       display: none;
@@ -193,4 +205,17 @@ export const Total = styled.a`
   :active {
     color: ${constants.main_accent};
   }
+`;
+export const Number = styled.a`
+  display: none;
+  &.confirm {
+    display: block;
+    text-decoration: none;
+    margin-right: 16px;
+    font: 700 normal 14px/16px "Roboto", sans-serif;
+    color: ${constants.dark_gray};
+    
+      
+  }
+  
 `;

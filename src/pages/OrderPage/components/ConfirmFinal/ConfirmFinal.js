@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import DatePicker, { registerLocale } from "react-datepicker";
-import "../../../../../node_modules/react-datepicker/dist/react-datepicker.css";
 import {
   FormMain,
   FormMainWrapper,
@@ -15,25 +13,21 @@ import {
   FormMainCost,
   FormMainBtn,
   FormMainModel,
-  ModelRadioWrapper,
-  AllModel,
-  Econom,
-  Premium,
-  Color,
   Basket,
-  DateWrapper,
-  FormDateWrapper,
-  RateWrapper,
-  RadioInput,
-  AdditionalService,
-  CheckBox,
   FormMainItemAside,
+  FinalOrder,
+  ModelName,
+  ModelNumber,
+  Fuel,
+  Available,
+  OrderWrapper,
+  CarImg,
 } from "./styled";
 import basket from "../../../../assets/img/basket.svg";
+import I30N from "../../../../assets/img/I30N.png";
+import { Modal } from "../../OrderPage";
 
 function Add() {
-  const [startDate, setStartDate] = useState();
-  const [endDate, setEndDate] = useState();
   const aside = () => {
     const menuItem = Array.from(document.querySelectorAll(".menuItem"));
     const order = document.getElementById("order");
@@ -42,7 +36,6 @@ function Add() {
     const formMainModel = document.getElementById("formMainModel");
     const formMain = document.getElementById("formMain");
     const basket = document.getElementById("basket");
-
     basket.classList.toggle("basket");
     order.classList.toggle("basket");
     pickpoint.classList.toggle("basket");
@@ -51,75 +44,27 @@ function Add() {
     formMainModel.classList.toggle("disable");
     menuItem.forEach((item) => item.classList.toggle("basket"));
   };
+  const modal =()=>{
+    const modal = document.getElementById("modal");
+    modal.style.display="flex";
+  }
   return (
     <FormMain id="formMain">
       <FormMainWrapper>
         <FormMainLent>
           <FormMainModel id="formMainModel">
-            <Color>Цвет</Color>
-            <ModelRadioWrapper id="modelRadioWrapper">
-              <AllModel
-                name="model"
-                type="radio"
-                value="all"
-                id="allmodel"
-                defaultChecked
-              />
-              <label for="allmodel">Любой</label>
-              <Econom name="model" type="radio" value="econom" id="econom" />
-              <label for="econom">Красный</label>
-              <Premium name="model" type="radio" value="premium" id="premium" />
-              <label for="premium">Голубой</label>
-            </ModelRadioWrapper>
-            <FormDateWrapper>
-              <span>Дата аренды</span>
-              <DateWrapper>
-                <label>
-                  {"\u00A0"}
-                  {"\u00A0"}
-                  {"\u00A0"}С
-                </label>
-                <DatePicker
-                  onChange={(date) => setStartDate(date)}
-                  selected={startDate}
-                  showTimeSelect
-                  dateFormat="dd.MM.yyyy HH:mm"
-                  placeholderText="Введите дату и время"
-                  minDate={new Date()}
-                  isClearable
-                />
-              </DateWrapper>
-              <DateWrapper>
-                <label>По</label>
-                <DatePicker
-                  onChange={(date) => setEndDate(date)}
-                  showTimeSelect
-                  selected={endDate}
-                  placeholderText="Введите дату и время"
-                  dateFormat="dd.MM.yyyy HH:mm"
-                  minDate={new Date()}
-                  isClearable
-                />
-              </DateWrapper>
-            </FormDateWrapper>
-            <RateWrapper>
-              <span>Тариф</span>
-              <RadioInput id="minute" name="rate" type="radio"></RadioInput>
-              <label for="minute">Поминутно, 7 {"\u20BD"}/мин</label>
-              <RadioInput id="day" name="rate" type="radio"></RadioInput>
-              <label for="day">На сутки, 1999{"\u20BD"}/сутки</label>
-            </RateWrapper>
-            <AdditionalService>
-              <span>Доп. услуги</span>
-              <CheckBox type="checkbox" id="fullTank"></CheckBox>
-              <label for="fullTank">Полный бак, 500р</label>
-              <CheckBox type="checkbox" id="chair"></CheckBox>
-              <label for="chair">Детское кресло, 200р</label>
-              <CheckBox type="checkbox" id="right"></CheckBox>
-              <label for="right">Правый руль. 1600р</label>
-            </AdditionalService>
+            <FinalOrder>
+              <ModelName>Hundai,I30N</ModelName>
+              <ModelNumber>K 761 HA 763</ModelNumber>
+              <Fuel>
+                <b>Топливо</b> 100%
+              </Fuel>
+              <Available>
+                <b>Доступна с</b> 12.06.2019 12:00
+              </Available>
+            </FinalOrder>
+            <CarImg src={I30N}></CarImg>
           </FormMainModel>
-
           <FormMainAside>
             <FormMainLane>
               <FormMainOrder id="order">Ваш заказ</FormMainOrder>
@@ -161,7 +106,10 @@ function Add() {
                 <FormMainAddress>Да</FormMainAddress>
               </FormMainItemAside>
               <FormMainCost id="cost">Цена: 16000 {"\u20BD"}</FormMainCost>
-              <FormMainBtn href="./final">Итого</FormMainBtn>
+              <FormMainBtn  href="./map"         
+              >
+                Отменить
+              </FormMainBtn>
             </FormMainLane>
           </FormMainAside>
           <Basket

@@ -159,7 +159,7 @@ function MapMain() {
               <Cost className="form-main__cost">
                 Цена: от 8000 до 12000 {"\u20BD"}
               </Cost>
-              <Button href="#">Выбрать модель</Button>
+              <Button href="./model">Выбрать модель</Button>
             </Lane>
           </Aside>
           <Basket

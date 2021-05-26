@@ -1,5 +1,6 @@
 import styled from "styled-components/macro";
 import constants from "../../../../styles/constants";
+import checkMark from "../../../../assets/img/check_mark.svg";
 
 export const FormMain = styled.div`
   grid-column: 1/87;
@@ -11,9 +12,7 @@ export const FormMain = styled.div`
     grid-column: 1/87;
   }
   @media (max-width: ${constants.screen_tablet - 1}px) {
-    grid-column: 1/87;
-    padding-left:24px;
-    padding-right:24px;
+    grid-column: 15/87;
   }
 `;
 
@@ -34,6 +33,7 @@ export const FormMainLent = styled.div`
   height: 100%;
   display: flex;
   z-index: 1000;
+  justify-content: space-between;
   @media (min-width: ${constants.screen_dx_min}px) and (max-width: ${constants.screen_dx -
     1}px) {
     width: 100%;
@@ -66,7 +66,7 @@ export const FormMainAside = styled.div`
     1}px) {
     grid-column: 3/31;
     margin-left: 10%;
-    margin-top: 2em;
+    margin-top: 0;
     border: 0;
     height: auto;
   }
@@ -79,7 +79,7 @@ export const FormMainLane = styled.div`
   align-items: flex-end;
   @media (min-width: ${constants.screen_dx_min}px) and (max-width: ${constants.screen_dx -
     1}px) {
-    margin-left: 0;
+    margin-left: 32px;
     align-items: flex-start;
   }
   @media (min-width: ${constants.screen_tablet}px) and (max-width: ${constants.screen_dx_min -
@@ -89,23 +89,21 @@ export const FormMainLane = styled.div`
     min-width: 320px;
   }
   @media (max-width: ${constants.screen_tablet - 1}px) {
-    margin-right: 0;
-    margin-left:0;
-    align-items: flex-start;
-    justify-content: space-between;
+    margin-right: 5%;
+    margin-left: 0;
+    align-items: center;
   }
 `;
 export const FormMainOrder = styled.div`
   width: 100%;
-  padding-left: 32px;
   font: 500 normal 18px/21px "Roboto", sans-serif;
-  padding-top: 32px;
+  margin-top: 32px;
   text-align: right;
   &.basket {
     display: block;
-    
+    text-align: left;
 
-    width: 100%;
+    width: 90%;
   }
   @media (min-width: ${constants.screen_dx_min}px) and (max-width: ${constants.screen_dx -
     1}px) {
@@ -122,8 +120,7 @@ export const FormMainOrder = styled.div`
     padding-top: 0;
     text-align: center;
     display: none;
-    padding-left: 0;
-    text-align: center;
+    padding-left: 10%;
   }
 `;
 
@@ -135,10 +132,9 @@ export const FormMainPoint = styled.div`
   padding-top: 32px;
   &.basket {
     display: flex;
-    width: 100%;
-    margin-right: 0px;
-    margin-left: 0px;
-    padding-left:0;
+    width: 90%;
+    margin-right: 5%;
+    margin-left: 5%;
     @media (min-width: ${constants.screen_tablet}px) and (max-width: ${constants.screen_dx_min -
       1}px) {
       margin-left: 0;
@@ -160,6 +156,7 @@ export const FormMainPoint = styled.div`
   @media (min-width: ${constants.screen_dx_min}px) and (max-width: ${constants.screen_dx -
     1}px) {
     width: 80%;
+    padding-left: 0;
   }
 `;
 export const FormMainPickup = styled.div`
@@ -175,7 +172,7 @@ export const FormMainAddress = styled.div`
   color: ${constants.dark_gray};
   text-align: right;
 `;
-export const FormMainModelAside = styled.div`
+export const FormMainItemAside = styled.div`
   width: 100%;
   padding-left: 32px;
   display: flex;
@@ -183,9 +180,9 @@ export const FormMainModelAside = styled.div`
   padding-top: 16px;
   &.basket {
     display: flex;
-    width: 100%;    
-    padding-left:0;
-    
+    width: 90%;
+    margin-right: 5%;
+    margin-left: 5%;
     @media (min-width: ${constants.screen_tablet}px) and (max-width: ${constants.screen_dx_min -
       1}px) {
       margin-left: 0;
@@ -196,30 +193,28 @@ export const FormMainModelAside = styled.div`
     1}px) {
     padding-top: 8px;
     display: none;
-    align-self:flex-start;
   }
   @media (max-width: ${constants.screen_tablet - 1}px) {
     display: none;
-    margin-right:0;
-    margin-left:0;
   }
   @media (min-width: ${constants.screen_dx_min}px) and (max-width: ${constants.screen_dx -
     1}px) {
     width: 80%;
+    padding-left: 0;
   }
 `;
+
 export const FormMainCost = styled.div`
   width: 100%;
-  padding-left: 32px;
+
   font: 400 normal 16px/16px "Roboto", sans-serif;
   color: ${constants.main_black};
   margin-top: 32px;
   &.basket {
     display: block;
-    width: 100%;
+    width: 90%;
     margin-right: 5%;
-    margin-left: 0;
-    padding-left: 0;
+    margin-left: 5%;
     @media (min-width: ${constants.screen_tablet}px) and (max-width: ${constants.screen_dx_min -
       1}px) {
       margin-left: 0;
@@ -228,15 +223,16 @@ export const FormMainCost = styled.div`
   }
   @media (min-width: ${constants.screen_tablet}px) and (max-width: ${constants.screen_dx_min -
     1}px) {
-    margin-top: 8px;
+    margin-top: 16px;
     display: none;
   }
   @media (max-width: ${constants.screen_tablet - 1}px) {
     display: none;
+    padding-left: 10%;
   }
   @media (min-width: ${constants.screen_dx_min}px) and (max-width: ${constants.screen_dx -
     1}px) {
-    min-width: 280px;
+    min-width: 270px;
   }
 `;
 
@@ -248,7 +244,7 @@ text-decoration:none;
   color: #fff;
   line-height: 21px;
   background-color: ${constants.light_gray};
-  background: linear-gradient(90deg, #13493f 0%, #0c7b1b 100%);
+  background: linear-gradient(90deg, rgb(73, 48, 19), rgb(123, 12, 59));
   padding: 0;
   margin-top: 32px;
   min-width: 280px;
@@ -273,23 +269,23 @@ text-decoration:none;
     width: 60vw;
     position: fixed;
     bottom: 1em;
-    left: 24px;
+    left: 10%;
   }
   @media (min-width: ${constants.screen_dx_min}px) and (max-width: ${constants.screen_dx -
     1}px) {
     width: 80%;
     min-width: auto;
-    margin-left: auto;
-    margin-right: auto;
   }
 `;
 
 export const FormMainModel = styled.div`
   grid-column: 3/31;
-  width: 928px;
+  max-width: 928px;
+  width: 100%;
   height: 100%;
   display: flex;
-  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
   &.disable {
     display: none;
   }
@@ -297,192 +293,23 @@ export const FormMainModel = styled.div`
   @media (min-width: ${constants.screen_dx_min}px) and (max-width: ${constants.screen_dx -
     1}px) {
     width: 100%;
-    align-items: center;
+    align-items: left;
+    margin-left: 10%;
   }
   @media (min-width: ${constants.screen_tablet}px) and (max-width: ${constants.screen_dx_min -
     1}px) {
     width: 100%;
-    align-items: center;
+    align-items: flex-start;
+    
   }
   @media (max-width: ${constants.screen_tablet - 1}px) {
     width: 100%;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+    flex-direction:column;
     grid-column: 1/44;
   }
 `;
-export const ModelRadioWrapper = styled.div`
-  max-width: 100%;
-  display: flex;
-  align-items: flex-start;
-  &.disable {
-    display: none;
-  }
-  @media (min-width: ${constants.screen_dx_min}px) and (max-width: ${constants.screen_dx -
-    1}px) {
-    align-self: flex-start;
-    margin-left: 15%;
-  }
-  @media (min-width: ${constants.screen_tablet}px) and (max-width: ${constants.screen_dx_min -
-    1}px) {
-    align-self: flex-start;
-    margin-left: 10%;
-  }
-  @media (max-width: ${constants.screen_tablet - 1}px) {
-    flex-direction: column;
-    align-self: flex-start;
-  }
-`;
-export const AllModel = styled.input`
-  box-sizing: border-box;
 
-  position: absolute;
-  z-index: -1;
-  opacity: 0;
-  + label {
-    margin-right: 1em;
-    margin-top: 2em;
-    display: inline-flex;
-    align-items: center;
-    user-select: none;
-    font: 300 normal 14px/16px "Roboto", sans-serif;
-    color: ${constants.dark_gray};
-    @media (max-width: ${constants.screen_tablet - 1}px) {
-      margin-top: 1em;
-    }
-  }
-  + label::before {
-    content: "";
-    display: inline-block;
-    width: 0.5em;
-    height: 0.5em;
-    flex-shrink: 0;
-    flex-grow: 0;
-    border: 1px solid #adb5bd;
-    border-radius: 50%;
-    margin-right: 0.5em;
-    background-repeat: no-repeat;
-    background-position: top top;
-    background-size: 50% 50%;
-  }
-
-  :checked + label::before {
-    box-sizing: border-box;
-    border: 2px solid ${constants.main_accent};
-    width: 0.7em;
-    height: 0.7em;
-  }
-  :checked + label {
-    color: ${constants.main_black};
-  }
-`;
-
-export const Econom = styled.input`
-  box-sizing: border-box;
-  position: absolute;
-  z-index: -1;
-  opacity: 0;
-  + label {
-    margin-right: 1em;
-    margin-top: 2em;
-    display: inline-flex;
-    align-items: center;
-    user-select: none;
-    font: 300 normal 14px/16px "Roboto", sans-serif;
-    color: ${constants.dark_gray};
-    @media (max-width: ${constants.screen_tablet - 1}px) {
-      margin-top: 1em;
-    }
-  }
-  + label::before {
-    content: "";
-    display: inline-block;
-    width: 0.5em;
-    height: 0.5em;
-    flex-shrink: 0;
-    flex-grow: 0;
-    border: 1px solid #adb5bd;
-    border-radius: 50%;
-    margin-right: 0.5em;
-    background-repeat: no-repeat;
-    background-position: top top;
-    background-size: 50% 50%;
-  }
-
-  :checked + label::before {
-    box-sizing: border-box;
-    border: 2px solid ${constants.main_accent};
-    width: 0.7em;
-    height: 0.7em;
-  }
-  :checked + label {
-    color: ${constants.main_black};
-  }
-`;
-export const Premium = styled.input`
-  box-sizing: border-box;
-  position: absolute;
-  z-index: -1;
-  opacity: 0;
-  + label {
-    margin-top: 2em;
-    display: inline-flex;
-    align-items: center;
-    user-select: none;
-    font: 300 normal 14px/16px "Roboto", sans-serif;
-    color: ${constants.dark_gray};
-    @media (max-width: ${constants.screen_tablet - 1}px) {
-      margin-top: 1em;
-    }
-  }
-  + label::before {
-    content: "";
-    display: inline-block;
-    width: 0.5em;
-    height: 0.5em;
-    flex-shrink: 0;
-    flex-grow: 0;
-    border: 1px solid #adb5bd;
-    border-radius: 50%;
-    margin-right: 0.5em;
-    background-repeat: no-repeat;
-    background-position: top top;
-    background-size: 50% 50%;
-  }
-
-  :checked + label::before {
-    box-sizing: border-box;
-    border: 2px solid ${constants.main_accent};
-    width: 0.7em;
-    height: 0.7em;
-  }
-  :checked + label {
-    color: ${constants.main_black};
-  }
-`;
-export const CardWrapper = styled.div`
-  width: 736px;
-  margin-top: 48px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, 368px);
-  border-collapse: collapse;
-  &.disable {
-    display: none;
-  }
-  @media (min-width: ${constants.screen_dx_min}px) and (max-width: ${constants.screen_dx -
-    1}px) {
-    width: 80%;
-    margin-left: 10%;
-  }
-  @media (min-width: ${constants.screen_tablet}px) and (max-width: ${constants.screen_dx_min -
-    1}px) {
-    width: 80%;
-  }
-  @media (max-width: ${constants.screen_tablet - 1}px) {
-    width: 100%;
-    margin-right: 0;
-  }
-`;
 export const Basket = styled.img`
   @media (min-width: ${constants.screen_dx_min - 1}px) {
     display: none;
@@ -490,9 +317,55 @@ export const Basket = styled.img`
   height: 48px;
   position: fixed;
   bottom: 22px;
-  right: 24px;
+  right: 5%;
   z-index: 10000;
+
   &.basket {
     filter: brightness(0.5) sepia(1) saturate(2000%) hue-rotate(120deg);
   }
+`;
+
+export const FinalOrder = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-top: 3%;
+  height:116px;
+  @media (min-width: ${constants.screen_tablet}px) and (max-width: ${constants.screen_dx_min -
+    1}px) {
+      margin-left:10%;
+    }
+`;
+export const OrderWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+export const ModelName = styled.div`
+  font: 400 normal 18px/21px "Roboto", sans-serif;
+  color: ${constants.main_black};
+  height:22px;
+`;
+export const ModelNumber = styled.div`
+  font: 400 normal 14px/16px "Roboto", sans-serif;
+  color: ${constants.main_black};
+  margin-top:8px;
+  height:24px;
+  width:94px;
+  border:1px solid ${constants.dark_gray};
+  text-align:center;
+  line-height: 24px;
+`;
+export const Fuel = styled.div`
+  font: normal 14px/16px "Roboto", sans-serif;
+  margin-top:8px;
+  height:22px;
+`;
+export const Available = styled.div`
+  font: normal 14px/16px "Roboto", sans-serif;
+  margin-top:8px;
+  height:22px;
+`;
+export const CarImg = styled.img`
+  margin-right: 20%;
+  margin-top: 3%;
+  height:116px;
 `;

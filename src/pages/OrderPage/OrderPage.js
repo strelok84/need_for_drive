@@ -34,6 +34,9 @@ export const Confirm = styled.div`
   flex-direction: column;
   font: 400 normal 24px/28px "Roboto", sans-serif;
   color: ${constants.main_black};
+  @media (max-width: ${constants.screen_tablet - 1}px) {
+    width:300px;
+  }
 `;
 
 export const Title = styled.div`
@@ -45,7 +48,8 @@ export const Buttons = styled.div`
   align-items: center;
   justify-content: space-around;
 `;
-export const Accept = styled.div`
+export const Accept = styled.a`
+  text-decoration: none;
   display: flex;
   color: ${constants.light_gray};
   background: linear-gradient(90deg, #13493f 0%, #0c7b1b 100%);
@@ -56,6 +60,9 @@ export const Accept = styled.div`
   align-items: center;
   justify-content: center;
   font: 500 normal 18px/21px "Roboto", sans-serif;
+  @media (max-width: ${constants.screen_tablet - 1}px) {
+    width:120px;
+  }
 `;
 export const Reject = styled.div`
   display: flex;
@@ -68,6 +75,9 @@ export const Reject = styled.div`
   text-align: center;
   border-radius: 8px;
   font: 500 normal 18px/21px "Roboto", sans-serif;
+  @media (max-width: ${constants.screen_tablet - 1}px) {
+    width:120px;
+  }
 `;
 
 export const Wrapper = styled.div`
@@ -88,10 +98,11 @@ export const Wrapper = styled.div`
 `;
 
 function Main(props) {
-  const closeModal=()=>{
+  const closeModal = () => {
     const modal = document.getElementById("modal");
-    modal.style.display="none";
-  }
+    modal.style.display = "none";
+  };
+
   return (
     <Wrapper>
       <Sidebar gradient="black" />
@@ -101,10 +112,14 @@ function Main(props) {
           <Confirm>
             <Title>Подтвердите заказ</Title>
             <Buttons>
-              <Accept>Подтвердить</Accept>
-              <Reject onClick={() => {
+              <Accept href="/need_for_drive/ConfirmFinal">Подтвердить</Accept>
+              <Reject
+                onClick={() => {
                   closeModal();
-                }}>Вернуться</Reject>
+                }}
+              >
+                Вернуться
+              </Reject>
             </Buttons>
           </Confirm>
         </ModalContainer>

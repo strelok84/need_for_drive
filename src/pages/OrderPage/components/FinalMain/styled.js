@@ -243,6 +243,7 @@ export const FormMainBtn = styled.div`
   color: #fff;
   line-height: 21px;
   background-color: ${constants.light_gray};
+  background: linear-gradient(90deg, #13493f 0%, #0c7b1b 100%);
   padding: 0;
   margin-top: 32px;
   min-width: 280px;

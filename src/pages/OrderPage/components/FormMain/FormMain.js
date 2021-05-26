@@ -4,6 +4,7 @@ import MapMain from "../MapMain/MapMain";
 import ModelMain from "../ModelMain/ModelMain";
 import AddMain from "../AddMain/AddMain";
 import FinalMain from "../FinalMain/FinalMain";
+import ConfirmFinal from "../ConfirmFinal/ConfirmFinal";
 import styled from "styled-components/macro";
 import constants from "../../../../styles/constants";
 
@@ -24,7 +25,8 @@ function Map(props) {
     MapMain: MapMain,
     ModelMain:ModelMain,
     AddMain:AddMain,
-    FinalMain:FinalMain
+    FinalMain:FinalMain,
+    ConfirmFinal:ConfirmFinal
   };
   const Tagname = components[props.orderPage]
   return (

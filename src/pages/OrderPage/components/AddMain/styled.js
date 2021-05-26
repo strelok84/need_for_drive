@@ -235,13 +235,15 @@ export const FormMainCost = styled.div`
   }
 `;
 
-export const FormMainBtn = styled.div`
+export const FormMainBtn = styled.a`
+  text-decoration: none;
   width: 100%;
   padding-left: 32px;
   font: 500 normal 18px "Roboto", sans-serif;
   color: #fff;
   line-height: 21px;
   background-color: ${constants.light_gray};
+  background: linear-gradient(90deg, #13493f 0%, #0c7b1b 100%);
   padding: 0;
   margin-top: 32px;
   min-width: 280px;
@@ -253,7 +255,6 @@ export const FormMainBtn = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-
   @media (min-width: ${constants.screen_tablet}px) and (max-width: ${constants.screen_dx_min -
     1}px) {
     position: fixed;
