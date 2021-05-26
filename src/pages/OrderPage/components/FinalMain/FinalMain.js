@@ -25,6 +25,7 @@ import {
 } from "./styled";
 import basket from "../../../../assets/img/basket.svg";
 import I30N from "../../../../assets/img/I30N.png";
+import { Modal } from "../../OrderPage";
 
 function Add() {
   const aside = () => {
@@ -35,7 +36,6 @@ function Add() {
     const formMainModel = document.getElementById("formMainModel");
     const formMain = document.getElementById("formMain");
     const basket = document.getElementById("basket");
-
     basket.classList.toggle("basket");
     order.classList.toggle("basket");
     pickpoint.classList.toggle("basket");
@@ -44,6 +44,10 @@ function Add() {
     formMainModel.classList.toggle("disable");
     menuItem.forEach((item) => item.classList.toggle("basket"));
   };
+  const modal =()=>{
+    const modal = document.getElementById("modal");
+    modal.style.display="flex";
+  }
   return (
     <FormMain id="formMain">
       <FormMainWrapper>
@@ -102,7 +106,13 @@ function Add() {
                 <FormMainAddress>Да</FormMainAddress>
               </FormMainItemAside>
               <FormMainCost id="cost">Цена: 16000 {"\u20BD"}</FormMainCost>
-              <FormMainBtn>Итого</FormMainBtn>
+              <FormMainBtn
+                onClick={() => {
+                  modal();
+                }}
+              >
+                Итого
+              </FormMainBtn>
             </FormMainLane>
           </FormMainAside>
           <Basket
