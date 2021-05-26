@@ -86,8 +86,8 @@ export const BdkrWrapper = styled.div`
   justify-content: center;
   align-items: center;
   @media (max-width: ${constants.screen_tablet - 1}px) {
-    border-bottom: 1px solid ${constants.ligth_gray};
-    border-top: 1px solid ${constants.ligth_gray};
+    border-bottom: 1px solid ${constants.light_gray};
+    border-top: 1px solid ${constants.light_gray};
   }
 `;
 

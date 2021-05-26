@@ -1,9 +1,28 @@
 import React from "react";
-import "./MapMain.scss";
 import GoogleMapReact from "google-map-react";
 import Select from "react-select";
 import basket from "../../../../assets/img/basket.svg";
-import { Basket } from "./styled";
+import {
+  Basket,
+  FormMain,
+  Wrapper,
+  Lent,
+  Map,
+  MapOrder,
+  InputWrapperSity,
+  InputWrapperPoint,
+  Chooze,
+  GoogleMap,
+  Aside,
+  Lane,
+  FormMainOrder,
+  FormMainPoint,
+  FormMainPickUp,
+  FormMainDots,
+  Address,
+  Cost,
+  Button,
+} from "./styled";
 
 const cityOptions = [
   { value: "Тьмутаракань", label: "Тьмутаракань" },
@@ -26,10 +45,9 @@ const inputStyles = () => ({
   borderRadius: 0,
   boxShadow: "none",
   minHeight: "19px",
-  paddingLeft:"5px",
+  paddingLeft: "5px",
   margin: "auto 5% auto auto",
-  ':hover':{borderColor:"#0EC261"}
-  
+  ":hover": { borderColor: "#0EC261" },
 });
 
 const colourStyles = {
@@ -39,6 +57,16 @@ const colourStyles = {
   indicatorSeparator: (styles) => ({ ...styles, display: "none" }),
   dropdownIndicator: (styles) => ({ ...styles, display: "none" }),
   clearIndicator: (styles) => ({ ...styles, padding: "0" }),
+  container: (provided, state) => ({
+    ...provided,
+    border: "0",
+    marginBottom: "14px",
+    marginLeft: "5px",
+    font: '300 normal 14px/16px "Roboto", sans-serif',
+    color: "#121212",
+    outline: "none",
+    width: "224px",
+  }),
   menu: (provided, state) => ({
     ...provided,
     borderRadius: 0,
@@ -49,10 +77,17 @@ const colourStyles = {
     ...provided,
     color: state.isFocused ? "#0EC261" : "#999",
     backgroundColor: "none",
-    
   }),
 };
-
+const FormSity = {
+  border: "0",
+  marginBottom: "14px",
+  marginLeft: "5px",
+  font: '300 normal 14px/16px "Roboto", sans-serif',
+  color: "#121212",
+  outline: "none",
+  width: "224px",
+};
 function MapMain() {
   const aside = () => {
     const order = document.querySelector(".form-main__order");
@@ -69,34 +104,32 @@ function MapMain() {
     formMainMap.classList.toggle("disable");
   };
   return (
-    <div className="form-main">
-      <div className="form-main__wrapper">
-        <div className="form-main__lent">
-          <div className="form-main__map">
-            <div className="form-main__map--order">
-              <form className="input__wrapper_sity">
+    <FormMain className="form-main">
+      <Wrapper>
+        <Lent>
+          <Map className="form-main__map">
+            <MapOrder className="form-main__map--order">
+              <InputWrapperSity>
                 <label for="city">Город</label>
                 <Select
-                  className="form-main__map--sity"
                   isClearable="true"
                   options={cityOptions}
                   styles={colourStyles}
                   placeholder="Начните вводить город..."
                 />
-              </form>
-              <form className="input__wrapper_point">
+              </InputWrapperSity>
+              <InputWrapperPoint>
                 <label for="point"></label>
                 <Select
-                  className="form-main__map--point"
                   isClearable="true"
                   options={cityOptions}
                   styles={colourStyles}
                   placeholder="Начните вводить пункт..."
                 />
-              </form>
-            </div>
-            <div className="chooze">Выбрать на карте</div>
-            <div className="google__map">
+              </InputWrapperPoint>
+            </MapOrder>
+            <Chooze>Выбрать на карте</Chooze>
+            <GoogleMap>
               <GoogleMapReact
                 bootstrapURLKeys={{
                   key: "AIzaSyDEUoFQqwctWUViRtQq47lU8YuYXvAiXkI",
@@ -104,31 +137,31 @@ function MapMain() {
                 center={{ lat: 54.31, lng: 48.39 }}
                 zoom={14}
               ></GoogleMapReact>
-            </div>
-          </div>
-          <div className="form-main__aside">
-            <div className="form-main__lane">
-              <div className="form-main__order">Ваш заказ</div>
-              <div className="form-main__point">
-                <div className="form-main__piсkup">
+            </GoogleMap>
+          </Map>
+          <Aside>
+            <Lane>
+              <FormMainOrder className="form-main__order">
+                Ваш заказ
+              </FormMainOrder>
+              <FormMainPoint className="form-main__point">
+                <FormMainPickUp>
                   <br />
                   Пункт выдачи
-                </div>
-                {<div className="form-main__dots"></div>}
-                <div className="form-main__address">
+                </FormMainPickUp>
+                {<FormMainDots></FormMainDots>}
+                <Address>
                   Ульяновск,
                   <br />
                   Нариманова 42
-                </div>
-              </div>
-              <div className="form-main__cost">
+                </Address>
+              </FormMainPoint>
+              <Cost className="form-main__cost">
                 Цена: от 8000 до 12000 {"\u20BD"}
-              </div>
-              <div href="#" className="form-main__btn">
-                Выбрать модель
-              </div>
-            </div>
-          </div>
+              </Cost>
+              <Button href="#">Выбрать модель</Button>
+            </Lane>
+          </Aside>
           <Basket
             id="basket"
             src={basket}
@@ -136,9 +169,9 @@ function MapMain() {
               aside();
             }}
           />
-        </div>
-      </div>
-    </div>
+        </Lent>
+      </Wrapper>
+    </FormMain>
   );
 }
 
