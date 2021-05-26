@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/index.scss"],"names":[],"mappings":"AAAA,6EAcE,QAAS","file":"main.83fb6615.chunk.css","sourcesContent":["body,\nh1,\nh2,\nh3,\nh4,\np,\nul[class],\nol[class],\nli,\nfigure,\nfigcaption,\nblockquote,\ndl,\ndd {\n  margin: 0;\n}"]}
