@@ -44,7 +44,8 @@ export const Lent = styled.div`
   width: 1248px;
   height: 100%;
   display: flex;
-  @include desktop_min {
+  @media (min-width: ${constants.screen_dx_min}px) and (max-width: ${constants.screen_dx -
+    1}px) {
     width: 100%;
   }
   @media (min-width: ${constants.screen_tablet}px) and (max-width: ${constants.screen_dx_min -
@@ -192,11 +193,11 @@ export const GoogleMap = styled.div`
     margin-left:24px;
   }
 `;
-
 export const Aside = styled.div`
+  
   grid-column: 32/44;
   height: 100%;
-  border-left: 1px solid $light_gray;
+  border-left: 1px solid ${constants.light_gray};
   display: flex;
   @media (max-width: ${constants.screen_tablet - 1}px) {
     justify-content: space-between;
@@ -208,9 +209,9 @@ export const Aside = styled.div`
     1}px) {
     grid-column: 3/31;
     margin-left: 10%;
+    margin-top: 0;
     border: 0;
     height: auto;
-    margin-top: 2em;
   }
 `;
 export const Lane = styled.div`
@@ -409,4 +410,5 @@ text-decoration:none;
     bottom: 1em;
     left: 24px;
   }
+  
 `;
