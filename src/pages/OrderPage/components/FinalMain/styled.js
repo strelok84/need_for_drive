@@ -12,7 +12,7 @@ export const FormMain = styled.div`
     grid-column: 1/87;
   }
   @media (max-width: ${constants.screen_tablet - 1}px) {
-    grid-column: 15/87;
+    grid-column: 1/87;
   }
 `;
 
@@ -46,7 +46,9 @@ export const FormMainLent = styled.div`
     align-items: flex-start;
   }
   @media (max-width: ${constants.screen_tablet - 1}px) {
-    width: 100%;
+    width: calc(100% - 48px);
+    margin-left:24px;
+    margin-right:24px;
     flex-direction: column;
     justify-content: space-around;
   }
@@ -89,7 +91,7 @@ export const FormMainLane = styled.div`
     min-width: 320px;
   }
   @media (max-width: ${constants.screen_tablet - 1}px) {
-    margin-right: 5%;
+    margin-right: 0;
     margin-left: 0;
     align-items: center;
   }
@@ -102,8 +104,10 @@ export const FormMainOrder = styled.div`
   &.basket {
     display: block;
     text-align: left;
-
-    width: 90%;
+    width: 100%;
+    @media (max-width: ${constants.screen_tablet - 1}px) {
+      text-align: center;
+    }
   }
   @media (min-width: ${constants.screen_dx_min}px) and (max-width: ${constants.screen_dx -
     1}px) {
@@ -120,7 +124,7 @@ export const FormMainOrder = styled.div`
     padding-top: 0;
     text-align: center;
     display: none;
-    padding-left: 10%;
+    padding-left: 0;
   }
 `;
 
@@ -132,9 +136,10 @@ export const FormMainPoint = styled.div`
   padding-top: 32px;
   &.basket {
     display: flex;
-    width: 90%;
-    margin-right: 5%;
-    margin-left: 5%;
+    width: 100%;
+    margin-right: 0;
+    margin-left: 0;
+    padding-left:0;
     @media (min-width: ${constants.screen_tablet}px) and (max-width: ${constants.screen_dx_min -
       1}px) {
       margin-left: 0;
@@ -180,9 +185,9 @@ export const FormMainItemAside = styled.div`
   padding-top: 16px;
   &.basket {
     display: flex;
-    width: 90%;
-    margin-right: 5%;
-    margin-left: 5%;
+    width: 100%;
+    margin-right: 0;
+    margin-left: 0;
     @media (min-width: ${constants.screen_tablet}px) and (max-width: ${constants.screen_dx_min -
       1}px) {
       margin-left: 0;
@@ -196,6 +201,7 @@ export const FormMainItemAside = styled.div`
   }
   @media (max-width: ${constants.screen_tablet - 1}px) {
     display: none;
+    padding-left:0;
   }
   @media (min-width: ${constants.screen_dx_min}px) and (max-width: ${constants.screen_dx -
     1}px) {
@@ -212,9 +218,10 @@ export const FormMainCost = styled.div`
   margin-top: 32px;
   &.basket {
     display: block;
-    width: 90%;
-    margin-right: 5%;
-    margin-left: 5%;
+    width: 100%;
+    margin-right: 0;
+    margin-left: 0;
+    padding-left:0;
     @media (min-width: ${constants.screen_tablet}px) and (max-width: ${constants.screen_dx_min -
       1}px) {
       margin-left: 0;
@@ -268,7 +275,7 @@ export const FormMainBtn = styled.div`
     width: 60vw;
     position: fixed;
     bottom: 1em;
-    left: 10%;
+    left: 24px;
   }
   @media (min-width: ${constants.screen_dx_min}px) and (max-width: ${constants.screen_dx -
     1}px) {
@@ -367,4 +374,8 @@ export const CarImg = styled.img`
   margin-right: 20%;
   margin-top: 3%;
   height:116px;
+  @media (max-width: ${constants.screen_tablet - 1}px) {
+    margin-right:0;
+    
+  }
 `;

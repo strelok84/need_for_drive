@@ -173,7 +173,7 @@ export const Add = styled.a`
     }
   }
   @media (max-width: ${constants.screen_tablet - 1}px) {
-    margin-left: 16%;
+    margin-left: 24px;
   }
   :hover {
     color: ${constants.main_accent};
@@ -197,7 +197,7 @@ export const Total = styled.a`
     }
   }
   @media (max-width: ${constants.screen_tablet - 1}px) {
-    margin-left: 16%;
+    margin-left: 24px;
   }
   :hover {
     color: ${constants.main_accent};
@@ -213,9 +213,10 @@ export const Number = styled.a`
     text-decoration: none;
     margin-right: 16px;
     font: 700 normal 14px/16px "Roboto", sans-serif;
-    color: ${constants.dark_gray};
-    
-      
+    color: ${constants.dark_gray};     
+  }
+  @media (max-width: ${constants.screen_tablet - 1}px) {
+    margin-left:24px;
   }
   
 `;
