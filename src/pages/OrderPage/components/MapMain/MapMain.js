@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import GoogleMapReact from "google-map-react";
 import Select from "react-select";
 import basket from "../../../../assets/img/basket.svg";
@@ -23,6 +23,9 @@ import {
   Cost,
   Button,
 } from "./styled";
+import { connect, useDispatch, useSelector } from "react-redux";
+import { GetCity } from "../../../../redux/city/actions";
+import { GET_CITY } from "../../../../redux/types";
 
 const cityOptions = [
   { value: "Тьмутаракань", label: "Тьмутаракань" },
@@ -89,6 +92,17 @@ const FormSity = {
   width: "224px",
 };
 function MapMain() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(GetCity());
+  }, [dispatch]);
+
+  const cities = useSelector((state) => state.cities.cities.data);  
+  /* cities.map((c) => {
+    console.log(c.name);
+  }); */
+
   const aside = () => {
     const order = document.querySelector(".form-main__order");
     const pickpoint = document.querySelector(".form-main__point");
@@ -174,5 +188,9 @@ function MapMain() {
     </FormMain>
   );
 }
-
-export default MapMain;
+const MapStateToProps = (state) => {
+  return {
+    cities: state.cities.cities,
+  };
+};
+export default connect(MapStateToProps, null)(MapMain);
