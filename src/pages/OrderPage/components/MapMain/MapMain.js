@@ -24,7 +24,7 @@ import {
   Button,
 } from "./styled";
 import { connect, useDispatch, useSelector } from "react-redux";
-import { GetCity } from "../../../../redux/city/actions";
+import { GetCity,GetPoint } from "../../../../redux/city/actions";
 import { GET_CITY } from "../../../../redux/types";
 
 const cityOptions = [
@@ -93,16 +93,17 @@ const FormSity = {
 };
 function MapMain() {
   const dispatch = useDispatch();
-
   useEffect(() => {
     dispatch(GetCity());
+    dispatch(GetPoint())
   }, [dispatch]);
 
-  const cities = useSelector((state) => state.cities.cities.data);  
-  /* cities.map((c) => {
-    console.log(c.name);
-  }); */
-
+  const cities = useSelector((state) => state.cities.cities.data);
+  const points = useSelector((state) => state.points.points.data);
+  const optionsCity = cities.map((city) => ({ value: city.name, label: city.name }));
+  const optionsPoint = points.map((point)=>({value:point.address, label:point.address}))
+  console.log(optionsPoint)
+  
   const aside = () => {
     const order = document.querySelector(".form-main__order");
     const pickpoint = document.querySelector(".form-main__point");
@@ -127,7 +128,7 @@ function MapMain() {
                 <label for="city">Город</label>
                 <Select
                   isClearable="true"
-                  options={cityOptions}
+                  options={optionsCity}
                   styles={colourStyles}
                   placeholder="Начните вводить город..."
                 />
@@ -136,7 +137,7 @@ function MapMain() {
                 <label for="point"></label>
                 <Select
                   isClearable="true"
-                  options={cityOptions}
+                  options={optionsPoint}
                   styles={colourStyles}
                   placeholder="Начните вводить пункт..."
                 />
