@@ -95,14 +95,14 @@ function MapMain() {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(GetCity());
-    dispatch(GetPoint())
+    dispatch(GetPoint());
   }, [dispatch]);
 
   const cities = useSelector((state) => state.cities.cities.data);
   const points = useSelector((state) => state.points.points.data);
   const optionsCity = cities.map((city) => ({ value: city.name, label: city.name }));
   const optionsPoint = points.map((point)=>({value:point.address, label:point.address}))
-  console.log(optionsPoint)
+  
   
   const aside = () => {
     const order = document.querySelector(".form-main__order");
@@ -131,6 +131,7 @@ function MapMain() {
                   options={optionsCity}
                   styles={colourStyles}
                   placeholder="Начните вводить город..."
+                  onChange={(event)=>{console.log(event === null ? '' : event.value)}}
                 />
               </InputWrapperSity>
               <InputWrapperPoint>
@@ -140,6 +141,8 @@ function MapMain() {
                   options={optionsPoint}
                   styles={colourStyles}
                   placeholder="Начните вводить пункт..."
+                  noOptionsMessage={() => 'Нет вариантов'}
+                  
                 />
               </InputWrapperPoint>
             </MapOrder>
