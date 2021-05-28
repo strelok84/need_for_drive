@@ -83,6 +83,7 @@ const FormSity = {
 
 function MapMain() {
   const selectInputRef = useRef();
+
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(GetCity());
@@ -92,7 +93,7 @@ function MapMain() {
   const cities = useSelector((state) => state.cities.cities.data);
   const points = useSelector((state) => state.points.points.data);
   const city = useSelector((state) => state.orderCity.orderCity);
-  if (!city){
+  if (!city&&selectInputRef.current) {
     selectInputRef.current.select.clearValue();
   }
   const point = useSelector((state) => state.orderPoint.orderPoint);
@@ -109,6 +110,9 @@ function MapMain() {
 
   const cityHandle = (value) => {
     dispatch(SetCity(value));
+    if(selectInputRef.current){
+    selectInputRef.current.select.clearValue();
+    }
   };
   const pointHandle = (value) => {
     dispatch(SetPoint(value));

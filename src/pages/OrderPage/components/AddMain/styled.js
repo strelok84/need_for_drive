@@ -526,6 +526,9 @@ export const DateWrapper = styled.div`
       color: ${constants.dark_gray};
       font: 300 normal 14px/16px "Roboto", sans-serif;
     }
+    :focus-visible{
+      outline:none;
+    }
   }
   button:after {
     background-color: transparent;
