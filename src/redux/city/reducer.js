@@ -1,9 +1,10 @@
-import { GET_CITY, GET_POINT, SET_CITY } from "../types";
+import { GET_CITY, GET_POINT, SET_CITY,SET_POINT } from "../types";
 
 const initialState = {
-  cities: { data: [{ name:""}] },
-  points:{data:[{address:""}]},
-  orderCity:""
+  cities: { data: [{ name: "" }] },
+  points: { data: [{ address: "", cityId: { name: "123" } }] },
+  orderCity: "",
+  orderPoint:""
 };
 
 export const cityReducer = (state = initialState, action) => {
@@ -13,7 +14,9 @@ export const cityReducer = (state = initialState, action) => {
     case GET_POINT:
       return { ...state, points: action.payload };
     case SET_CITY:
-      return {...state, orderCity:action.payload};
+      return { ...state, orderCity: action.payload };
+    case SET_POINT:
+      return {...state, orderPoint:action.payload};  
     default:
       return state;
   }

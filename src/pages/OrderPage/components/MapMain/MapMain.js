@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import GoogleMapReact from "google-map-react";
 import Select from "react-select";
 import basket from "../../../../assets/img/basket.svg";
@@ -24,24 +24,13 @@ import {
   Button,
 } from "./styled";
 import { connect, useDispatch, useSelector } from "react-redux";
-import { GetCity,GetPoint } from "../../../../redux/city/actions";
-import { GET_CITY } from "../../../../redux/types";
+import {
+  GetCity,
+  GetPoint,
+  SetCity,
+  SetPoint,
+} from "../../../../redux/city/actions";
 
-const cityOptions = [
-  { value: "Тьмутаракань", label: "Тьмутаракань" },
-  { value: "Ульяновск", label: "Ульяновск" },
-  { value: "Самара", label: "Самара" },
-  { value: "Самара", label: "Самара" },
-  { value: "Тьмутаракань", label: "Тьмутаракань" },
-  { value: "Ульяновск", label: "Ульяновск" },
-  { value: "Самара", label: "Самара" },
-  { value: "Самара", label: "Самара" },
-  { value: "Тьмутаракань", label: "Тьмутаракань" },
-  { value: "Ульяновск", label: "Ульяновск" },
-  { value: "Самара", label: "Самара" },
-  { value: "Самара", label: "Самара" },
-  { value: "Самара", label: "Самара" },
-];
 const inputStyles = () => ({
   border: "none",
   borderBottom: "1px solid #999999",
@@ -91,7 +80,9 @@ const FormSity = {
   outline: "none",
   width: "224px",
 };
+
 function MapMain() {
+  const selectInputRef = useRef();
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(GetCity());
@@ -100,10 +91,29 @@ function MapMain() {
 
   const cities = useSelector((state) => state.cities.cities.data);
   const points = useSelector((state) => state.points.points.data);
-  const optionsCity = cities.map((city) => ({ value: city.name, label: city.name }));
-  const optionsPoint = points.map((point)=>({value:point.address, label:point.address}))
-  
-  
+  const city = useSelector((state) => state.orderCity.orderCity);
+  if (!city){
+    selectInputRef.current.select.clearValue();
+  }
+  const point = useSelector((state) => state.orderPoint.orderPoint);
+  const optionsCity = cities.map((city) => ({
+    value: city.name,
+    label: city.name,
+  }));
+  const nullFilter = points.filter((point) => point.cityId !== null);
+  const filter2 = nullFilter.filter((point) => point.cityId.name === city);
+  let optionsPoint = filter2.map((point) => ({
+    value: point.address,
+    label: point.address,
+  }));
+
+  const cityHandle = (value) => {
+    dispatch(SetCity(value));
+  };
+  const pointHandle = (value) => {
+    dispatch(SetPoint(value));
+  };
+
   const aside = () => {
     const order = document.querySelector(".form-main__order");
     const pickpoint = document.querySelector(".form-main__point");
@@ -131,18 +141,23 @@ function MapMain() {
                   options={optionsCity}
                   styles={colourStyles}
                   placeholder="Начните вводить город..."
-                  onChange={(event)=>{console.log(event === null ? '' : event.value)}}
+                  onChange={(event) =>
+                    cityHandle(event === null ? "" : event.value)
+                  }
                 />
               </InputWrapperSity>
               <InputWrapperPoint>
                 <label for="point"></label>
                 <Select
+                  ref={selectInputRef}
                   isClearable="true"
                   options={optionsPoint}
                   styles={colourStyles}
                   placeholder="Начните вводить пункт..."
-                  noOptionsMessage={() => 'Нет вариантов'}
-                  
+                  noOptionsMessage={() => "Нет вариантов"}
+                  onChange={(event) =>
+                    pointHandle(event === null ? "" : event.value)
+                  }
                 />
               </InputWrapperPoint>
             </MapOrder>
@@ -169,9 +184,9 @@ function MapMain() {
                 </FormMainPickUp>
                 {<FormMainDots></FormMainDots>}
                 <Address>
-                  Ульяновск,
+                  {city},
                   <br />
-                  Нариманова 42
+                  {city ? point : ""}
                 </Address>
               </FormMainPoint>
               <Cost className="form-main__cost">

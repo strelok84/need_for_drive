@@ -1,4 +1,4 @@
-import { GET_CITY,GET_POINT } from "../types";
+import { GET_CITY,GET_POINT,SET_CITY, SET_POINT } from "../types";
 import { data } from "../../api/api";
 
 export function GetCity() {
@@ -12,4 +12,16 @@ export function GetPoint(){
     const json = await data.getPoint()
     dispatch({type:GET_POINT, payload:json})
   };
+}
+
+export function SetCity(orderSity) {
+  return async dispatch => {    
+    dispatch({type:SET_CITY, payload:orderSity})
+  };
+}
+
+export function SetPoint(orderPoint){
+  return async dispatch =>{
+    dispatch({type:SET_POINT,payload:orderPoint})
+  }
 }
