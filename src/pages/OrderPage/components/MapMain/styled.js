@@ -172,7 +172,7 @@ export const Chooze = styled.div`
   }
 `;
 
-export const GoogleMap = styled.div`
+export const GoogleMapBox = styled.div`
   width: 736px;
   height: 352px;
   margin-top: 16px;
@@ -412,3 +412,11 @@ text-decoration:none;
   }
   
 `;
+export const Marker = styled.div`
+border: 5px solid #0EC261;
+background: #FFFFFF;
+box-sizing: border-box;
+width:18px;
+height:18px;
+border-radius:50%;
+`
