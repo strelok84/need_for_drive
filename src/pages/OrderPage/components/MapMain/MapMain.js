@@ -93,7 +93,7 @@ function MapMain() {
   const cities = useSelector((state) => state.cities.cities.data);
   const points = useSelector((state) => state.points.points.data);
   const city = useSelector((state) => state.orderCity.orderCity);
-  if (!city&&selectInputRef.current) {
+  if (!city && selectInputRef.current) {
     selectInputRef.current.select.clearValue();
   }
   const point = useSelector((state) => state.orderPoint.orderPoint);
@@ -110,10 +110,11 @@ function MapMain() {
 
   const cityHandle = (value) => {
     dispatch(SetCity(value));
-    if(selectInputRef.current){
-    selectInputRef.current.select.clearValue();
+    if (selectInputRef.current) {
+      selectInputRef.current.select.clearValue();
     }
   };
+  
   const pointHandle = (value) => {
     dispatch(SetPoint(value));
   };
@@ -211,9 +212,5 @@ function MapMain() {
     </FormMain>
   );
 }
-const MapStateToProps = (state) => {
-  return {
-    cities: state.cities.cities,
-  };
-};
-export default connect(MapStateToProps, null)(MapMain);
+
+export default MapMain;
