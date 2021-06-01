@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-/* import "./orderHeader.scss"; */
+import { connect, useDispatch, useSelector } from "react-redux";
 import Sity_marker from "../../../../assets/img/Sity_marker.svg";
 import triangle from "../../../../assets/img/triangle.svg";
 import {
@@ -19,10 +19,12 @@ import {
 } from "./styled";
 
 function Order_header(props) {
+  const city = useSelector((state) => state.orderCity.orderCity);
+  const point = useSelector((state) => state.orderPoint.orderPoint);
   useEffect(() => {
     window.addEventListener("resize", () => {
       width = window.innerWidth;
-      resize()
+      resize();
     });
     const place = document.querySelector(".lane-breadcrumbs__place");
     const model = document.querySelector(".lane-breadcrumbs__model");
@@ -65,6 +67,30 @@ function Order_header(props) {
         }
       }
     };
+    switch (props.name) {
+      case "model":
+        model.classList.add("now");
+        place.classList.remove("now");
+        break;
+      case "place":
+        place.classList.add("now");
+        model.classList.remove("now");
+        break;
+      case "add":
+        add.classList.add("now");
+        model.classList.remove("now");
+        break;
+      case "total":
+        total.classList.add("now");
+        add.classList.remove("now");
+        break;
+      case "final":
+        total.classList.add("now");
+        add.classList.remove("now");
+        break;
+      default:
+        console.log("wrong_name");
+    }
     resize();
   });
   return (
@@ -91,7 +117,7 @@ function Order_header(props) {
           </Place>
           <img src={triangle} className="triangle"></img>
           <Model
-            href="/need_for_drive/model"
+            to={point&&city?"./model":"#"}
             className="lane-breadcrumbs__model hidden"
           >
             Модель

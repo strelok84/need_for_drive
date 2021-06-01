@@ -1,8 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import GoogleMapReact from "google-map-react";
-
 import Select from "react-select";
-import basket from "../../../../assets/img/basket.svg";
 import {
   Basket,
   FormMain,
@@ -31,6 +29,7 @@ import {
   SetCity,
   SetPoint,
 } from "../../../../redux/city/actions";
+import basket from "../../../../assets/img/basket.svg";
 
 const inputStyles = () => ({
   border: "none",
@@ -82,18 +81,14 @@ const FormSity = {
   width: "224px",
 };
 
-const position = {
-  lat: 37.772,
-  lng: -122.214,
-};
 
 let optionsPoint = [];
 //5723fb56-580e-43c0-ae85-0ba0cfb5a4dd - streloc84
 //bd403854-01c0-404d-81a7-6847c7363770 - cucumberivanoff
 function MapMain() {
-  let [pointsNow, setPoints] = useState([]);
+  let [pointsNow, setPoint] = useState([]);
   const geocode = async (city, address) => {
-    const url = `https://geocode-maps.yandex.ru/1.x/?format=json&apikey=bd403854-01c0-404d-81a7-6847c7363770&geocode=${city}, ${address}`;
+    const url = `https://geocode-maps.yandex.ru/1.x/?format=json&apikey=fabc5db5-3846-4419-8d4b-9c07007b4e28&geocode=${city}, ${address}`;
     let request = () => {
       return fetch(url);
     };
@@ -112,12 +107,13 @@ function MapMain() {
   const selectInputRef = useRef();
 
   const dispatch = useDispatch();
+
   useEffect(() => {
     dispatch(GetCity());
     dispatch(GetPoint());
   }, [dispatch]);
 
-  const cities = useSelector((state) => state.cities.cities.data); 
+  const cities = useSelector((state) => state.cities.cities.data);
   const city = useSelector((state) => state.orderCity.orderCity);
   const optionsCity = cities.map((city) => ({
     value: city.name,
@@ -128,29 +124,34 @@ function MapMain() {
   }
 
   const points = useSelector((state) => state.points.points.data);
-  const point = useSelector((state) => state.orderPoint.orderPoint);  
+  const point = useSelector((state) => state.orderPoint.orderPoint);
   const nullFilter = points.filter((point) => point.cityId !== null);
   const filter2 = nullFilter.filter((point) => point.cityId.name === city);
 
-  
+  useEffect(() => {
+    if (points) {
+      Promise.all(
+        filter2.map((point) => geocode(city, point.address))
+      ).then((responses) =>
+        responses.map((response) =>
+          setPoint((oldArray) => [...oldArray, response])
+        )
+      );
+    }
+  }, [city]);
 
-  useEffect(()=>{
-    optionsPoint = filter2.map((point, index) => ({
-      value: point.address,
-      label: point.address,
-      coord: geocode(city, point.address).then((result) => {
-        optionsPoint[index].coord = result;      
-      }),
-    }));
-  })
-
-
+  optionsPoint = filter2.map((point, index) => ({
+    value: point.address,
+    label: point.address,
+  }));
   console.log(optionsPoint);
+
   const cityHandle = (value) => {
     dispatch(SetCity(value));
     if (selectInputRef.current) {
       selectInputRef.current.select.clearValue();
     }
+    setPoint([])
   };
 
   const pointHandle = (value) => {
@@ -159,15 +160,14 @@ function MapMain() {
 
   const aside = () => {
     const order = document.querySelector(".form-main__order");
-    const pickpoint = document.querySelector(".form-main__point");
-    const cost = document.querySelector(".form-main__cost");
+    const pickpoint = document.querySelector(".form-main__point");    
     const formMainMap = document.querySelector(".form-main__map");
     const formMain = document.querySelector(".form-main");
     const basket = document.getElementById("basket");
     basket.classList.toggle("basket");
     order.classList.toggle("basket");
     pickpoint.classList.toggle("basket");
-    cost.classList.toggle("basket");
+    
     formMain.classList.toggle("basket");
     formMainMap.classList.toggle("disable");
   };
@@ -205,20 +205,16 @@ function MapMain() {
               </InputWrapperPoint>
             </MapOrder>
             <Chooze>Выбрать на карте</Chooze>
-            <GoogleMapBox>
+            <GoogleMapBox >
               <GoogleMapReact
                 bootstrapURLKeys={{
                   key: "AIzaSyDEUoFQqwctWUViRtQq47lU8YuYXvAiXkI",
                 }}
-                center={{ lat: 54.31, lng: 48.39 }}
-                zoom={14}
+                center={pointsNow.length>0?{lat:+pointsNow[0][1], lng: +pointsNow[0][0]}:{ lat: 54.31, lng: 48.39 }}
+                zoom={12}
               >
-                {optionsPoint.coord
-                  ? optionsPoint.map((point) => {
-                      console.log(optionsPoint.coord);
-                    })
-                  : ""}
-                {/*  <Marker lat={optionsPoint[0].coord[0]} lng={optionsPoint[0].coord[1]}></Marker> */}
+
+               {pointsNow.map(point=>(point?<Marker lat={point[1]} lng={point[0]}></Marker>:""))}
               </GoogleMapReact>
             </GoogleMapBox>
           </Map>
@@ -239,7 +235,7 @@ function MapMain() {
                   {city ? point : ""}
                 </Address>
               </FormMainPoint>
-              <Button href="./model">Выбрать модель</Button>
+              <Button className={point&&city?"":"gray"} to={point&&city?"./model":"#"}>Выбрать модель</Button>
             </Lane>
           </Aside>
           <Basket

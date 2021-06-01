@@ -1,5 +1,6 @@
 import styled from "styled-components/macro";
 import constants from "../../../../styles/constants";
+import  {Link } from 'react-router-dom'
 
 export const FormHeader = styled.div`
   grid-column: 1/87;
@@ -116,6 +117,9 @@ export const Place = styled.a`
   margin-right: 16px;
   font: 700 normal 14px/16px "Roboto", sans-serif;
   color: ${constants.dark_gray};
+  &.now{
+    color: ${constants.main_accent};
+  }
   &.confirm {
     display: none;
   }
@@ -134,12 +138,15 @@ export const Place = styled.a`
     color: ${constants.main_accent};
   }
 `;
-export const Model = styled.a`
+export const Model = styled(Link)`
   text-decoration: none;
   margin-right: 16px;
   font: 700 normal 14px/16px "Roboto", sans-serif;
   color: ${constants.dark_gray};
   margin-left: 16px;
+  &.now{
+    color: ${constants.main_accent};
+  }
   &.confirm {
     display: none;
   }
@@ -164,6 +171,9 @@ export const Add = styled.a`
   font: 700 normal 14px/16px "Roboto", sans-serif;
   color: ${constants.dark_gray};
   margin-left: 16px;
+  &.now{
+    color: ${constants.main_accent};
+  }
   &.confirm {
     display: none;
   }
@@ -188,6 +198,9 @@ export const Total = styled.a`
   font: 700 normal 14px/16px "Roboto", sans-serif;
   color: ${constants.dark_gray};
   margin-left: 16px;
+  &.now{
+    color: ${constants.main_accent};
+  }
   &.confirm {
     display: none;
   }

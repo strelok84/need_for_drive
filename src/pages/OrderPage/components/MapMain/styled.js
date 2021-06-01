@@ -1,5 +1,6 @@
 import styled from "styled-components/macro";
 import constants from "../../../../styles/constants";
+import  { Redirect,Link } from 'react-router-dom'
 
 export const Basket = styled.img`
   @media (min-width: ${constants.screen_dx_min - 1}px) {
@@ -224,6 +225,7 @@ export const Lane = styled.div`
     1}px) {
     margin-left: 0;
     align-items: flex-start;
+    min-width:280px;
   }
   @media (min-width: ${constants.screen_tablet}px) and (max-width: ${constants.screen_dx_min -
     1}px) {
@@ -368,7 +370,7 @@ export const Cost = styled.div`
     }
   }
 `;
-export const Button = styled.a`
+export const Button = styled(Link)`
 text-decoration:none;
   width: 100%;
   padding-left: 32px;
@@ -388,6 +390,11 @@ text-decoration:none;
   display: flex;
   align-items: center;
   justify-content: center;
+  &.gray{
+    background:none ${constants.light_gray};
+    cursor: default;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  }
   @media (min-width: ${constants.screen_dx_min}px) and (max-width: ${constants.screen_dx -
     1}px) {
     width: 80%;
