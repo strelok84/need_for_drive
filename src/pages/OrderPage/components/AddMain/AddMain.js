@@ -40,7 +40,7 @@ function Add() {
     const pickpoint = document.getElementById("pickpoint");
     const cost = document.getElementById("cost");
     const formMainModel = document.getElementById("formMainModel");
-    const formMain = document.getElementById("formMain");
+    const formMain = document.getElementById("form-main");
     const basket = document.getElementById("basket");
 
     basket.classList.toggle("basket");
@@ -52,7 +52,7 @@ function Add() {
     menuItem.forEach((item) => item.classList.toggle("basket"));
   };
   return (
-    <FormMain id="formMain">
+    <FormMain id="form-main">
       <FormMainWrapper>
         <FormMainLent>
           <FormMainModel id="formMainModel">

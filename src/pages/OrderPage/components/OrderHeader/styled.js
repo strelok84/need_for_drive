@@ -1,6 +1,6 @@
 import styled from "styled-components/macro";
 import constants from "../../../../styles/constants";
-import  {Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 
 export const FormHeader = styled.div`
   grid-column: 1/87;
@@ -8,10 +8,13 @@ export const FormHeader = styled.div`
   border-bottom: 1px solid ${constants.light_gray};
   display: grid;
   grid-template-rows: 3fr 1fr;
+ 
   @media (max-width: ${constants.screen_tablet - 1}px) {
     grid-column: 1/-1;
     grid-template-rows: 3fr 1fr;
     border: 0;
+    grid-row: 1/30;
+    grid-template-rows: auto;
   }
 `;
 
@@ -107,17 +110,21 @@ export const LaneBdkr = styled.div`
   @media (max-width: ${constants.screen_tablet - 1}px) {
     width: 100%;
     padding-left: 0;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: 0;
     img {
       display: none;
     }
   }
 `;
-export const Place = styled.a`
+export const Place = styled(Link)`
   text-decoration: none;
   margin-right: 16px;
   font: 700 normal 14px/16px "Roboto", sans-serif;
   color: ${constants.dark_gray};
-  &.now{
+  &.now {
     color: ${constants.main_accent};
   }
   &.confirm {
@@ -129,7 +136,7 @@ export const Place = styled.a`
     }
   }
   @media (max-width: ${constants.screen_tablet - 1}px) {
-    margin-left:24px;
+    margin-left: 24px;
   }
   :hover {
     color: ${constants.main_accent};
@@ -144,7 +151,7 @@ export const Model = styled(Link)`
   font: 700 normal 14px/16px "Roboto", sans-serif;
   color: ${constants.dark_gray};
   margin-left: 16px;
-  &.now{
+  &.now {
     color: ${constants.main_accent};
   }
   &.confirm {
@@ -165,13 +172,13 @@ export const Model = styled(Link)`
     color: ${constants.main_accent};
   }
 `;
-export const Add = styled.a`
+export const Add = styled(Link)`
   text-decoration: none;
   margin-right: 16px;
   font: 700 normal 14px/16px "Roboto", sans-serif;
   color: ${constants.dark_gray};
   margin-left: 16px;
-  &.now{
+  &.now {
     color: ${constants.main_accent};
   }
   &.confirm {
@@ -192,13 +199,13 @@ export const Add = styled.a`
     color: ${constants.main_accent};
   }
 `;
-export const Total = styled.a`
+export const Total = styled(Link)`
   text-decoration: none;
   margin-right: 16px;
   font: 700 normal 14px/16px "Roboto", sans-serif;
   color: ${constants.dark_gray};
   margin-left: 16px;
-  &.now{
+  &.now {
     color: ${constants.main_accent};
   }
   &.confirm {
@@ -226,10 +233,9 @@ export const Number = styled.a`
     text-decoration: none;
     margin-right: 16px;
     font: 700 normal 14px/16px "Roboto", sans-serif;
-    color: ${constants.dark_gray};     
+    color: ${constants.dark_gray};
   }
   @media (max-width: ${constants.screen_tablet - 1}px) {
-    margin-left:24px;
+    margin-left: 24px;
   }
-  
 `;

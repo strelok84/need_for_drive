@@ -21,6 +21,33 @@ import {
 function Order_header(props) {
   const city = useSelector((state) => state.orderCity.orderCity);
   const point = useSelector((state) => state.orderPoint.orderPoint);
+  /* const list = (item) => {
+    const bdkr = document.getElementById("bdkr");
+    const place = document.querySelector(".lane-breadcrumbs__place");
+    const model = document.querySelector(".lane-breadcrumbs__model");
+    const add = document.querySelector(".lane-breadcrumbs__add");
+    const total = document.querySelector(".lane-breadcrumbs__total");
+    const number = document.querySelector(".lane-breadcrumbs__number");
+    const form_header=document.getElementById("form-header");
+    const form_main = document.getElementById("form-main");
+    if (window.innerWidth < 768) {     
+      if(item==="place"){
+        place.classList.toggle("hidden");
+      }else if(item==="model"){
+        model.classList.toggle("hidden");
+      }else if(item==="add"){
+        add.classList.toggle("hidden");
+      }else if(item==="total"){
+        total.classList.toggle("hidden");
+      }
+      place.classList.toggle("hidden");
+      model.classList.toggle("hidden");
+      add.classList.toggle("hidden");
+      total.classList.toggle("hidden");
+      form_header.classList.toggle("menu");
+      form_main.classList.toggle("menu");
+    }
+  }; */
   useEffect(() => {
     window.addEventListener("resize", () => {
       width = window.innerWidth;
@@ -31,6 +58,7 @@ function Order_header(props) {
     const add = document.querySelector(".lane-breadcrumbs__add");
     const total = document.querySelector(".lane-breadcrumbs__total");
     const number = document.querySelector(".lane-breadcrumbs__number");
+    const form_header=document.getElementById("form-header");
     let width = window.innerWidth;
 
     if (props.name === "ConfirmFinal") {
@@ -51,7 +79,7 @@ function Order_header(props) {
             model.classList.remove("hidden");
             break;
           case "place":
-            place.classList.remove("hidden");
+            place.classList.remove("hidden");           
             break;
           case "add":
             add.classList.remove("hidden");
@@ -71,6 +99,7 @@ function Order_header(props) {
       case "model":
         model.classList.add("now");
         place.classList.remove("now");
+        form_header.classList.add("mobile-fixed")
         break;
       case "place":
         place.classList.add("now");
@@ -94,7 +123,7 @@ function Order_header(props) {
     resize();
   });
   return (
-    <FormHeader>
+    <FormHeader id="form-header">
       <Wrapper>
         <Slogan>
           <FormHeaderSlogan>Need for drive</FormHeaderSlogan>
@@ -111,28 +140,28 @@ function Order_header(props) {
         <LaneBdkr id="bdkr">
           <Place
             href="/need_for_drive/map"
-            className="lane-breadcrumbs__place hidden"
+            className="lane-breadcrumbs__place"
           >
             Местоположение
           </Place>
           <img src={triangle} className="triangle"></img>
           <Model
-            to={point&&city?"./model":"#"}
-            className="lane-breadcrumbs__model hidden"
+            to={point && city ? "./model" : "#"}
+            className="lane-breadcrumbs__model"
           >
             Модель
           </Model>
           <img src={triangle} className="triangle"></img>
           <Add
             href="/need_for_drive/add"
-            className="lane-breadcrumbs__add hidden"
+            className="lane-breadcrumbs__add"
           >
             Дополнительно
           </Add>
           <img src={triangle} className="triangle"></img>
           <Total
             href="/need_for_drive/final"
-            className="lane-breadcrumbs__total hidden"
+            className="lane-breadcrumbs__total"
           >
             Итого
           </Total>

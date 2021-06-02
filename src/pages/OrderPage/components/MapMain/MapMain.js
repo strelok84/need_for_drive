@@ -44,7 +44,11 @@ const inputStyles = () => ({
 
 const colourStyles = {
   control: (styles) => ({ ...styles, ...inputStyles() }),
-  valueContainer: (styles) => ({ ...styles, paddingLeft: "0" }),
+  valueContainer: (styles) => ({
+    ...styles,
+    paddingLeft: "0",
+    cursor: "pointer",
+  }),
   indicatorsContainer: (styles) => ({ ...styles, minHeight: "19px" }),
   indicatorSeparator: (styles) => ({ ...styles, display: "none" }),
   dropdownIndicator: (styles) => ({ ...styles, display: "none" }),
@@ -80,7 +84,6 @@ const FormSity = {
   outline: "none",
   width: "224px",
 };
-
 
 let optionsPoint = [];
 //5723fb56-580e-43c0-ae85-0ba0cfb5a4dd - streloc84
@@ -151,7 +154,7 @@ function MapMain() {
     if (selectInputRef.current) {
       selectInputRef.current.select.clearValue();
     }
-    setPoint([])
+    setPoint([]);
   };
 
   const pointHandle = (value) => {
@@ -160,19 +163,22 @@ function MapMain() {
 
   const aside = () => {
     const order = document.querySelector(".form-main__order");
-    const pickpoint = document.querySelector(".form-main__point");    
+    const pickpoint = document.querySelector(".form-main__point");
     const formMainMap = document.querySelector(".form-main__map");
     const formMain = document.querySelector(".form-main");
     const basket = document.getElementById("basket");
+
     basket.classList.toggle("basket");
     order.classList.toggle("basket");
-    pickpoint.classList.toggle("basket");
-    
+    console.log(pickpoint);
+    if (pickpoint) {
+      pickpoint.classList.toggle("basket");
+    }
     formMain.classList.toggle("basket");
     formMainMap.classList.toggle("disable");
   };
   return (
-    <FormMain className="form-main">
+    <FormMain id="form-main" className="form-main">
       <Wrapper>
         <Lent>
           <Map className="form-main__map">
@@ -205,16 +211,21 @@ function MapMain() {
               </InputWrapperPoint>
             </MapOrder>
             <Chooze>Выбрать на карте</Chooze>
-            <GoogleMapBox >
+            <GoogleMapBox>
               <GoogleMapReact
                 bootstrapURLKeys={{
                   key: "AIzaSyDEUoFQqwctWUViRtQq47lU8YuYXvAiXkI",
                 }}
-                center={pointsNow.length>0?{lat:+pointsNow[0][1], lng: +pointsNow[0][0]}:{ lat: 54.31, lng: 48.39 }}
+                center={
+                  pointsNow.length > 0
+                    ? { lat: +pointsNow[0][1], lng: +pointsNow[0][0] }
+                    : { lat: 54.31, lng: 48.39 }
+                }
                 zoom={12}
               >
-
-               {pointsNow.map(point=>(point?<Marker lat={point[1]} lng={point[0]}></Marker>:""))}
+                {pointsNow.map((point) =>
+                  point ? <Marker lat={point[1]} lng={point[0]}></Marker> : ""
+                )}
               </GoogleMapReact>
             </GoogleMapBox>
           </Map>
@@ -223,19 +234,28 @@ function MapMain() {
               <FormMainOrder className="form-main__order">
                 Ваш заказ
               </FormMainOrder>
-              <FormMainPoint className="form-main__point">
-                <FormMainPickUp>
-                  <br />
-                  Пункт выдачи
-                </FormMainPickUp>
-                {<FormMainDots></FormMainDots>}
-                <Address>
-                  {city},
-                  <br />
-                  {city ? point : ""}
-                </Address>
-              </FormMainPoint>
-              <Button className={point&&city?"":"gray"} to={point&&city?"./model":"#"}>Выбрать модель</Button>
+              {city ? (
+                <FormMainPoint className="form-main__point">
+                  <FormMainPickUp>
+                    <br />
+                    Пункт выдачи
+                  </FormMainPickUp>
+                  {<FormMainDots></FormMainDots>}
+                  <Address>
+                    {city},
+                    <br />
+                    {city ? point : ""}
+                  </Address>
+                </FormMainPoint>
+              ) : (
+                ""
+              )}
+              <Button
+                className={point && city ? "" : "gray"}
+                to={point && city ? "./model" : "#"}
+              >
+                Выбрать модель
+              </Button>
             </Lane>
           </Aside>
           <Basket

@@ -13,6 +13,7 @@ export const FormMain = styled.div`
   }
   @media (max-width: ${constants.screen_tablet - 1}px) {
     grid-column: 1/87;
+    grid-row: 30/101;
   }
 `;
 
@@ -47,10 +48,10 @@ export const FormMainLent = styled.div`
   }
   @media (max-width: ${constants.screen_tablet - 1}px) {
     width: calc(100% - 48px);
-    margin-left:24px;
-    margin-right:24px;
+    margin-left: 24px;
+    margin-right: 24px;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: flex-start;
   }
 `;
 export const FormMainAside = styled.div`
@@ -139,7 +140,7 @@ export const FormMainPoint = styled.div`
     width: 100%;
     margin-right: 0;
     margin-left: 0;
-    padding-left:0;
+    padding-left: 0;
     @media (min-width: ${constants.screen_tablet}px) and (max-width: ${constants.screen_dx_min -
       1}px) {
       margin-left: 0;
@@ -201,7 +202,7 @@ export const FormMainItemAside = styled.div`
   }
   @media (max-width: ${constants.screen_tablet - 1}px) {
     display: none;
-    padding-left:0;
+    padding-left: 0;
   }
   @media (min-width: ${constants.screen_dx_min}px) and (max-width: ${constants.screen_dx -
     1}px) {
@@ -221,7 +222,7 @@ export const FormMainCost = styled.div`
     width: 100%;
     margin-right: 0;
     margin-left: 0;
-    padding-left:0;
+    padding-left: 0;
     @media (min-width: ${constants.screen_tablet}px) and (max-width: ${constants.screen_dx_min -
       1}px) {
       margin-left: 0;
@@ -306,12 +307,11 @@ export const FormMainModel = styled.div`
     1}px) {
     width: 100%;
     align-items: flex-start;
-    
   }
   @media (max-width: ${constants.screen_tablet - 1}px) {
     width: 100%;
     justify-content: flex-start;
-    flex-direction:column;
+    flex-direction: column;
     grid-column: 1/44;
   }
 `;
@@ -335,11 +335,11 @@ export const FinalOrder = styled.div`
   display: flex;
   flex-direction: column;
   margin-top: 3%;
-  height:116px;
+  height: 116px;
   @media (min-width: ${constants.screen_tablet}px) and (max-width: ${constants.screen_dx_min -
     1}px) {
-      margin-left:10%;
-    }
+    margin-left: 10%;
+  }
 `;
 export const OrderWrapper = styled.div`
   display: flex;
@@ -348,34 +348,33 @@ export const OrderWrapper = styled.div`
 export const ModelName = styled.div`
   font: 400 normal 18px/21px "Roboto", sans-serif;
   color: ${constants.main_black};
-  height:22px;
+  height: 22px;
 `;
 export const ModelNumber = styled.div`
   font: 400 normal 14px/16px "Roboto", sans-serif;
   color: ${constants.main_black};
-  margin-top:8px;
-  height:24px;
-  width:94px;
-  border:1px solid ${constants.dark_gray};
-  text-align:center;
+  margin-top: 8px;
+  height: 24px;
+  width: 94px;
+  border: 1px solid ${constants.dark_gray};
+  text-align: center;
   line-height: 24px;
 `;
 export const Fuel = styled.div`
   font: normal 14px/16px "Roboto", sans-serif;
-  margin-top:8px;
-  height:22px;
+  margin-top: 8px;
+  height: 22px;
 `;
 export const Available = styled.div`
   font: normal 14px/16px "Roboto", sans-serif;
-  margin-top:8px;
-  height:22px;
+  margin-top: 8px;
+  height: 22px;
 `;
 export const CarImg = styled.img`
   margin-right: 20%;
   margin-top: 3%;
-  height:116px;
+  height: 116px;
   @media (max-width: ${constants.screen_tablet - 1}px) {
-    margin-right:0;
-    
+    margin-right: 0;
   }
 `;

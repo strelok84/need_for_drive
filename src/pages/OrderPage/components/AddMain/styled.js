@@ -13,6 +13,7 @@ export const FormMain = styled.div`
   }
   @media (max-width: ${constants.screen_tablet - 1}px) {
     grid-column: 1/87;
+    grid-row: 30/101;
   }
 `;
 
@@ -48,9 +49,9 @@ export const FormMainLent = styled.div`
   @media (max-width: ${constants.screen_tablet - 1}px) {
     width: 100%;
     flex-direction: column;
-    justify-content: space-around;
-    margin-left:24px;
-    margin-right:24px;
+    justify-content: flex-start;
+    margin-left: 24px;
+    margin-right: 24px;
   }
 `;
 export const FormMainAside = styled.div`
@@ -122,7 +123,7 @@ export const FormMainOrder = styled.div`
     text-align: center;
     display: none;
     padding-left: 0;
-    width:100%;
+    width: 100%;
   }
 `;
 
@@ -137,7 +138,7 @@ export const FormMainPoint = styled.div`
     width: 100%;
     margin-right: 0;
     margin-left: 0;
-    padding-left:0;
+    padding-left: 0;
     @media (min-width: ${constants.screen_tablet}px) and (max-width: ${constants.screen_dx_min -
       1}px) {
       margin-left: 0;
@@ -199,8 +200,8 @@ export const FormMainItemAside = styled.div`
   }
   @media (max-width: ${constants.screen_tablet - 1}px) {
     display: none;
-    padding-left:0;
-    margin-left:0;
+    padding-left: 0;
+    margin-left: 0;
   }
   @media (min-width: ${constants.screen_dx_min}px) and (max-width: ${constants.screen_dx -
     1}px) {
@@ -502,7 +503,7 @@ export const FormDateWrapper = styled.div`
   }
   @media (max-width: ${constants.screen_tablet - 1}px) {
     margin-top: 1em;
-    right:24px;
+    right: 24px;
   }
 `;
 
@@ -526,8 +527,8 @@ export const DateWrapper = styled.div`
       color: ${constants.dark_gray};
       font: 300 normal 14px/16px "Roboto", sans-serif;
     }
-    :focus-visible{
-      outline:none;
+    :focus-visible {
+      outline: none;
     }
   }
   button:after {

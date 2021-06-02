@@ -13,6 +13,7 @@ export const FormMain = styled.div`
   }
   @media (max-width: ${constants.screen_tablet - 1}px) {
     grid-column: 1/87;
+    grid-row: 30/101;
   }
 `;
 
@@ -48,7 +49,7 @@ export const FormMainLent = styled.div`
   @media (max-width: ${constants.screen_tablet - 1}px) {
     width: calc(100% - 48px);
     flex-direction: column;
-    justify-content: space-around;
+    justify-content:flex-start;
     margin-right:24px;
     margin-left:24px;
   }

@@ -1,6 +1,6 @@
 import styled from "styled-components/macro";
 import constants from "../../../../styles/constants";
-import  { Redirect,Link } from 'react-router-dom'
+import { Redirect, Link } from "react-router-dom";
 
 export const Basket = styled.img`
   @media (min-width: ${constants.screen_dx_min - 1}px) {
@@ -13,8 +13,8 @@ export const Basket = styled.img`
   z-index: 10000;
   @media (min-width: ${constants.screen_tablet}px) and (max-width: ${constants.screen_dx_min -
     1}px) {
-      right:5%;
-    }
+    right: 5%;
+  }
   &.basket {
     filter: brightness(0.5) sepia(1) saturate(2000%) hue-rotate(120deg);
   }
@@ -27,6 +27,7 @@ export const FormMain = styled.div`
   grid-template-columns: repeat(43, 1fr);
   @media (max-width: ${constants.screen_tablet - 1}px) {
     grid-column: 1/87;
+    grid-row: 30/101;
   }
 `;
 export const Wrapper = styled.div`
@@ -39,6 +40,7 @@ export const Wrapper = styled.div`
     align-items: flex-start;
     justify-content: space-between;
   }
+  
 `;
 
 export const Lent = styled.div`
@@ -57,7 +59,7 @@ export const Lent = styled.div`
   @media (max-width: ${constants.screen_tablet - 1}px) {
     width: 100%;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: flex-start;   
   }
 `;
 
@@ -104,7 +106,7 @@ export const MapOrder = styled.div`
   @media (max-width: ${constants.screen_tablet - 1}px) {
     max-width: 100%;
     margin-top: 1em;
-    margin-bottom: 1em;
+    margin-bottom: 0;
   }
   @media (min-width: ${constants.screen_dx_min}px) and (max-width: ${constants.screen_dx -
     1}px) {
@@ -190,12 +192,11 @@ export const GoogleMapBox = styled.div`
     width: calc(100% - 48px);
     height: 50%;
     margin-top: 5%;
-    margin-right:24px;
-    margin-left:24px;
+    margin-right: 24px;
+    margin-left: 24px;
   }
 `;
 export const Aside = styled.div`
-  
   grid-column: 32/44;
   height: 100%;
   border-left: 1px solid ${constants.light_gray};
@@ -225,7 +226,7 @@ export const Lane = styled.div`
     1}px) {
     margin-left: 0;
     align-items: flex-start;
-    min-width:280px;
+    min-width: 280px;
   }
   @media (min-width: ${constants.screen_tablet}px) and (max-width: ${constants.screen_dx_min -
     1}px) {
@@ -366,19 +367,25 @@ export const Cost = styled.div`
   @media (max-width: ${constants.screen_tablet - 1}px) {
     display: none;
     &.basket {
-      margin-left:0;
+      margin-left: 0;
     }
   }
 `;
 export const Button = styled(Link)`
-text-decoration:none;
+  text-decoration: none;
   width: 100%;
   padding-left: 32px;
   font: 500 normal 18px "Roboto", sans-serif;
   color: #fff;
   line-height: 21px;
   background-color: ${constants.light_gray};
-  background: linear-gradient(90deg, #13493f 0%, #0c7b1b 100%);
+  background: linear-gradient(90deg, #0ec261 2.61%, #039f67 112.6%);
+  :hover {
+    background: linear-gradient(90deg, #0b934a 2.61%, #026e47 112.6%);
+  }
+  :active {
+    background: linear-gradient(90deg, #076432 2.61%, #013c27 112.6%);
+  }
   padding: 0;
   margin-top: 32px;
   min-width: 280px;
@@ -390,10 +397,9 @@ text-decoration:none;
   display: flex;
   align-items: center;
   justify-content: center;
-  &.gray{
-    background:none ${constants.light_gray};
+  &.gray {
+    background: none ${constants.light_gray};
     cursor: default;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   }
   @media (min-width: ${constants.screen_dx_min}px) and (max-width: ${constants.screen_dx -
     1}px) {
@@ -417,13 +423,12 @@ text-decoration:none;
     bottom: 1em;
     left: 24px;
   }
-  
 `;
 export const Marker = styled.div`
-border: 5px solid #0EC261;
-background: #FFFFFF;
-box-sizing: border-box;
-width:18px;
-height:18px;
-border-radius:50%;
-`
+  border: 5px solid #0ec261;
+  background: #ffffff;
+  box-sizing: border-box;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+`;
