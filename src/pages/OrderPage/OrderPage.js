@@ -52,7 +52,13 @@ export const Accept = styled.a`
   text-decoration: none;
   display: flex;
   color: ${constants.light_gray};
-  background: linear-gradient(90deg, #13493f 0%, #0c7b1b 100%);
+  background: linear-gradient(90deg, #0ec261 2.61%, #039f67 112.6%);
+  :hover {
+    background: linear-gradient(90deg, #0b934a 2.61%, #026e47 112.6%);
+  }
+  :active {
+    background: linear-gradient(90deg, #076432 2.61%, #013c27 112.6%);
+  }
   width: 177px;
   height: 48px;
   text-align: center;
@@ -70,6 +76,12 @@ export const Reject = styled.div`
   justify-content: center;
   color: ${constants.light_gray};
   background: linear-gradient(90deg, rgb(73, 48, 19), rgb(123, 12, 59));
+  :hover {
+    filter: brightness(0.9);
+  }
+  :active {
+    filter: brightness(0.8);
+  }
   width: 177px;
   height: 48px;
   text-align: center;
