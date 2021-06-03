@@ -109,7 +109,9 @@ function Model() {
                 id="allmodel"
                 defaultChecked
               />
-              <label for="allmodel">Все модели</label>
+              <label htmlFor="allmodel">
+                <span>Все модели</span>
+              </label>
               <Econom name="model" type="radio" value="econom" id="econom" />
               <label for="econom">Эконом</label>
               <Premium name="model" type="radio" value="premium" id="premium" />

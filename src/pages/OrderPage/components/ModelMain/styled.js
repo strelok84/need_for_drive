@@ -340,6 +340,7 @@ export const AllModel = styled.input`
   z-index: -1;
   opacity: 0;
   + label {
+    box-sizing: border-box;
     margin-right: 1em;
     margin-top: 2em;
     display: inline-flex;
@@ -352,10 +353,11 @@ export const AllModel = styled.input`
     }
   }
   + label::before {
+    box-sizing: border-box;
     content: "";
-    display: inline-block;
-    width: 0.5em;
-    height: 0.5em;
+    display: flex;
+    width: 0.7em;
+    height: 0.7em;
     flex-shrink: 0;
     flex-grow: 0;
     border: 1px solid #adb5bd;
@@ -396,9 +398,11 @@ export const Econom = styled.input`
   }
   + label::before {
     content: "";
-    display: inline-block;
-    width: 0.5em;
-    height: 0.5em;
+    box-sizing: border-box;
+    content: "";
+    display: flex;
+    width: 0.7em;
+    height: 0.7em;
     flex-shrink: 0;
     flex-grow: 0;
     border: 1px solid #adb5bd;
@@ -436,10 +440,11 @@ export const Premium = styled.input`
     }
   }
   + label::before {
+    box-sizing: border-box;
     content: "";
-    display: inline-block;
-    width: 0.5em;
-    height: 0.5em;
+    display: flex;
+    width: 0.7em;
+    height: 0.7em;
     flex-shrink: 0;
     flex-grow: 0;
     border: 1px solid #adb5bd;

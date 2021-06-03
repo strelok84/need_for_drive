@@ -95,6 +95,9 @@ export const Wrapper = styled.div`
     1}px) {
     grid-template-columns: repeat(4, 21.5px) repeat(86, 1fr);
   }
+  @media (max-width: ${constants.screen_tablet - 1}px) {
+   
+  }
 `;
 
 function Main(props) {

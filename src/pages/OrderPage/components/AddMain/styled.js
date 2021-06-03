@@ -13,7 +13,7 @@ export const FormMain = styled.div`
   }
   @media (max-width: ${constants.screen_tablet - 1}px) {
     grid-column: 1/87;
-    grid-row: 30/101;
+    grid-row: 27/101;
   }
 `;
 
@@ -355,22 +355,23 @@ export const AllModel = styled.input`
   z-index: -1;
   opacity: 0;
   + label {
-    margin-right: 1em;
     margin-top: 1em;
+    margin-right:1em;
     display: inline-flex;
     align-items: center;
     user-select: none;
     font: 300 normal 14px/16px "Roboto", sans-serif;
     color: ${constants.dark_gray};
     @media (max-width: ${constants.screen_tablet - 1}px) {
-      margin-top: 1em;
+      margin-top: .5em;
     }
   }
   + label::before {
+    box-sizing: border-box;
     content: "";
-    display: inline-block;
-    width: 0.5em;
-    height: 0.5em;
+    display: flex;
+    width: 0.7em;
+    height: 0.7em;
     flex-shrink: 0;
     flex-grow: 0;
     border: 1px solid #adb5bd;
@@ -398,22 +399,23 @@ export const Econom = styled.input`
   z-index: -1;
   opacity: 0;
   + label {
-    margin-right: 1em;
     margin-top: 1em;
+    margin-right:1em;
     display: inline-flex;
     align-items: center;
     user-select: none;
     font: 300 normal 14px/16px "Roboto", sans-serif;
     color: ${constants.dark_gray};
     @media (max-width: ${constants.screen_tablet - 1}px) {
-      margin-top: 1em;
+      margin-top: .5em;
     }
   }
   + label::before {
+    box-sizing: border-box;
     content: "";
-    display: inline-block;
-    width: 0.5em;
-    height: 0.5em;
+    display: flex;
+    width: 0.7em;
+    height: 0.7em;
     flex-shrink: 0;
     flex-grow: 0;
     border: 1px solid #adb5bd;
@@ -435,7 +437,7 @@ export const Econom = styled.input`
   }
 `;
 export const Premium = styled.input`
-  box-sizing: border-box;
+ box-sizing: border-box;
   position: absolute;
   z-index: -1;
   opacity: 0;
@@ -447,14 +449,15 @@ export const Premium = styled.input`
     font: 300 normal 14px/16px "Roboto", sans-serif;
     color: ${constants.dark_gray};
     @media (max-width: ${constants.screen_tablet - 1}px) {
-      margin-top: 1em;
+      margin-top: .5em;
     }
   }
   + label::before {
+    box-sizing: border-box;
     content: "";
-    display: inline-block;
-    width: 0.5em;
-    height: 0.5em;
+    display: flex;
+    width: 0.7em;
+    height: 0.7em;
     flex-shrink: 0;
     flex-grow: 0;
     border: 1px solid #adb5bd;
@@ -578,14 +581,15 @@ export const RadioInput = styled.input`
     font: 300 normal 14px/16px "Roboto", sans-serif;
     color: ${constants.dark_gray};
     @media (max-width: ${constants.screen_tablet - 1}px) {
-      margin-top: 1em;
+      margin-top: .5em;
     }
   }
   + label::before {
+    box-sizing: border-box;
     content: "";
     display: inline-block;
-    width: 0.5em;
-    height: 0.5em;
+    width: 0.7em;
+    height: 0.7em;
     flex-shrink: 0;
     flex-grow: 0;
     border: 1px solid #adb5bd;

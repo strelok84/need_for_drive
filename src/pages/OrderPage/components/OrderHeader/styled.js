@@ -15,6 +15,10 @@ export const FormHeader = styled.div`
     border: 0;
     grid-row: 1/30;
     grid-template-rows: auto;
+    position: fixed;
+    background-color:#fff;
+    width:100%;
+    z-index:11;
   }
 `;
 
@@ -114,6 +118,9 @@ export const LaneBdkr = styled.div`
     flex-direction: column;
     position: relative;
     top: 0;
+    a{
+      margin-top:8px;
+    }
     img {
       display: none;
     }
@@ -218,6 +225,7 @@ export const Total = styled(Link)`
   }
   @media (max-width: ${constants.screen_tablet - 1}px) {
     margin-left: 24px;
+    margin-bottom:8px;
   }
   :hover {
     color: ${constants.main_accent};
