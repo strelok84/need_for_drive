@@ -250,7 +250,13 @@ export const FormMainBtn = styled.a`
   color: #fff;
   line-height: 21px;
   background-color: ${constants.light_gray};
-  background: linear-gradient(90deg, #13493f 0%, #0c7b1b 100%);
+  background: linear-gradient(90deg, #0ec261 2.61%, #039f67 112.6%);
+  :hover {
+    background: linear-gradient(90deg, #0b934a 2.61%, #026e47 112.6%);
+  }
+  :active {
+    background: linear-gradient(90deg, #076432 2.61%, #013c27 112.6%);
+  }
   padding: 0;
   margin-top: 32px;
   min-width: 280px;

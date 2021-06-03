@@ -364,6 +364,7 @@ export const ModelNumber = styled.div`
   border:1px solid ${constants.dark_gray};
   text-align:center;
   line-height: 24px;
+  border-radius:4px;
 `;
 export const Fuel = styled.div`
   font: normal 14px/16px "Roboto", sans-serif;
