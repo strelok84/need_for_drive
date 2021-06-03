@@ -73,6 +73,7 @@ const colourStyles = {
     ...provided,
     color: state.isFocused ? "#0EC261" : "#999",
     backgroundColor: "none",
+    cursor: "pointer",
   }),
 };
 const FormSity = {
@@ -86,12 +87,14 @@ const FormSity = {
 };
 
 let optionsPoint = [];
+let center;
 //5723fb56-580e-43c0-ae85-0ba0cfb5a4dd - streloc84
 //bd403854-01c0-404d-81a7-6847c7363770 - cucumberivanoff
 function MapMain() {
   let [pointsNow, setPoint] = useState([]);
+
   const geocode = async (city, address) => {
-    const url = `https://geocode-maps.yandex.ru/1.x/?format=json&apikey=fabc5db5-3846-4419-8d4b-9c07007b4e28&geocode=${city}, ${address}`;
+    const url = `https://geocode-maps.yandex.ru/1.x/?format=json&apikey=bd403854-01c0-404d-81a7-6847c7363770&geocode=${city}, ${address}`;
     let request = () => {
       return fetch(url);
     };
@@ -147,7 +150,6 @@ function MapMain() {
     value: point.address,
     label: point.address,
   }));
-  console.log(optionsPoint);
 
   const cityHandle = (value) => {
     dispatch(SetCity(value));
@@ -158,6 +160,10 @@ function MapMain() {
   };
 
   const pointHandle = (value) => {
+    center = filter2.findIndex(function (point) {
+      return point.address === value;
+    });
+    console.log(filter2);
     dispatch(SetPoint(value));
   };
 
@@ -217,14 +223,29 @@ function MapMain() {
                   key: "AIzaSyDEUoFQqwctWUViRtQq47lU8YuYXvAiXkI",
                 }}
                 center={
-                  pointsNow.length > 0
+                  center > -1
+                    ? pointsNow.length > 0
+                      ? {
+                          lat: +pointsNow[center][1],
+                          lng: +pointsNow[center][0],
+                        }
+                      : { lat: 54.31, lng: 48.39 }
+                    : pointsNow.length > 0
                     ? { lat: +pointsNow[0][1], lng: +pointsNow[0][0] }
                     : { lat: 54.31, lng: 48.39 }
                 }
-                zoom={12}
+                zoom={13}
               >
-                {pointsNow.map((point) =>
-                  point ? <Marker lat={point[1]} lng={point[0]}></Marker> : ""
+                {pointsNow.map((point, index) =>
+                  point ? (
+                    <Marker
+                      lat={point[1]}
+                      lng={point[0]}
+                      title={filter2.length > 0 ? filter2[+index].address : ""}
+                    ></Marker>
+                  ) : (
+                    ""
+                  )
                 )}
               </GoogleMapReact>
             </GoogleMapBox>
