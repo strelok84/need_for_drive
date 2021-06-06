@@ -10,11 +10,11 @@ import thunk from "redux-thunk";
 import { composeWithDevTools } from "redux-devtools-extension";
 
 import {persistStore, persistReducer} from "redux-persist";
-import storage from "redux-persist/lib/storage";
+import storageSession from 'redux-persist/lib/storage/session'
 
 const persistConfig = {
   key: "root",
-  storage
+  storage:storageSession
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
