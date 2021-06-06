@@ -1,4 +1,8 @@
 import React, { useEffect } from "react";
+import { connect, useDispatch, useSelector } from "react-redux";
+import {
+  GetCar
+} from "../../../../redux/model/actions";
 import {
   FormMain,
   FormMainWrapper,
@@ -27,50 +31,50 @@ import basket from "../../../../assets/img/basket.svg";
 const model = [
   {
     name: "ELANTRA",
-    costMin: 12000,
-    costMax: 25000,
+    priceMin: 12000,
+    priceMax: 25000,
     imgURL: "",
     class: "econom",
   },
   {
     name: "CRETA",
-    costMin: 12000,
-    costMax: 25000,
+    priceMin: 12000,
+    priceMax: 25000,
     imgURL: "",
     class: "premium",
   },
   {
     name: "SONATA",
-    costMin: 10000,
-    costMax: 32000,
+    priceMin: 10000,
+    priceMax: 32000,
     imgURL: "",
     class: "econom",
   },
   {
     name: "SONATA",
-    costMin: 10000,
-    costMax: 32000,
+    priceMin: 10000,
+    priceMax: 32000,
     imgURL: "",
     class: "econom",
   },
   {
     name: "SONATA",
-    costMin: 10000,
-    costMax: 32000,
+    priceMin: 10000,
+    priceMax: 32000,
     imgURL: "",
     class: "econom",
   },
   {
     name: "SONATA",
-    costMin: 10000,
-    costMax: 32000,
+    priceMin: 10000,
+    priceMax: 32000,
     imgURL: "",
     class: "econom",
   },
   {
     name: "SONATA",
-    costMin: 10000,
-    costMax: 32000,
+    priceMin: 10000,
+    priceMax: 32000,
     imgURL: "",
     class: "econom",
   },
@@ -96,6 +100,17 @@ function Model() {
     formMainModel.classList.toggle("disable");
   };
 
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(GetCar());   
+  }, [dispatch]);
+
+  const cars = useSelector((state) => state.cars.cars.data);
+  const orderCar = useSelector((state)=>state.orderCar.orderCar);
+  const orderCity = useSelector((state) => state.orderCity.orderCity);
+  const orderPoint = useSelector((state) => state.orderPoint.orderPoint);
+
   return (
     <FormMain id="formMain">
       <FormMainWrapper>
@@ -118,11 +133,12 @@ function Model() {
               <label for="premium">Премиум</label>
             </ModelRadioWrapper>
             <CardWrapper id="cardWrapper">
-              {model.map((item) => (
+              {cars.map((item) => (
                 <Card
                   name={item.name}
-                  costMin={item.costMin}
-                  costMax={item.costMax}
+                  costMin={item.priceMin}
+                  costMax={item.priceMax}
+                  link={item.thumbnail.path}
                 />
               ))}
             </CardWrapper>
@@ -130,6 +146,7 @@ function Model() {
           <FormMainAside>
             <FormMainLane>
               <FormMainOrder id="order">Ваш заказ</FormMainOrder>
+              {orderCity&&orderPoint?(
               <FormMainPoint id="pickpoint">
                 <FormMainPickup>
                   <br />
@@ -137,16 +154,17 @@ function Model() {
                 </FormMainPickup>
                 <FormMainDots></FormMainDots>
                 <FormMainAddress>
-                  Ульяновск
+                  {orderCity}
                   <br />
-                  Нариманова,42
+                  {orderPoint}
                 </FormMainAddress>
-              </FormMainPoint>
+              </FormMainPoint>):""}
+              {orderCar?(
               <FormMainModelAside id="model">
                 <FormMainPickup>Модель</FormMainPickup>
                 <FormMainDots></FormMainDots>
-                <FormMainAddress>Hundai,I30 N</FormMainAddress>
-              </FormMainModelAside>
+              <FormMainAddress>{orderCar}</FormMainAddress>
+              </FormMainModelAside>):""}
               <FormMainCost id="cost">
                 Цена: от 10000 до 32000 {"\u20BD"}
               </FormMainCost>

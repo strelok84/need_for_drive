@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 import constants from "../../../../../styles/constants";
-import CRETA from "../../../../../assets/img/creta.png";
-import elantra from "../../../../../assets/img/elantra.png";
-import sonata from "../../../../../assets/img/sonata.png";
-import I30N from "../../../../../assets/img/I30N.png";
+import { useDispatch } from "react-redux";
+import {
+  SetCar
+} from "../../../../../redux/model/actions";
 
 const CardStyle = styled.div`
   min-width: 368px;
@@ -23,8 +23,7 @@ const CardStyle = styled.div`
       0 1px 0 0 ${constants.main_accent} inset;
   }
   @media (min-width: ${constants.screen_tablet}px) and (max-width: ${constants.screen_dx_min -
-    1}px) {
-    
+    1}px) {    
    min-width:368px;
   }
   @media (max-width: ${constants.screen_tablet - 1}px) {
@@ -36,7 +35,7 @@ const CardStyle = styled.div`
 
 const ModelImg = styled.img`
   width: 70%;
-
+  max-height:70%;
   align-self: flex-end;
 
   margin-right: 1em;
@@ -47,9 +46,7 @@ const ModelImg = styled.img`
       width:auto;
     }
   @media (max-width: ${constants.screen_tablet - 1}px) {
-    width:auto;
-    height:70%;
-      
+    width:auto;      
   }
 `;
 
@@ -67,15 +64,19 @@ const Cost = styled.div`
 `;
 
 function Card(props) {
-  const imgList = {
-    CRETA: CRETA,
-    SONATA: sonata,
-    ELANTRA: elantra,
-    I30N: I30N,
+  const dispatch = useDispatch();
+  const getImgLink = (link) => {
+    if (link.match('base64')) {
+      return link
+    }
+    return `https://api-factory.simbirsoft1.com${link}`
   };
-  const src = imgList[props.name];
+  const src = getImgLink(props.link)
+  const handleCard=(name)=>{
+   dispatch(SetCar(name))
+  }
   return (
-    <CardStyle>
+    <CardStyle onClick={()=>{handleCard(props.name)}}>
       <div>
         <Name>{props.name}</Name>
         <Cost>
