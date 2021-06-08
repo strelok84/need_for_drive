@@ -162,8 +162,7 @@ function MapMain() {
   const pointHandle = (value) => {
     center = filter2.findIndex(function (point) {
       return point.address === value;
-    });
-    console.log(filter2);
+    });    
     dispatch(SetPoint(value));
   };
 

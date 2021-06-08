@@ -348,7 +348,7 @@ export const AllModel = styled.input`
   opacity: 0;
   + label {
     box-sizing: border-box;
-    margin-right: 1em;
+    margin-right: .5em;
     margin-top: 2em;
     display: inline-flex;
     align-items: center;
@@ -431,6 +431,51 @@ export const Econom = styled.input`
   }
 `;
 export const Premium = styled.input`
+  box-sizing: border-box;
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+  + label {
+    margin-top: 2em;
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+    font: 300 normal 14px/16px "Roboto", sans-serif;
+    color: ${constants.dark_gray};
+    @media (max-width: ${constants.screen_tablet - 1}px) {
+      margin-top: 1em;
+    }
+  }
+  + label::before {
+    box-sizing: border-box;
+    content: "";
+    display: flex;
+    width: 0.7em;
+    height: 0.7em;
+    flex-shrink: 0;
+    flex-grow: 0;
+    border: 1px solid #adb5bd;
+    border-radius: 50%;
+    margin-right: 0.5em;
+    background-repeat: no-repeat;
+    background-position: top top;
+    background-size: 50% 50%;
+  }
+
+  :checked + label::before {
+    box-sizing: border-box;
+    border: 2px solid ${constants.main_accent};
+    width: 0.7em;
+    height: 0.7em;
+  }
+  :checked + label {
+    color: ${constants.main_black};
+  }
+`;
+export const RadioBox=styled.div`
+  margin-right:.5em;
+`;
+export const Radio = styled.input`
   box-sizing: border-box;
   position: absolute;
   z-index: -1;
